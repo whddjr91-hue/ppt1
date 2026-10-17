@@ -11,6 +11,12 @@ $destinationRoot = Join-Path $root '.agents/skills'
 # Validate the entire set before creating anything.
 foreach ($name in $names) {
     $source = Join-Path $sourceRoot $name
+    if (-not [IO.File]::Exists((Join-Path $source 'SKILL.md'))) {
+        $source = Join-Path (Join-Path $root '.local/skill-source/.claude/skills') $name
+    }
+    if (-not [IO.File]::Exists((Join-Path $source 'SKILL.md'))) {
+        $source = Join-Path (Join-Path $root '.local/skill-source/.claude/skills') $name
+    }
     if (-not [IO.File]::Exists((Join-Path $source 'SKILL.md'))) { throw "Missing source skill: $name" }
     $destination = Join-Path $destinationRoot $name
     if (Test-Path -LiteralPath $destination) {
@@ -54,6 +60,12 @@ if ($CheckOnly) {
 [IO.Directory]::CreateDirectory($destinationRoot) | Out-Null
 foreach ($name in $names) {
     $source = Join-Path $sourceRoot $name
+    if (-not [IO.File]::Exists((Join-Path $source 'SKILL.md'))) {
+        $source = Join-Path (Join-Path $root '.local/skill-source/.claude/skills') $name
+    }
+    if (-not [IO.File]::Exists((Join-Path $source 'SKILL.md'))) {
+        $source = Join-Path (Join-Path $root '.local/skill-source/.claude/skills') $name
+    }
     $destination = Join-Path $destinationRoot $name
     if (-not (Test-Path -LiteralPath $destination)) { New-Item -ItemType Junction -Path $destination -Target $source | Out-Null }
     if ((Get-FileHash -LiteralPath (Join-Path $source 'SKILL.md')).Hash -ne (Get-FileHash -LiteralPath (Join-Path $destination 'SKILL.md')).Hash) { throw "Skill verification failed: $name" }
