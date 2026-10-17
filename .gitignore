@@ -1,0 +1,45 @@
+# Machine-local accounts, conversations and connection state
+/.local/
+/.codex/auth.json
+/.codex/auth.*
+/.codex/*.local.toml
+/.agents/skills/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Project inputs, media, outputs and working records stay private by default
+/프로젝트/
+/작업파일/
+/참고자료/
+/참고 사진/
+/보완(1)/
+/작업관리/*
+!/작업관리/세션연결/
+/작업관리/세션연결/*
+!/작업관리/세션연결/registry.example.json
+
+# Generated dependencies and local tools
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.log
+*.tmp
+*.zip
+*.pptx
+*.potx
+*.hwp
+*.hwpx
+*.docx
+*.pdf
+*.ttf
+*.otf
+*.eot
+.DS_Store
+Thumbs.db

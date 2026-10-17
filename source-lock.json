@@ -1,0 +1,28 @@
+﻿{
+    "schema_version":  1,
+    "repository":  "csi20140104-ops/ppt-12",
+    "commit":  "b27b43b94a515d2693191236c1ca9211d1d9fc8d",
+    "usage":  "원본 라이선스를 유지하여 로컬에 복원. 스킬·의존성 실행은 별도.",
+    "skills":  [
+                   {
+                       "name":  "grill-me",
+                       "sha256":  "caaf8b8de1684f96e26b28f3c29189db5c89cce4b73e1c93d86164f66ef88637"
+                   },
+                   {
+                       "name":  "grilling",
+                       "sha256":  "10ff989e7498b23b5acb49d5048f11dcd906757d2f79c5cdf8a00001381296f2"
+                   },
+                   {
+                       "name":  "playwright-skill",
+                       "sha256":  "6dc254f552392e1f5b8704434e982cd26375d04ebe815084d1b47af1ee2a971f"
+                   },
+                   {
+                       "name":  "ppt-master",
+                       "sha256":  "6b568cfa5b17229f264c3366c5e07844df5749b243c31af15e12424d75c30185"
+                   },
+                   {
+                       "name":  "pptx",
+                       "sha256":  "a7ff03e2c85b636f55232a6b1555f5dd90216b7a1a359ab289d8364e6acbc6a0"
+                   }
+               ]
+}

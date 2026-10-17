@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "codex_binary": null,
+  "sessions": [
+    {"number": 1, "role": "총괄·인터뷰·배분·최종 통합", "thread_id": null, "verified": false, "ack_path": null},
+    {"number": 2, "role": "독립 검수·수정 요청·재검수", "thread_id": null, "verified": false, "ack_path": null},
+    {"number": 3, "role": "스토리보드·PPT 제작·내용/구조 확인", "thread_id": null, "verified": false, "ack_path": null},
+    {"number": 4, "role": "매체·글꼴·출처/권리 조사", "thread_id": null, "verified": false, "ack_path": null},
+    {"number": 5, "role": "별도 사본 디자인·가독성 보완", "thread_id": null, "verified": false, "ack_path": null}
+  ]
+}

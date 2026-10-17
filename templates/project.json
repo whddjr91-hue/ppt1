@@ -1,0 +1,18 @@
+{
+  "project_id": "",
+  "topic": "",
+  "audience": [],
+  "learning_objectives": [],
+  "duration_minutes": {"min": null, "max": null},
+  "reference_template": "",
+  "manuscript": "",
+  "narration_policy": "사용자 확인 필요",
+  "delivery": ["pptx", "hwpx"],
+  "confirmed_answers": [],
+  "approved_changes": [],
+  "pending_questions": [],
+  "input_files": [],
+  "file_owners": {},
+  "latest_adopted_artifacts": [],
+  "verification_limits": []
+}

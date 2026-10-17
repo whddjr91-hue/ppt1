@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-17",
+  "project_id": "KIRD_역사학_연구윤리",
+  "purpose": "이러닝 교육 영상 제작용 스토리보드",
+  "audience": ["역사학 대학원생", "연구원", "연구책임자"],
+  "duration_minutes": {"min": 10, "max": 15},
+  "narration_policy": "원문 최대 유지. 감수 메모와 사용자 승인 예외를 구분해 반영",
+  "presentation_style": "제공 KIRD 심리 원본의 실제 양식·프레임·표·도형·글꼴·싱크·내레이션 위치",
+  "voice": "성우 도입·램지어 사례 + 원래 강사 해설/마무리",
+  "case_policy": {
+    "ramseyer": "유지·근거와 귀속 재검토. 공식 연구부정 확정으로 단정하지 않음",
+    "subtopic_openings": "기존 사례·조건부 상황을 중앙 영상 영역 전면 이미지/영상으로 구성",
+    "ai_opening": "일반·조건부 활용 맥락→위험 설명, 새 실제 사건으로 만들지 않음",
+    "translation_case": "원문·번역 대조 3컷",
+    "reuse_case": "새 성과처럼 발표한다는 조건을 유지한 2컷",
+    "summary": "마지막 페이지, 마지막 두 낭독문을 원순서로 통합"
+  },
+  "approved_rough_edit_assets": "제공 예시 강사 컷은 실제 촬영 때 교체. 자체 사진4·아이콘6·웹연출2안의 과거 승인 범위는 해당 자료에만 적용",
+  "latest_completed_task": "KIRD-HIST-V4-STOCK",
+  "completed_snapshot": {
+    "pages": 76,
+    "video_pages": 74,
+    "estimated_seconds": 843,
+    "narration_paragraphs": 20,
+    "narration_characters_excluding_whitespace": 4389,
+    "learning_objectives": 4,
+    "memo_processing_routes": 29,
+    "direct_scene_memo_ids": ["M24", "M26", "M27", "M29"],
+    "pptx_sha256": "993d03263cdc364b4d18ac4f4736bdf362dde33bf178fda96d35bdbd11971cf8",
+    "scene_json_sha256": "42198b892d9c192f58ab617e0b6df98a7898457b2989573b6a913a4e4ba279cc",
+    "note": "기존 PC 완료 당시의 식별값이며 새 PC에서 검증됐다는 뜻이 아님"
+  },
+  "local_project_assets_included": false,
+  "new_machine_verification": "not_performed",
+  "model_preference": {"model": "gpt-6.1-sol", "reasoning_effort": "high"},
+  "delivery": ["pptx", "hwpx", "docx", "pdf", "verified_zip"],
+  "remaining_independent_checks": ["실제 PowerPoint/한글 앱 열기·편집·재저장", "녹음·촬영·모션 실측", "최종 매체 사용권", "기관 공식 감수", "사용자 최종 디자인 수용"]
+}
