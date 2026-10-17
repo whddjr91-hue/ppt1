@@ -1,3 +1,5 @@
+> **최종 복원 기준:** 번호가 붙은 ZIP 7개와 `workspace-support-files.zip`을 모두 받아 같은 폴더에 풀어주세요(총 ZIP 8개, 43,840파일). 파일 목록은 **workspace-manifest-v2.json**이 최신입니다. 이전 workspace-manifest.json은 초기 제외 검사 이력입니다. 보충 ZIP은 공개 CA 인증서 2개와 Pillow의 내장 폰트 코드 1개를 오탐 제외에서 복구한 원본입니다. 비밀키나 로그인 토큰이 아닙니다.
+
 # 전체 작업 폴더와 대화 정리
 
 전체 작업자료는 파일 크기 때문에 GitHub Releases의 workspace-backup-2026-10-17에 독립 ZIP 7개로 보관합니다. **Code → Download ZIP만으로는 전체 자료를 받을 수 없습니다.**
