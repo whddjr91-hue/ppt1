@@ -32,13 +32,22 @@
       "package_version": "0.1.9",
       "license": "MIT",
       "distribution": "PyPI requirements.lock hashes; repository commit documents capabilities, not asserted PyPI build identity"
+    },
+    {
+      "name": "chromium",
+      "repository": "Sparticuz/chromium",
+      "documentation_commit": "2755b27e7a8654dbbc69eb2f9a728db6f3812e81",
+      "package_version": "153.0.0",
+      "license": "MIT package; Chromium BSD-3-Clause and upstream third-party notices",
+      "distribution": "npm SHA512 package-lock plus pinned extracted executable SHA256; documentation commit is not asserted as build identity"
     }
   ],
   "package_locks": [
     "tools/advanced-production/package-lock.json",
     "tools/advanced-documents/requirements.lock",
     "tools/advanced-browser/runtime-lock.json",
-    "tools/advanced-browser/package-lock.json"
+    "tools/advanced-browser/package-lock.json",
+    "tools/advanced-browser/chromium/package-lock.json"
   ],
   "vendored_files": [
     {

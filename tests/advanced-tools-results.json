@@ -340,7 +340,8 @@
       "preflight_pass": true,
       "browser_test_not_repeated": true,
       "smoke_sha256": "f3e249589dcffa3acb45281999715e380bef57b9c97332eca30b443908260a29"
-    }
+    },
+    "chromium_followup": "tests/chromium-results.json; original CLI-only result above retained as historical evidence"
   },
   "native_apps_open_edit_resave": false,
   "real_institution_prototype_equivalence": false,

@@ -6,21 +6,132 @@
   "existing_agents_unchanged": true,
   "legacy_initialization_required": false,
   "sessions": {
-    "1": {"role": "총괄 PM", "tools": ["markitdown"], "overlay": "prompts/extensions/session1.md"},
-    "2": {"role": "독립 검수", "tools": ["openai-pdf"], "overlay": "prompts/extensions/session2.md"},
-    "3": {"role": "스토리보드 제작", "tools": ["minimax-pptx-generator", "pptxgenjs", "mermaid", "markitdown"], "preserve": ["ppt-master"], "overlay": "prompts/extensions/session3.md"},
-    "4": {"role": "자료·출처 조사", "tools": ["openai-playwright", "openai-pdf"], "preserve": ["playwright-skill"], "overlay": "prompts/extensions/session4.md"},
-    "5": {"role": "별도 사본 디자인", "tools": ["minimax-pptx-generator", "mermaid"], "overlay": "prompts/extensions/session5.md"}
+    "1": {
+      "role": "총괄 PM",
+      "tools": [
+        "markitdown"
+      ],
+      "overlay": "prompts/extensions/session1.md"
+    },
+    "2": {
+      "role": "독립 검수",
+      "tools": [
+        "openai-pdf"
+      ],
+      "overlay": "prompts/extensions/session2.md"
+    },
+    "3": {
+      "role": "스토리보드 제작",
+      "tools": [
+        "minimax-pptx-generator",
+        "pptxgenjs",
+        "mermaid",
+        "markitdown"
+      ],
+      "preserve": [
+        "ppt-master"
+      ],
+      "overlay": "prompts/extensions/session3.md"
+    },
+    "4": {
+      "role": "자료·출처 조사",
+      "tools": [
+        "openai-playwright",
+        "openai-pdf"
+      ],
+      "preserve": [
+        "playwright-skill"
+      ],
+      "overlay": "prompts/extensions/session4.md"
+    },
+    "5": {
+      "role": "별도 사본 디자인",
+      "tools": [
+        "minimax-pptx-generator",
+        "mermaid"
+      ],
+      "overlay": "prompts/extensions/session5.md"
+    }
   },
   "tools": {
-    "minimax-pptx-generator": {"kind": "skill", "path": "vendor/skills/minimax-pptx-generator/SKILL.md", "registration": ".agents/skills/pptx-generator", "mode": "supplement-existing-ppt-master"},
-    "pptxgenjs": {"kind": "library", "version": "4.0.1", "manifest": "tools/advanced-production/package.json", "adapter": "tools/advanced-production/src/native-pptx.mjs", "existing_pptx_import": false},
-    "mermaid": {"kind": "library", "version": "12.2.0", "manifest": "tools/advanced-production/package.json", "use": "semantic flowchart structure to editable native PPT objects; do not impose Mermaid final design"},
-    "markitdown": {"kind": "library", "version": "0.1.9", "python_venv": ".local/advanced-documents-venv", "requirements": "tools/advanced-documents/requirements.lock", "adapter": "tools/advanced-documents/convert_document.py", "network_providers": false, "hangul_routing": "preserve-existing-HWP-HWPX-pipeline"},
-    "openai-playwright": {"kind": "skill-and-adapter", "upstream": "vendor/skills/openai-playwright/SKILL.md", "active_host_skill": "playwright-cli", "adapter_directory": "tools/advanced-browser", "auto_registration": false, "duplicate_policy": "reuse equivalent host CLI skill; separate legacy code-first skill preserved"},
-    "openai-pdf": {"kind": "skill", "upstream": "vendor/skills/openai-pdf/SKILL.md", "active_host_skill": "pdf", "active_host_package": "e2/pdf", "auto_registration": false, "duplicate_policy": "reuse built-in PDF skill; upstream registration is opt-in fallback only"}
+    "minimax-pptx-generator": {
+      "kind": "skill",
+      "path": "vendor/skills/minimax-pptx-generator/SKILL.md",
+      "registration": ".agents/skills/pptx-generator",
+      "mode": "supplement-existing-ppt-master"
+    },
+    "pptxgenjs": {
+      "kind": "library",
+      "version": "4.0.1",
+      "manifest": "tools/advanced-production/package.json",
+      "adapter": "tools/advanced-production/src/native-pptx.mjs",
+      "existing_pptx_import": false
+    },
+    "mermaid": {
+      "kind": "library",
+      "version": "12.2.0",
+      "manifest": "tools/advanced-production/package.json",
+      "use": "semantic flowchart structure to editable native PPT objects; do not impose Mermaid final design"
+    },
+    "markitdown": {
+      "kind": "library",
+      "version": "0.1.9",
+      "python_venv": ".local/advanced-documents-venv",
+      "requirements": "tools/advanced-documents/requirements.lock",
+      "adapter": "tools/advanced-documents/convert_document.py",
+      "network_providers": false,
+      "hangul_routing": "preserve-existing-HWP-HWPX-pipeline"
+    },
+    "openai-playwright": {
+      "kind": "skill-and-adapter",
+      "upstream": "vendor/skills/openai-playwright/SKILL.md",
+      "active_host_skill": "playwright-cli",
+      "adapter_directory": "tools/advanced-browser",
+      "auto_registration": false,
+      "duplicate_policy": "reuse equivalent host CLI skill; separate legacy code-first skill preserved",
+      "capture_adapter": "tools/advanced-browser/capture.cjs"
+    },
+    "openai-pdf": {
+      "kind": "skill",
+      "upstream": "vendor/skills/openai-pdf/SKILL.md",
+      "active_host_skill": "pdf",
+      "active_host_package": "e2/pdf",
+      "auto_registration": false,
+      "duplicate_policy": "reuse built-in PDF skill; upstream registration is opt-in fallback only"
+    },
+    "chromium": {
+      "kind": "browser-runtime",
+      "distribution": "@sparticuz/chromium",
+      "version": "153.0.0",
+      "browser_version": "153.0.8010.0",
+      "manifest": "tools/advanced-browser/chromium/package.json",
+      "sessions": [
+        4
+      ],
+      "capture_transport": "Playwright public API stdio",
+      "validation": "tests/chromium-results.json"
+    }
   },
-  "required_precedence": ["explicit user directions", "project AGENTS.md", "approved KEDI/KIRD prototype and manuscript", "session overlay", "external skill defaults"],
-  "quality_gates": ["original template frame, size, colors and typefaces", "screen text separated from approved narration", "sync markers start at #1 per page", "editable native text, shapes, tables and charts where applicable", "full-area image/video scene respects the prototype video region", "source-to-scene mappings and media rights", "render every final page and review clipping, overlap and text", "revise then independently re-review"],
-  "limitations": ["No full original prototype was reloaded in this add-on task", "No legacy workspace or completed storyboard was regenerated", "Current Chromium CDN download blocked; real browser capture pending"]
+  "required_precedence": [
+    "explicit user directions",
+    "project AGENTS.md",
+    "approved KEDI/KIRD prototype and manuscript",
+    "session overlay",
+    "external skill defaults"
+  ],
+  "quality_gates": [
+    "original template frame, size, colors and typefaces",
+    "screen text separated from approved narration",
+    "sync markers start at #1 per page",
+    "editable native text, shapes, tables and charts where applicable",
+    "full-area image/video scene respects the prototype video region",
+    "source-to-scene mappings and media rights",
+    "render every final page and review clipping, overlap and text",
+    "revise then independently re-review"
+  ],
+  "limitations": [
+    "No full original prototype was reloaded in this add-on task",
+    "No legacy workspace or completed storyboard was regenerated",
+    "Official Chromium CDN still returns invalid archives; pinned npm Chromium153 capture works via public API. CLI daemon Unix socket remains EPERM in this environment."
+  ]
 }

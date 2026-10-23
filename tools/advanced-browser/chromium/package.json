@@ -1,0 +1,8 @@
+{
+  "name": "ppt1-project-chromium",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pinned Linux x64 Chromium headless distribution for the project capture runtime",
+  "engines": { "node": "^22.17.0 || >=24.0.0" },
+  "dependencies": { "@sparticuz/chromium": "153.0.0" }
+}

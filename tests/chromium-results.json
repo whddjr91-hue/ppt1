@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-23",
+  "status": "PASS_CHROMIUM_INSTALL_AND_API_CAPTURE",
+  "distribution": "@sparticuz/chromium",
+  "packageVersion": "153.0.0",
+  "browserVersion": "Chromium 153.0.8010.0",
+  "playwrightVersion": "1.62.1",
+  "platform": "linux-x64",
+  "npmIntegrity": "sha512-jiGWqSvPMdu4+P9TilYqAR7yEGPEHINx+lCvE/NqNO/EHYzF/x1hUiI5T6ioVIt7dEy7n88byyT0vk+dnsgQwA==",
+  "executableBytes": 209022176,
+  "executableSha256": "53a15d6c3a3d27dfb54c4ba60278b1683136f70cf1e67e989da7dfbd3d451ef0",
+  "sourceAssets": {
+    "chromium.br": "38e1e1649db20fa4ea644bf5987688ce81a4c9eb10e7eae8380b74fc0d699fea",
+    "fonts.tar.br": "c1307fe5cd607092f0426742b4ab93755eec9a9b7752e47c56408c2bcf3e515b",
+    "swiftshader.tar.br": "b680e40a33235ecc6ad4c6897a168b70ce5164f0d62d2a64d675320d51614631"
+  },
+  "installationDirectory": "tools/advanced-browser/chromium/node_modules/.cache/ppt1-chromium",
+  "receipt": ".local/advanced-browser-cache/chromium-install.json",
+  "apiSmoke": {
+    "passed": true,
+    "browser": "Chromium 153.0.8010.0",
+    "playwright": "1.62.1",
+    "transport": "public API stdio",
+    "pageOpened": true,
+    "buttonClicked": true,
+    "snapshotCreated": true,
+    "screenshotCreated": true,
+    "executableIntegrityAfterTest": true,
+    "userAuthenticationUsed": false,
+    "externalSitesTested": false
+  },
+  "captureCommand": {
+    "passed": true,
+    "png": true,
+    "metadata": true,
+    "snapshot": true,
+    "usesExternalSite": false
+  },
+  "visualReview": {
+    "koreanReadable": true,
+    "buttonStateUpdated": true,
+    "reviewedBy": "root"
+  },
+  "independentReview": "Earlier independent integrity diagnosis completed; follow-up reviewer unavailable due model capacity. Root verified actual capture and source. No model substitution.",
+  "officialPlaywrightDownload": "FAILED_INVALID_ZIP",
+  "cliDaemon": "FAILED_UNIX_SOCKET_LISTEN_EPERM",
+  "notes": [
+    "Public API stdio capture succeeds without changing Unix socket permissions",
+    "Earlier source-synced executable was truncated; verified compressed source restored into generated dependency cache",
+    "Chromium153 differs from the Playwright default151; basic workflow verified, not complete API compatibility",
+    "External websites, authenticated sessions, media rights and full storyboard rendering were not tested in this follow-up",
+    "Existing AGENTS, role definitions, original skills and project inputs were preserved"
+  ],
+  "artifactHashes": {
+    "capture-command.png": "f57172e5b0684cb4513b74c6b17566f7104b6ee11713c6c1197bf4cc704e92ea",
+    "local-test.png": "a3f469a1c32e9ec08fe90771a977ef048b6a637eab98a17198468ca811a5952e"
+  }
+}
