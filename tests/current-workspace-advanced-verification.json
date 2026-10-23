@@ -1,0 +1,317 @@
+{
+  "verified_on": "2026-10-23",
+  "canonical_base_commit": "72bd8e49ecaa7bec408a206e823fa34dd96fdf42",
+  "concurrent_update_policy": "Adopted existing main add-on; did not overwrite or commit a duplicate implementation.",
+  "root": "/workspace/scratch/3188a94e77fa/ppt1",
+  "vendor_hashes_passed": true,
+  "preservation": [
+    {
+      "path": "AGENTS.md",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "docs/스킬환경.md",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "SKILLS-SOURCE.md",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "source-lock.json",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "scripts/Initialize-Workspace.ps1",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": ".codex/config.toml",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "docs/제작기준.md",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "docs/검수보고서기준.md",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "docs/세션운영.md",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": ".gitignore",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": ".claude/skills/ppt-master/SKILL.md",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": ".claude/skills/playwright-skill/SKILL.md",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "prompts/1세션_총괄.md",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "prompts/2세션_검수.md",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "prompts/3세션_제작.md",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "prompts/4세션_자료권리.md",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "prompts/5세션_디자인.md",
+      "original_bytes_preserved": true
+    }
+  ],
+  "active_runtime": {
+    "documents_python": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-documents-venv/bin/python",
+    "documents_ready": true,
+    "production_ready": true,
+    "node": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "pdftoppm": "/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override/pdftoppm",
+    "soffice": "/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override/soffice",
+    "browser_status": "Run the browser smoke separately; CLI presence is not browser availability",
+    "markitdown_version": "0.1.9",
+    "browser_cli_runtime_ready": true
+  },
+  "production_structure": {
+    "passed": true,
+    "diagnosticOnly": true,
+    "reports": [
+      {
+        "family": "kird",
+        "sha256": "44cec6d06f50c53d3944dfd5588d8bd5ff382b315c863bf128e944937a68f97a",
+        "size_emu": [
+          9144000,
+          5143500
+        ],
+        "slide_count": 2,
+        "slides": [
+          {
+            "slide": 1,
+            "native_shapes": 8,
+            "native_tables": 1,
+            "native_charts": 1,
+            "pictures": 1,
+            "native_text_runs": 10,
+            "page_cue_reset_to_one": true
+          },
+          {
+            "slide": 2,
+            "native_shapes": 15,
+            "native_tables": 0,
+            "native_charts": 0,
+            "pictures": 0,
+            "native_text_runs": 7,
+            "page_cue_reset_to_one": true
+          }
+        ],
+        "chart_cached_values": [
+          "2",
+          "4",
+          "3"
+        ],
+        "embedded_workbook_crc_pass": true,
+        "svg_preserved": true,
+        "svg_png_fallback_dimensions": [
+          120,
+          60
+        ],
+        "all_xml_parsed": true,
+        "all_internal_relationships_resolve": true,
+        "zip_crc_pass": true
+      },
+      {
+        "family": "kedi",
+        "sha256": "401f9161ef2ef8a2ee9f901a4998a94a02c8f535462bea7f1973df8bb38ffc10",
+        "size_emu": [
+          12192000,
+          6858000
+        ],
+        "slide_count": 2,
+        "slides": [
+          {
+            "slide": 1,
+            "native_shapes": 8,
+            "native_tables": 1,
+            "native_charts": 1,
+            "pictures": 1,
+            "native_text_runs": 10,
+            "page_cue_reset_to_one": true
+          },
+          {
+            "slide": 2,
+            "native_shapes": 15,
+            "native_tables": 0,
+            "native_charts": 0,
+            "pictures": 0,
+            "native_text_runs": 7,
+            "page_cue_reset_to_one": true
+          }
+        ],
+        "chart_cached_values": [
+          "2",
+          "4",
+          "3"
+        ],
+        "embedded_workbook_crc_pass": true,
+        "svg_preserved": true,
+        "svg_png_fallback_dimensions": [
+          120,
+          60
+        ],
+        "all_xml_parsed": true,
+        "all_internal_relationships_resolve": true,
+        "zip_crc_pass": true
+      }
+    ]
+  },
+  "document_tests": {
+    "tests": [
+      {
+        "format": ".pptx",
+        "expected_text_found": true,
+        "source_unchanged": true,
+        "source_sha256": "30e508a237f93946f26012ed00f81260fcbe59723cdec4de9b73ec8bade6860a"
+      },
+      {
+        "format": ".docx",
+        "expected_text_found": true,
+        "source_unchanged": true,
+        "source_sha256": "fe97947cf910ae02b4a8c1107c7c6547b607b21b77048f7f134cd54b788397be"
+      },
+      {
+        "format": ".pdf",
+        "expected_text_found": true,
+        "source_unchanged": true,
+        "source_sha256": "c843b88d9a2c226f45b40c33ab8666c6e862bd173896abbc9ae65e12cd8e9b04"
+      },
+      {
+        "format": ".hwp",
+        "legacy_route_preserved": true,
+        "real_hangul_parsing_tested": false
+      },
+      {
+        "format": ".hwpx",
+        "legacy_route_preserved": true,
+        "real_hangul_parsing_tested": false
+      }
+    ],
+    "status": "PASS",
+    "scope": "diagnostic local preprocessing and routing only"
+  },
+  "real_prototype_read_only_analysis": [
+    {
+      "prototype": "KEDI",
+      "slide_count": 176,
+      "size_emu": [
+        12192000,
+        6858000
+      ],
+      "source_sha256": "bfd0c4c282b0f364f7009764db3146b167ce456ba23c1d6653915d2f11b7dbc7",
+      "source_unchanged": true,
+      "group_children_recorded": 273
+    },
+    {
+      "prototype": "KIRD",
+      "slide_count": 73,
+      "size_emu": [
+        9144000,
+        5143500
+      ],
+      "source_sha256": "1ab388216156db6b78134cef800cc2f42f9f387ff15bd39117883d4d0855e062",
+      "source_unchanged": true,
+      "group_children_recorded": 0
+    }
+  ],
+  "agents": [
+    {
+      "session": 2,
+      "ready": true,
+      "scope": "current internal agent; latest main add-on paths read"
+    },
+    {
+      "session": 3,
+      "ready": true,
+      "scope": "current internal agent; latest main add-on paths read"
+    },
+    {
+      "session": 4,
+      "ready": true,
+      "scope": "current internal agent; latest main add-on paths read"
+    },
+    {
+      "session": 5,
+      "ready": true,
+      "scope": "current internal agent; latest main add-on paths read"
+    }
+  ],
+  "browser_scope": "CLI runtime and hash only; no website automation or capture test",
+  "previous_complex_svg_test": "Direct Mermaid SVG render failed; native rebuild and PNG reference passed independent two-page review.",
+  "limits": [
+    "No legacy storyboard regenerated",
+    "No production prototype fidelity PASS",
+    "PowerPoint/Hancom application roundtrip and playback not tested",
+    "Final public media rights and user design acceptance not tested"
+  ],
+  "canonical_visual_review": {
+    "status": "PASS_VIRTUAL_FIXTURE_VISUAL_SCOPE",
+    "reviewer": "/root/reviewer",
+    "inputs": [
+      {
+        "file": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pptx",
+        "sha256": "401f9161ef2ef8a2ee9f901a4998a94a02c8f535462bea7f1973df8bb38ffc10",
+        "page_count": 2,
+        "pdf_sha256": "4887d3465575fe773b5d94ad319d1d69d9859c60e99918e81f92f885fed19b1a"
+      },
+      {
+        "file": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pptx",
+        "sha256": "44cec6d06f50c53d3944dfd5588d8bd5ff382b315c863bf128e944937a68f97a",
+        "page_count": 2,
+        "pdf_sha256": "3f58c7f9684ca7fc123f4df36c0ab9a4b134ad091352fbbd4b2bc615c8d0b30f"
+      }
+    ],
+    "pages_reviewed": 4,
+    "page_results": [
+      {
+        "file": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pptx",
+        "page": 1,
+        "visual": "PASS: Korean glyphs readable; no observed clipped text, overlapping text, broken chart/table/SVG or missing diagram labels"
+      },
+      {
+        "file": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pptx",
+        "page": 2,
+        "visual": "PASS: Korean glyphs readable; no observed clipped text, overlapping text, broken chart/table/SVG or missing diagram labels"
+      },
+      {
+        "file": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pptx",
+        "page": 1,
+        "visual": "PASS: Korean glyphs readable; no observed clipped text, overlapping text, broken chart/table/SVG or missing diagram labels"
+      },
+      {
+        "file": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pptx",
+        "page": 2,
+        "visual": "PASS: Korean glyphs readable; no observed clipped text, overlapping text, broken chart/table/SVG or missing diagram labels"
+      }
+    ],
+    "scope": "Synthetic KEDI/KIRD diagnostic fixtures only. Not a real institution prototype or manuscript, not delivery validation of any existing project.",
+    "limits": [
+      "PowerPoint UI edit/save roundtrip not performed",
+      "Source template fidelity and narration accuracy not assessed against a real project",
+      "Animation timing, audio/video playback and media usage rights not tested"
+    ],
+    "production_files_changed": false,
+    "reviewed_at_utc": "2026-10-23T07:12:01.270684+00:00"
+  }
+}
