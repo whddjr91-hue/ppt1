@@ -1,0 +1,349 @@
+{
+  "date": "2026-10-23",
+  "scope": "additive tool bundle; original content not rebuilt",
+  "independent_review": "tests/advanced-tools-review.json",
+  "review_sha256": "f758cc1649929e1a821d3336596b87898b0bb42a69ce48eb5bc1adb166123fa4",
+  "source_integrity": {
+    "vendor_files": 24,
+    "vendor_integrity_pass": true,
+    "original_file_checks": 17,
+    "all_original_prefixes_or_bytes_preserved": true
+  },
+  "registration": {
+    "new_default_skills": [
+      "pptx-generator"
+    ],
+    "existing_pdf_reused": true,
+    "existing_cli_reused": true,
+    "non_overwrite_tests": 3,
+    "non_overwrite_tests_pass": true
+  },
+  "markitdown": {
+    "tests": [
+      {
+        "format": ".pptx",
+        "expected_text_found": true,
+        "source_unchanged": true,
+        "source_sha256": "c4b7183f19fc0c56c6e0f4947ae76ce8d3134702452af6ddf73c60de76cf9741"
+      },
+      {
+        "format": ".docx",
+        "expected_text_found": true,
+        "source_unchanged": true,
+        "source_sha256": "57bd2534ab080172617543e38fe9317dd9fd9d06ebaa47797cc548e6a1e5221d"
+      },
+      {
+        "format": ".pdf",
+        "expected_text_found": true,
+        "source_unchanged": true,
+        "source_sha256": "5880d2b4fbae82b5933958d2f1bd6d22d5d80839ea055541fb7f950d382f9732"
+      },
+      {
+        "format": ".hwp",
+        "legacy_route_preserved": true,
+        "real_hangul_parsing_tested": false
+      },
+      {
+        "format": ".hwpx",
+        "legacy_route_preserved": true,
+        "real_hangul_parsing_tested": false
+      }
+    ],
+    "status": "PASS",
+    "scope": "diagnostic local preprocessing and routing only"
+  },
+  "geometry_and_sync_regression": {
+    "issue": "S2-GEOM-001",
+    "passed": true,
+    "negativeCases": 50,
+    "tests": [
+      {
+        "surface": "text",
+        "case": 0,
+        "rejected": true
+      },
+      {
+        "surface": "text",
+        "case": 1,
+        "rejected": true
+      },
+      {
+        "surface": "text",
+        "case": 2,
+        "rejected": true
+      },
+      {
+        "surface": "text",
+        "case": 3,
+        "rejected": true
+      },
+      {
+        "surface": "text",
+        "case": 4,
+        "rejected": true
+      },
+      {
+        "surface": "text",
+        "case": 5,
+        "rejected": true
+      },
+      {
+        "surface": "text",
+        "case": 6,
+        "rejected": true
+      },
+      {
+        "surface": "text",
+        "case": 7,
+        "rejected": true
+      },
+      {
+        "surface": "shape",
+        "case": 0,
+        "rejected": true
+      },
+      {
+        "surface": "shape",
+        "case": 1,
+        "rejected": true
+      },
+      {
+        "surface": "shape",
+        "case": 2,
+        "rejected": true
+      },
+      {
+        "surface": "shape",
+        "case": 3,
+        "rejected": true
+      },
+      {
+        "surface": "shape",
+        "case": 4,
+        "rejected": true
+      },
+      {
+        "surface": "shape",
+        "case": 5,
+        "rejected": true
+      },
+      {
+        "surface": "shape",
+        "case": 6,
+        "rejected": true
+      },
+      {
+        "surface": "shape",
+        "case": 7,
+        "rejected": true
+      },
+      {
+        "surface": "table",
+        "case": 0,
+        "rejected": true
+      },
+      {
+        "surface": "table",
+        "case": 1,
+        "rejected": true
+      },
+      {
+        "surface": "table",
+        "case": 2,
+        "rejected": true
+      },
+      {
+        "surface": "table",
+        "case": 3,
+        "rejected": true
+      },
+      {
+        "surface": "table",
+        "case": 4,
+        "rejected": true
+      },
+      {
+        "surface": "table",
+        "case": 5,
+        "rejected": true
+      },
+      {
+        "surface": "table",
+        "case": 6,
+        "rejected": true
+      },
+      {
+        "surface": "table",
+        "case": 7,
+        "rejected": true
+      },
+      {
+        "surface": "chart",
+        "case": 0,
+        "rejected": true
+      },
+      {
+        "surface": "chart",
+        "case": 1,
+        "rejected": true
+      },
+      {
+        "surface": "chart",
+        "case": 2,
+        "rejected": true
+      },
+      {
+        "surface": "chart",
+        "case": 3,
+        "rejected": true
+      },
+      {
+        "surface": "chart",
+        "case": 4,
+        "rejected": true
+      },
+      {
+        "surface": "chart",
+        "case": 5,
+        "rejected": true
+      },
+      {
+        "surface": "chart",
+        "case": 6,
+        "rejected": true
+      },
+      {
+        "surface": "chart",
+        "case": 7,
+        "rejected": true
+      },
+      {
+        "surface": "mermaid.options.text",
+        "case": 0,
+        "rejected": true
+      },
+      {
+        "surface": "mermaid.options.text",
+        "case": 1,
+        "rejected": true
+      },
+      {
+        "surface": "mermaid.options.text",
+        "case": 2,
+        "rejected": true
+      },
+      {
+        "surface": "mermaid.options.text",
+        "case": 3,
+        "rejected": true
+      },
+      {
+        "surface": "mermaid.options.text",
+        "case": 4,
+        "rejected": true
+      },
+      {
+        "surface": "mermaid.options.text",
+        "case": 5,
+        "rejected": true
+      },
+      {
+        "surface": "mermaid.options.text",
+        "case": 6,
+        "rejected": true
+      },
+      {
+        "surface": "mermaid.options.text",
+        "case": 7,
+        "rejected": true
+      },
+      {
+        "surface": "CLI op.options text",
+        "rejected": true,
+        "outputCreated": false
+      },
+      {
+        "surface": "CLI op.options shape",
+        "rejected": true,
+        "outputCreated": false
+      },
+      {
+        "surface": "CLI op.options table",
+        "rejected": true,
+        "outputCreated": false
+      },
+      {
+        "surface": "CLI op.options chart",
+        "rejected": true,
+        "outputCreated": false
+      },
+      {
+        "surface": "CLI mermaid.options.text",
+        "rejected": true,
+        "outputCreated": false
+      },
+      {
+        "surface": "addScene page-local cue contract",
+        "case": 0,
+        "rejected": true
+      },
+      {
+        "surface": "addScene page-local cue contract",
+        "case": 1,
+        "rejected": true
+      },
+      {
+        "surface": "addScene page-local cue contract",
+        "case": 2,
+        "rejected": true
+      },
+      {
+        "surface": "addScene page-local cue contract",
+        "case": 3,
+        "rejected": true
+      },
+      {
+        "surface": "addScene page-local cue contract",
+        "case": 4,
+        "rejected": true
+      }
+    ],
+    "pageCueFirstMarkerRequired": true,
+    "pageCueResetRepeatedAcrossTwoInMemoryScenesAllowed": true,
+    "approvedNarrationRewritten": false,
+    "nativeAdapterSha256": "21bd77585dff7d4ca6eb0643a5e0749dd0b119470e423a99d0dd7f1e1e5a6e4a",
+    "existingDiagnosticArtifacts": [
+      "kedi-1.png",
+      "kedi-2.png",
+      "kedi-virtual-diagnostic.pdf",
+      "kedi-virtual-diagnostic.pptx",
+      "kird-1.png",
+      "kird-2.png",
+      "kird-virtual-diagnostic.pdf",
+      "kird-virtual-diagnostic.pptx"
+    ],
+    "pptxCreated": false,
+    "fullDiagnosticsRerun": false
+  },
+  "production": "tools/advanced-production/integration-result.json",
+  "pdf": "Official upstream+existing builtin; extraction via 3 engines and PNG inspection passed",
+  "playwright": {
+    "cli_version": "1.62.1",
+    "cli_version_hash_parser_preflight": "PASS",
+    "browser_open": "FAILED_BROWSER_NOT_INSTALLED",
+    "snapshot_generated": false,
+    "screenshot_generated": false,
+    "official_cdn_download": "BLOCKED_SITE_UNAVAILABLE",
+    "bypass_attempted": false,
+    "post_review_runtime_selection_fix": {
+      "public_wrapper_runtime_info": true,
+      "preflight_pass": true,
+      "browser_test_not_repeated": true,
+      "smoke_sha256": "f3e249589dcffa3acb45281999715e380bef57b9c97332eca30b443908260a29"
+    }
+  },
+  "native_apps_open_edit_resave": false,
+  "real_institution_prototype_equivalence": false,
+  "github_publish_receipt": "Reported after remote commit/tree verification; no commit is implied by this local test record",
+  "review_status": "PASS_WITH_DECLARED_BROWSER_AND_NATIVE_APP_LIMITS; GITHUB_SAVE_PENDING_ROOT"
+}

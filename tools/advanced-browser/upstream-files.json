@@ -1,0 +1,70 @@
+{
+  "repository": "https://github.com/openai/skills",
+  "commit": "49f948faa9258a0c61caceaf225e179651397431",
+  "path": "skills/.curated/playwright",
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "bytes": 11552,
+      "sha256": "9a7110fc2d2f964038e5dc49128f908f29f47a574c961cba16085914e879cbda",
+      "git_blob_sha1": "cefe596afef12e19a8e5e923f1a04c7da3188760",
+      "source_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/playwright/LICENSE.txt"
+    },
+    {
+      "path": "NOTICE.txt",
+      "bytes": 403,
+      "sha256": "417d5d3372914ecfd9fe102ac1d7dc2119253209f9718d6c222f616876c1904b",
+      "git_blob_sha1": "f3a1933ff01c4402bc4210aa30ae4a52aa23c05f",
+      "source_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/playwright/NOTICE.txt"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 3771,
+      "sha256": "0ffaabcc8e0990627c4725f18bf1c7955534a796c1c199e872909de2013ce6a8",
+      "git_blob_sha1": "77c01afb31aa602d0b002ae2438c2b67f0335fcb",
+      "source_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/playwright/SKILL.md"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 313,
+      "sha256": "ddda43720fc566fffa45264be8f17f7745a3cee28d5245d41d3b963bc9967230",
+      "git_blob_sha1": "e74575e62f7c0e4b2b825de3cae2062a483fadd4",
+      "source_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/playwright/agents/openai.yaml"
+    },
+    {
+      "path": "assets/playwright-small.svg",
+      "bytes": 828,
+      "sha256": "f1d213c0f76735d8272c3d3e9fbf71fe7b894e2d1588907044c780f2c33a9732",
+      "git_blob_sha1": "bf694d6611157cf88d478ee8e26004b3bfb5b3c2",
+      "source_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/playwright/assets/playwright-small.svg"
+    },
+    {
+      "path": "assets/playwright.png",
+      "bytes": 1730,
+      "sha256": "521669f088c838196c6c852ccc9abdd7234d8f37fc9a8a7a9af7db2d50193381",
+      "git_blob_sha1": "c651868b94ffbed29cf5e6a07a5f6ced79edbd51",
+      "source_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/playwright/assets/playwright.png"
+    },
+    {
+      "path": "references/cli.md",
+      "bytes": 1863,
+      "sha256": "7c069a8206ba20b9ddbdc42436b04de30bb3aa4a825ba98680757ee62e954900",
+      "git_blob_sha1": "ec0b4e1aca28021a493ba84ce67489bd8ef9e876",
+      "source_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/playwright/references/cli.md"
+    },
+    {
+      "path": "references/workflows.md",
+      "bytes": 1864,
+      "sha256": "a2b5835a00ebee3906c146adf7f764f7718ea3f89a8702d86eaa135dfe0fc8c2",
+      "git_blob_sha1": "ffd45c0d8249fe1a3766f9745b75154112d04d87",
+      "source_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/playwright/references/workflows.md"
+    },
+    {
+      "path": "scripts/playwright_cli.sh",
+      "bytes": 526,
+      "sha256": "aa3fdff5d0e4556177f4dfd5f04117e772aa54f94b6a2e34b6c0edf629c6b9b5",
+      "git_blob_sha1": "51fabc65500efd877d2c3de36b19b48b733ebb15",
+      "source_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/playwright/scripts/playwright_cli.sh"
+    }
+  ]
+}

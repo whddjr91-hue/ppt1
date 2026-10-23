@@ -1,0 +1,72 @@
+{
+  "checked_date": "2026-10-23",
+  "packages": [
+    {
+      "package": "pptxgenjs",
+      "version": "4.0.1",
+      "license": "MIT",
+      "official_repository": "https://github.com/gitbrent/PptxGenJS",
+      "github_connector_verified": true,
+      "upstream_default_branch_license_blob_sha": "0b21750ad94fcfc08e723c81d337fd66e5b35964",
+      "distributed_license_file": "licenses/pptxgenjs-LICENSE",
+      "distributed_license_sha256": "7a2bfe96150786ed1908b8e63f98ebab88875c1e79e28faff6649e0f11f77e52",
+      "registry": "https://registry.npmjs.org/",
+      "installed_path": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/node_modules/pptxgenjs"
+    },
+    {
+      "package": "mermaid",
+      "version": "12.2.0",
+      "license": "MIT",
+      "official_repository": "https://github.com/mermaid-js/mermaid",
+      "github_connector_verified": true,
+      "upstream_default_branch_license_blob_sha": "2e5daebd2ad0fb200080a27d98aec5f04902acdd",
+      "distributed_license_file": "licenses/mermaid-LICENSE",
+      "distributed_license_sha256": "ec9fb67dcb25eccc416ed56e1aab819222c805a2a4bfe4cb19e7556bf2ffde80",
+      "registry": "https://registry.npmjs.org/",
+      "installed_path": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/node_modules/mermaid"
+    },
+    {
+      "package": "jsdom",
+      "version": "26.1.0",
+      "license": "MIT",
+      "official_repository": "https://github.com/jsdom/jsdom",
+      "github_connector_verified": true,
+      "upstream_default_branch_license_blob_sha": "0dbd4290419fcfd490e0dd574d22ba2660f7fc5d",
+      "distributed_license_file": "licenses/jsdom-LICENSE.txt",
+      "distributed_license_sha256": "242d37e7cab25cbafc36cc973ee88f9345fddf066afe4f72b7ac3d9ad4e24cce",
+      "registry": "https://registry.npmjs.org/",
+      "installed_path": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/node_modules/jsdom"
+    },
+    {
+      "package": "jszip",
+      "version": "3.10.2",
+      "license": "MIT OR GPL-3.0-or-later",
+      "selectedLicense": "MIT",
+      "official_repository": "https://github.com/Stuk/jszip",
+      "github_connector_verified": true,
+      "upstream_default_branch_license_blob_sha": "f8250b37a61862ea61ea9a93d5d423cad395a364",
+      "distributed_license_file": "licenses/jszip-LICENSE.markdown",
+      "distributed_license_sha256": "566c953c6090b1218ca6217dd7359d45dde46581968586dc607d59a78af6a9c4",
+      "registry": "https://registry.npmjs.org/",
+      "installed_path": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/node_modules/jszip"
+    },
+    {
+      "package": "sharp",
+      "version": "0.35.5",
+      "license": "Apache-2.0",
+      "official_repository": "https://github.com/lovell/sharp",
+      "github_connector_verified": true,
+      "upstream_default_branch_license_blob_sha": "37ec93a14fdcd0d6e525d97c0cfa6b314eaa98d8",
+      "distributed_license_file": "licenses/sharp-LICENSE",
+      "distributed_license_sha256": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68",
+      "registry": "https://registry.npmjs.org/",
+      "installed_path": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/node_modules/sharp",
+      "native_dependency_licenses": "Preserved in npm optional @img/sharp/libvips packages; no runtime binary redistributed separately."
+    }
+  ],
+  "notes": [
+    "Source repository and license read with GitHub connector.",
+    "Default-branch license blob is upstream reference, not an assertion of release-tag source identity. Installed version/integrity resolved from package-lock.json; distributed license copied from exact installed package.",
+    "All transitive versions, registry URLs and integrity hashes are in package-lock.json."
+  ]
+}

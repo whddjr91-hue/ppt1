@@ -1,0 +1,22 @@
+{
+  "name": "ppt1-advanced-production",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Additive storyboard native PPTX authoring and Mermaid structure adapter",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "diagnose": "node scripts/diagnose.mjs",
+    "build": "node scripts/build.mjs",
+    "mermaid": "node scripts/parse-mermaid.mjs"
+  },
+  "dependencies": {
+    "jsdom": "26.1.0",
+    "jszip": "3.10.2",
+    "mermaid": "12.2.0",
+    "pptxgenjs": "4.0.1",
+    "sharp": "0.35.5"
+  }
+}

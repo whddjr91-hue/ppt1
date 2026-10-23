@@ -1,0 +1,6 @@
+{
+  "playwright_version": "1.62.1",
+  "cli_sha256": "5e79302a6aad7d835d92d5ae6b4244c91cf61b28e94d7917279090e6c231f7a1",
+  "mode": "reuse existing runtime; no npm package installation",
+  "upstream_commit": "49f948faa9258a0c61caceaf225e179651397431"
+}

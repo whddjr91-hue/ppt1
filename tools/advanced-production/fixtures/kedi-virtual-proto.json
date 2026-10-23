@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "KEDI-VIRTUAL-DIAGNOSTIC",
+  "family": "KEDI",
+  "diagnosticOnly": true,
+  "notice": "가상 진단 양식. 실제 기관 프로토·공식 양식·승인 제작본이 아님.",
+  "width": 13.333333,
+  "height": 7.5,
+  "font": {
+    "face": "NanumGothic",
+    "bodyPt": 17.333332900000002,
+    "titlePt": 23.9999994
+  },
+  "colors": {
+    "background": "FFFFFF",
+    "ink": "263445",
+    "accent": "2878A5",
+    "frame": "25493B"
+  },
+  "regions": {
+    "header": {
+      "x": 0.333333325,
+      "y": 0.26666666,
+      "w": 12.66666635,
+      "h": 0.7333333150000001
+    },
+    "content": {
+      "x": 0.333333325,
+      "y": 1.1999999700000001,
+      "w": 12.66666635,
+      "h": 4.866666545
+    },
+    "narration": {
+      "x": 0.333333325,
+      "y": 6.26666651,
+      "w": 12.66666635,
+      "h": 0.866666645
+    }
+  }
+}

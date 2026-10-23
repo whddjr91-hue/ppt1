@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "created_date": "2026-10-23",
+  "base_repository": "whddjr91-hue/ppt1",
+  "base_commit": "22c39b6ed16aedccd31473bfcabbc4b1024a7d3d",
+  "upstreams": [
+    {
+      "name": "minimax-pptx-generator",
+      "repository": "MiniMax-AI/skills",
+      "commit": "60aaae52bb2af8162732751a4332f62a5fef518b",
+      "skill_path": "skills/pptx-generator/SKILL.md",
+      "license": "MIT; bundled Apache reference license preserved"
+    },
+    {
+      "name": "openai-playwright",
+      "repository": "openai/skills",
+      "commit": "49f948faa9258a0c61caceaf225e179651397431",
+      "skill_path": "skills/.curated/playwright/SKILL.md",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "openai-pdf",
+      "repository": "openai/skills",
+      "commit": "49f948faa9258a0c61caceaf225e179651397431",
+      "skill_path": "skills/.curated/pdf/SKILL.md",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "markitdown",
+      "repository": "microsoft/markitdown",
+      "documentation_commit": "7482c092d9c0074a89803c9fdb63a969e7fe17fc",
+      "package_version": "0.1.9",
+      "license": "MIT",
+      "distribution": "PyPI requirements.lock hashes; repository commit documents capabilities, not asserted PyPI build identity"
+    }
+  ],
+  "package_locks": [
+    "tools/advanced-production/package-lock.json",
+    "tools/advanced-documents/requirements.lock",
+    "tools/advanced-browser/runtime-lock.json",
+    "tools/advanced-browser/package-lock.json"
+  ],
+  "vendored_files": [
+    {
+      "path": "vendor/skills/minimax-pptx-generator/CREDITS.md",
+      "sha256": "536cfa5cf8171d6c9418a7520d732ce5a382fa68947654bd5f037bdfc6368897",
+      "bytes": 2609
+    },
+    {
+      "path": "vendor/skills/minimax-pptx-generator/LICENSE",
+      "sha256": "eed4ccce37c2d24822da3bd9d5bee7bc12d494741de56ada513d0b97f537fcd0",
+      "bytes": 1064
+    },
+    {
+      "path": "vendor/skills/minimax-pptx-generator/LICENSES/Apache-2.0.txt",
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "bytes": 11357
+    },
+    {
+      "path": "vendor/skills/minimax-pptx-generator/SKILL.md",
+      "sha256": "6eeb36239fdef35ab133ca462e1ec4674cb96dd9c5cd63da39c29151899bda10",
+      "bytes": 7930
+    },
+    {
+      "path": "vendor/skills/minimax-pptx-generator/integration-result.json",
+      "sha256": "724015d7aeeb9e3019d58359474a409cedadcbe704845d65b5bd2d69c25f2889",
+      "bytes": 18423
+    },
+    {
+      "path": "vendor/skills/minimax-pptx-generator/references/design-system.md",
+      "sha256": "8a225af2ebd3bfa979616da74b7ec34395712fe1a8195e5613214aa291211996",
+      "bytes": 16159
+    },
+    {
+      "path": "vendor/skills/minimax-pptx-generator/references/editing.md",
+      "sha256": "5385ef88e7d081c43ee488ca308174743678314d53f6afc5df9b932390dcb3bf",
+      "bytes": 6577
+    },
+    {
+      "path": "vendor/skills/minimax-pptx-generator/references/pitfalls.md",
+      "sha256": "247a8eb1860524fdd0d8a3365a791490c162d4a58677eb3f329d4dd682ce0257",
+      "bytes": 3849
+    },
+    {
+      "path": "vendor/skills/minimax-pptx-generator/references/pptxgenjs.md",
+      "sha256": "4b66df00dd581c2eeadb140fd9bbad71daea6fb48b424f97b993f8521e41d470",
+      "bytes": 12752
+    },
+    {
+      "path": "vendor/skills/minimax-pptx-generator/references/slide-types.md",
+      "sha256": "fa2c0da76d420463990317dc5932e607cea5e126389ca391e3e5718629b0cb38",
+      "bytes": 15790
+    },
+    {
+      "path": "vendor/skills/openai-pdf/LICENSE.txt",
+      "sha256": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9",
+      "bytes": 10776
+    },
+    {
+      "path": "vendor/skills/openai-pdf/SKILL.md",
+      "sha256": "d108cf2b36355ab37eb5962933f4d09785ec002f3105c506129320209306b9d2",
+      "bytes": 2517
+    },
+    {
+      "path": "vendor/skills/openai-pdf/SOURCE.json",
+      "sha256": "6e594bd46bb48d55e9ea1e70df50332bf096ab869f743abd6f9fedd61f5075f5",
+      "bytes": 1767
+    },
+    {
+      "path": "vendor/skills/openai-pdf/agents/openai.yaml",
+      "sha256": "f8b223e25343559f57e1839ccd849fd1494a9729da33da04bb5074b7f80f4887",
+      "bytes": 219
+    },
+    {
+      "path": "vendor/skills/openai-pdf/assets/pdf.png",
+      "sha256": "17da356d195d4e3fa24f9becbee6b8d9e60e13005762b5ab0809c520c76da6ee",
+      "bytes": 1312
+    },
+    {
+      "path": "vendor/skills/openai-playwright/LICENSE.txt",
+      "sha256": "9a7110fc2d2f964038e5dc49128f908f29f47a574c961cba16085914e879cbda",
+      "bytes": 11552
+    },
+    {
+      "path": "vendor/skills/openai-playwright/NOTICE.txt",
+      "sha256": "417d5d3372914ecfd9fe102ac1d7dc2119253209f9718d6c222f616876c1904b",
+      "bytes": 403
+    },
+    {
+      "path": "vendor/skills/openai-playwright/SKILL.md",
+      "sha256": "0ffaabcc8e0990627c4725f18bf1c7955534a796c1c199e872909de2013ce6a8",
+      "bytes": 3771
+    },
+    {
+      "path": "vendor/skills/openai-playwright/agents/openai.yaml",
+      "sha256": "ddda43720fc566fffa45264be8f17f7745a3cee28d5245d41d3b963bc9967230",
+      "bytes": 313
+    },
+    {
+      "path": "vendor/skills/openai-playwright/assets/playwright-small.svg",
+      "sha256": "f1d213c0f76735d8272c3d3e9fbf71fe7b894e2d1588907044c780f2c33a9732",
+      "bytes": 828
+    },
+    {
+      "path": "vendor/skills/openai-playwright/assets/playwright.png",
+      "sha256": "521669f088c838196c6c852ccc9abdd7234d8f37fc9a8a7a9af7db2d50193381",
+      "bytes": 1730
+    },
+    {
+      "path": "vendor/skills/openai-playwright/references/cli.md",
+      "sha256": "7c069a8206ba20b9ddbdc42436b04de30bb3aa4a825ba98680757ee62e954900",
+      "bytes": 1863
+    },
+    {
+      "path": "vendor/skills/openai-playwright/references/workflows.md",
+      "sha256": "a2b5835a00ebee3906c146adf7f764f7718ea3f89a8702d86eaa135dfe0fc8c2",
+      "bytes": 1864
+    },
+    {
+      "path": "vendor/skills/openai-playwright/scripts/playwright_cli.sh",
+      "sha256": "aa3fdff5d0e4556177f4dfd5f04117e772aa54f94b6a2e34b6c0edf629c6b9b5",
+      "bytes": 526
+    }
+  ],
+  "preserved_existing_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "f4519c38d1281495f77dde3f3a6be3d1bfa9c4cf31d908b02c526a128d6f5f86",
+      "bytes": 6336,
+      "git_blob_sha1": "2b7408a0d3274c67911ee284b53b2a63b915f5f7"
+    },
+    {
+      "path": "docs/스킬환경.md",
+      "sha256": "1e78f1462e769d2e7dbe818fcccd1ea6405cac831bf2c9506d91c61241937a3c",
+      "bytes": 2372,
+      "git_blob_sha1": "1b632042930d3b82037814a33bfac0663eec445c"
+    },
+    {
+      "path": "SKILLS-SOURCE.md",
+      "sha256": "238b6bfd7804a6e34a58dac7bb98676be75e75addca0e72fb701db4334abe29c",
+      "bytes": 1033,
+      "git_blob_sha1": "707671012d527bca2459d85bb9921cf4b421aa68"
+    },
+    {
+      "path": "source-lock.json",
+      "sha256": "04160fb9490eacdd7964e4059ea144c5814944d9ff7f6031e09a76aa11f3da36",
+      "bytes": 1251,
+      "git_blob_sha1": "7f6054caf44ffeacd5796acbf5922d79f4e46e4d"
+    },
+    {
+      "path": "scripts/Initialize-Workspace.ps1",
+      "sha256": "e3b7cfd3b5735d480f86dd5421529dbe75d8738f2e46802a7eee5dc27cdf3331",
+      "bytes": 4411,
+      "git_blob_sha1": "c5112f20527420f9049804c097c2fcee65334237"
+    },
+    {
+      "path": ".codex/config.toml",
+      "sha256": "7ebb55f6738f8944d81dce9a01db9b6700202f396fc9379fdf6fd0bd75e22e2c",
+      "bytes": 229,
+      "git_blob_sha1": "b8405fe067a443667cd1a0cf33d82b4e5439ab24"
+    },
+    {
+      "path": "docs/제작기준.md",
+      "sha256": "ee8182934ad4112d014553f6d7488cdca615a2b89631c7d98349bd7b1813dc5a",
+      "bytes": 2825,
+      "git_blob_sha1": "c2d708bda8dfcf62d027e8021c6e8e2433d3ec42"
+    },
+    {
+      "path": "docs/검수보고서기준.md",
+      "sha256": "d57777ca3a2c22672703cc8b4f3a762c95d52f55e078df08583b31f78a6085a3",
+      "bytes": 2574,
+      "git_blob_sha1": "0d4578b1e4ddb072f4617db06526ec6543633330"
+    },
+    {
+      "path": "docs/세션운영.md",
+      "sha256": "71ec2ca4294cde80657ebe2edfd35ae6e8703db0f6b6410ab8714d00ecaaeeea",
+      "bytes": 3168,
+      "git_blob_sha1": "cc08b1af32643f63f7c3655ed41f344124466ecb"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "04c11a5d2663904d34a2efdb4b74b2a9d3a4fa3da8f220d00e852851df8a6e98",
+      "bytes": 654,
+      "git_blob_sha1": "39b9f51602a25fb84efc81cb4bb224c5a0d42336"
+    },
+    {
+      "path": ".claude/skills/ppt-master/SKILL.md",
+      "sha256": "6b568cfa5b17229f264c3366c5e07844df5749b243c31af15e12424d75c30185",
+      "bytes": 10043,
+      "git_blob_sha1": "b6252917bfcb7fac9a806ca1e0876f7c0edfa49b"
+    },
+    {
+      "path": ".claude/skills/playwright-skill/SKILL.md",
+      "sha256": "6dc254f552392e1f5b8704434e982cd26375d04ebe815084d1b47af1ee2a971f",
+      "bytes": 7741,
+      "git_blob_sha1": "8e002881ae65ebfa13f61a99d50678622c0ae5bf"
+    }
+  ],
+  "preserved_prompt_prefixes": [
+    {
+      "path": "prompts/1세션_총괄.md",
+      "sha256": "de825925e0b6858f31b51409a1b3e1614f6437fef456dae096611d0f593faa7d",
+      "bytes": 1028,
+      "git_blob_sha1": "ba1f85a45d575be7dd84c7611d38739bbeb9b429"
+    },
+    {
+      "path": "prompts/2세션_검수.md",
+      "sha256": "f4d50effcdb8eb45a5d0ecb0a81e11c4be6ab28e304b41eeda9388c66e6d7a4f",
+      "bytes": 842,
+      "git_blob_sha1": "300baecfd49b95d35df6782ed54266c16a67f878"
+    },
+    {
+      "path": "prompts/3세션_제작.md",
+      "sha256": "8a3ffb5c834cb1758f2b9636089fe0c4a6f5eebef1d9ca4ff70aeb06ea2073de",
+      "bytes": 871,
+      "git_blob_sha1": "8c52b4965d5543ec9719ff47ec3a1a2e2d774d8c"
+    },
+    {
+      "path": "prompts/4세션_자료권리.md",
+      "sha256": "6d033337da3c70429f22a52346214d9d35bcecb7b692463d398b434fb420f881",
+      "bytes": 862,
+      "git_blob_sha1": "178978887744fe9fa30a907b543c9a21e2490387"
+    },
+    {
+      "path": "prompts/5세션_디자인.md",
+      "sha256": "ec03b644d72486aee7fd25e7ac3f56b57c163428e068f45cd8aa95a7939a1cdf",
+      "bytes": 943,
+      "git_blob_sha1": "00e0e1fc5b81d64b61d0ffa69cf9bb0d6295bff6"
+    }
+  ]
+}

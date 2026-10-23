@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "KIRD-VIRTUAL-DIAGNOSTIC",
+  "family": "KIRD",
+  "diagnosticOnly": true,
+  "notice": "가상 진단 양식. 실제 기관 프로토·공식 양식·승인 제작본이 아님.",
+  "width": 10,
+  "height": 5.625,
+  "font": {
+    "face": "NanumGothic",
+    "bodyPt": 13.0,
+    "titlePt": 18.0
+  },
+  "colors": {
+    "background": "FFFFFF",
+    "ink": "263445",
+    "accent": "D5576B",
+    "frame": "17365D"
+  },
+  "regions": {
+    "header": {
+      "x": 0.25,
+      "y": 0.2,
+      "w": 9.5,
+      "h": 0.55
+    },
+    "content": {
+      "x": 0.25,
+      "y": 0.9,
+      "w": 9.5,
+      "h": 3.65
+    },
+    "narration": {
+      "x": 0.25,
+      "y": 4.7,
+      "w": 9.5,
+      "h": 0.65
+    }
+  }
+}

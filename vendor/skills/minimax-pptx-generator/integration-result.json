@@ -1,0 +1,401 @@
+{
+  "task": "advanced-skills-addition-session5",
+  "date_utc": "2026-10-23T06:35:56.799024+00:00",
+  "owner": "/root/session5_design",
+  "status": "UPSTREAM_PRESERVED_STATIC_VERIFIED_WITH_DOCUMENTATION_LIMITS",
+  "upstream": {
+    "repository": "https://github.com/MiniMax-AI/skills",
+    "commit": "60aaae52bb2af8162732751a4332f62a5fef518b",
+    "canonical_name": "pptx-generator",
+    "canonical_version": "1.0",
+    "canonical_upstream_path": "skills/pptx-generator/SKILL.md",
+    "canonical_url": "https://github.com/MiniMax-AI/skills/blob/60aaae52bb2af8162732751a4332f62a5fef518b/skills/pptx-generator/SKILL.md",
+    "vendored_skill_path": "/workspace/scratch/4ce71c0d77c1/ppt1/vendor/skills/minimax-pptx-generator/SKILL.md",
+    "SKILL_sha256": "6eeb36239fdef35ab133ca462e1ec4674cb96dd9c5cd63da39c29151899bda10",
+    "unmodified_files": [
+      {
+        "path": "CREDITS.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "020d3e18068a5491d2081afb16f09a7a27af7da1",
+        "size": 2609,
+        "url": "https://api.github.com/repos/MiniMax-AI/skills/git/blobs/020d3e18068a5491d2081afb16f09a7a27af7da1",
+        "local_path": "/workspace/scratch/4ce71c0d77c1/ppt1/vendor/skills/minimax-pptx-generator/CREDITS.md",
+        "sha256": "536cfa5cf8171d6c9418a7520d732ce5a382fa68947654bd5f037bdfc6368897",
+        "verified_git_blob_and_size": true
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "132dd20ee3294d09a1c613a6bd4c8094c496fbf9",
+        "size": 1064,
+        "url": "https://api.github.com/repos/MiniMax-AI/skills/git/blobs/132dd20ee3294d09a1c613a6bd4c8094c496fbf9",
+        "local_path": "/workspace/scratch/4ce71c0d77c1/ppt1/vendor/skills/minimax-pptx-generator/LICENSE",
+        "sha256": "eed4ccce37c2d24822da3bd9d5bee7bc12d494741de56ada513d0b97f537fcd0",
+        "verified_git_blob_and_size": true
+      },
+      {
+        "path": "LICENSES/Apache-2.0.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+        "size": 11357,
+        "url": "https://api.github.com/repos/MiniMax-AI/skills/git/blobs/7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+        "local_path": "/workspace/scratch/4ce71c0d77c1/ppt1/vendor/skills/minimax-pptx-generator/LICENSES/Apache-2.0.txt",
+        "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+        "verified_git_blob_and_size": true
+      },
+      {
+        "path": "skills/pptx-generator/SKILL.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "995486c916653bc73990e13985d9d0df16c7859d",
+        "size": 7930,
+        "url": "https://api.github.com/repos/MiniMax-AI/skills/git/blobs/995486c916653bc73990e13985d9d0df16c7859d",
+        "local_path": "/workspace/scratch/4ce71c0d77c1/ppt1/vendor/skills/minimax-pptx-generator/SKILL.md",
+        "sha256": "6eeb36239fdef35ab133ca462e1ec4674cb96dd9c5cd63da39c29151899bda10",
+        "verified_git_blob_and_size": true
+      },
+      {
+        "path": "skills/pptx-generator/references/design-system.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ea3fc7526fd38c52e3e5154e1ad16fccb33e6ee9",
+        "size": 16159,
+        "url": "https://api.github.com/repos/MiniMax-AI/skills/git/blobs/ea3fc7526fd38c52e3e5154e1ad16fccb33e6ee9",
+        "local_path": "/workspace/scratch/4ce71c0d77c1/ppt1/vendor/skills/minimax-pptx-generator/references/design-system.md",
+        "sha256": "8a225af2ebd3bfa979616da74b7ec34395712fe1a8195e5613214aa291211996",
+        "verified_git_blob_and_size": true
+      },
+      {
+        "path": "skills/pptx-generator/references/editing.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ab2e9ca5a8e594def71ac9cf95663ec8ca43516c",
+        "size": 6577,
+        "url": "https://api.github.com/repos/MiniMax-AI/skills/git/blobs/ab2e9ca5a8e594def71ac9cf95663ec8ca43516c",
+        "local_path": "/workspace/scratch/4ce71c0d77c1/ppt1/vendor/skills/minimax-pptx-generator/references/editing.md",
+        "sha256": "5385ef88e7d081c43ee488ca308174743678314d53f6afc5df9b932390dcb3bf",
+        "verified_git_blob_and_size": true
+      },
+      {
+        "path": "skills/pptx-generator/references/pitfalls.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cb6eefc48bb05edbb54193459051c46658ed248a",
+        "size": 3849,
+        "url": "https://api.github.com/repos/MiniMax-AI/skills/git/blobs/cb6eefc48bb05edbb54193459051c46658ed248a",
+        "local_path": "/workspace/scratch/4ce71c0d77c1/ppt1/vendor/skills/minimax-pptx-generator/references/pitfalls.md",
+        "sha256": "247a8eb1860524fdd0d8a3365a791490c162d4a58677eb3f329d4dd682ce0257",
+        "verified_git_blob_and_size": true
+      },
+      {
+        "path": "skills/pptx-generator/references/pptxgenjs.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f64951620224713cc05d3894a32cd761dfd9cfb2",
+        "size": 12752,
+        "url": "https://api.github.com/repos/MiniMax-AI/skills/git/blobs/f64951620224713cc05d3894a32cd761dfd9cfb2",
+        "local_path": "/workspace/scratch/4ce71c0d77c1/ppt1/vendor/skills/minimax-pptx-generator/references/pptxgenjs.md",
+        "sha256": "4b66df00dd581c2eeadb140fd9bbad71daea6fb48b424f97b993f8521e41d470",
+        "verified_git_blob_and_size": true
+      },
+      {
+        "path": "skills/pptx-generator/references/slide-types.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "699560cf4f9d2b1e6e109c40b68155ecb89f17e2",
+        "size": 15790,
+        "url": "https://api.github.com/repos/MiniMax-AI/skills/git/blobs/699560cf4f9d2b1e6e109c40b68155ecb89f17e2",
+        "local_path": "/workspace/scratch/4ce71c0d77c1/ppt1/vendor/skills/minimax-pptx-generator/references/slide-types.md",
+        "sha256": "fa2c0da76d420463990317dc5932e607cea5e126389ca391e3e5718629b0cb38",
+        "verified_git_blob_and_size": true
+      }
+    ],
+    "scope_complete": {
+      "SKILL": true,
+      "references_file_count": 5,
+      "all_upstream_subtree_files_preserved": true,
+      "root_LICENSE_preserved": true,
+      "credits_and_referenced_apache_license_preserved": true
+    }
+  },
+  "license": {
+    "declared": "MIT",
+    "root_license": "/workspace/scratch/4ce71c0d77c1/ppt1/vendor/skills/minimax-pptx-generator/LICENSE",
+    "root_license_sha256": "eed4ccce37c2d24822da3bd9d5bee7bc12d494741de56ada513d0b97f537fcd0",
+    "copyright": "Copyright (c) 2026 MiniMax",
+    "directory_specific_LICENSE_NOTICE_TERMS": "None in skills/pptx-generator or skills/ ancestor in pinned untruncated tree",
+    "redistribution_obligation": "Preserve copyright and permission notice in copies/substantial portions",
+    "additional_preserved": "CREDITS.md and LICENSES/Apache-2.0.txt retained unchanged; Apache credit concerns frontend-derived material, not a reassignment of this MIT pptx skill",
+    "api_terms": "No MiniMax paid API or service-specific tool is required by this skill subtree. Optional assets have separate rights."
+  },
+  "installation": {
+    "files_installed": true,
+    "registration_or_autoload_modified": false,
+    "registration_scope": "Vendored canonical SKILL path ready for root registration; this agent did not edit .agents or existing configs",
+    "upstream_executable_scripts_bundled": false,
+    "default_python": {
+      "modules": {
+        "markitdown": false,
+        "defusedxml": false,
+        "lxml": true,
+        "PIL": true
+      },
+      "commands": {
+        "node": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "npm": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/npm",
+        "python3": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "soffice": "/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override/soffice",
+        "pdftoppm": "/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override/pdftoppm"
+      }
+    },
+    "isolated_python": {
+      "interpreter": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-documents-venv/bin/python",
+      "markitdown_version": "0.1.9",
+      "markitdown_available": true,
+      "defusedxml_available": true,
+      "scope": "Fresh import/metadata verification; extraction fixtures verified by root, not repeated here"
+    },
+    "node_dependencies": {
+      "defaultResolution": {
+        "pptxgenjs": {
+          "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/pptxgenjs/dist/pptxgen.cjs.js",
+          "loaded": true
+        },
+        "react": {
+          "available": false,
+          "error": "MODULE_NOT_FOUND"
+        },
+        "react-dom/server": {
+          "available": false,
+          "error": "MODULE_NOT_FOUND"
+        },
+        "react-icons/fa": {
+          "available": false,
+          "error": "MODULE_NOT_FOUND"
+        },
+        "sharp": {
+          "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp/dist/index.cjs",
+          "loaded": true
+        }
+      },
+      "runtimeResolution": {
+        "pptxgenjs": {
+          "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/pptxgenjs/dist/pptxgen.cjs.js",
+          "loaded": true
+        },
+        "react": {
+          "available": false,
+          "error": "MODULE_NOT_FOUND"
+        },
+        "react-dom/server": {
+          "available": false,
+          "error": "MODULE_NOT_FOUND"
+        },
+        "react-icons/fa": {
+          "available": false,
+          "error": "MODULE_NOT_FOUND"
+        },
+        "sharp": {
+          "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp/dist/index.cjs",
+          "loaded": true
+        }
+      },
+      "pptxgenjsApi": {
+        "constructorType": "function",
+        "shapesType": "object",
+        "legacyRectangle": "rect",
+        "ShapeTypeRect": "rect",
+        "chartsType": "object",
+        "legacyBar": "bar",
+        "chartTypeBar": "bar",
+        "layout16x9": null,
+        "noSlidesCreated": true,
+        "noFileWritten": true
+      }
+    },
+    "PptxGenJS_api_probe": {
+      "version": "4.0.1",
+      "layoutKeys": [],
+      "layoutSetTests": [
+        {
+          "value": "LAYOUT_16x9",
+          "accepted": true,
+          "layout": "LAYOUT_16x9",
+          "dimensions": "LAYOUT_16x9"
+        },
+        {
+          "value": "LAYOUT_16X9",
+          "accepted": false,
+          "error": "UNKNOWN-LAYOUT"
+        },
+        {
+          "value": "LAYOUT_WIDE",
+          "accepted": true,
+          "layout": "LAYOUT_WIDE",
+          "dimensions": "LAYOUT_WIDE"
+        }
+      ],
+      "noSlidesCreated": true,
+      "noFileWritten": true
+    },
+    "external_special_tool": {
+      "MiniMax_tool_required": false,
+      "MiniMax_tool_exposed_in_registry": false,
+      "named_Edit_tool_exposed": false,
+      "generic_patch_tool_available": true,
+      "meaning": "No MiniMax service blocker for local core; named Edit-tool workflow needs explicit adapted implementation."
+    },
+    "dependency_changes_by_this_agent": false,
+    "api_keys_read_or_set": false,
+    "paid_calls": false
+  },
+  "static_validation": {
+    "git_blob_sha1_size_and_sha256": "9/9 upstream files verified after base64 retrieval and again from disk",
+    "markdown_local_links": {
+      "local_count": 18,
+      "missing_files": [],
+      "missing_anchors": [
+        {
+          "file": "SKILL.md",
+          "target": "#creating-from-scratch-workflow",
+          "kind": "local",
+          "exists": true,
+          "anchor_match": false
+        },
+        {
+          "file": "SKILL.md",
+          "target": "#theme-object-contract",
+          "kind": "local",
+          "exists": true,
+          "anchor_match": false
+        }
+      ]
+    },
+    "anchor_diagnostics": [
+      {
+        "link": "#creating-from-scratch-workflow",
+        "actual_heading_slug": "#creating-from-scratch--workflow"
+      },
+      {
+        "link": "#theme-object-contract",
+        "actual_heading_slug": "#theme-object-contract-mandatory"
+      }
+    ],
+    "missing_local_files": 0,
+    "upstream_source_modified_to_fix_findings": false
+  },
+  "existing_ppt_master": {
+    "SKILL_path": "/workspace/scratch/4ce71c0d77c1/ppt1/.claude/skills/ppt-master/SKILL.md",
+    "SKILL_sha256": "6b568cfa5b17229f264c3366c5e07844df5749b243c31af15e12424d75c30185",
+    "document_version": "6.6.0",
+    "comparison_scope": "SKILL static declaration only; other route files not restored",
+    "attribution_guard_attempt": "ENOENT: scripts/attribution_guard.py absent",
+    "runtime_status": "STOPPED; no bypass, repair, reinstall, or further ppt-master execution",
+    "old_20261022_guard_success_reused_as_current_evidence": false
+  },
+  "compatibility": {
+    "detailed_comparison": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session5/COMPARISON.md",
+    "adapter_proposal": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session5/PROJECT-ADAPTER-PROPOSAL.md",
+    "root_overlay_pending": "Root owns final license/user-priority overlay; this proposal is not an upstream modification",
+    "duplicate_features": [
+      "new PPT generation",
+      "template editing",
+      "text extraction QA",
+      "native editable diagram/table/chart support",
+      "visual design defaults"
+    ],
+    "project_precedence": [
+      "user approval and exact KEDI/KIRD original",
+      "fixed script/speaker/conditions/order/duration",
+      "actual source dimensions and frame",
+      "editable objects and native evidence",
+      "page-local #1 screen/narration sync",
+      "project-specific font instructions"
+    ],
+    "conflicts_requiring_adapter": [
+      "fixed16:9 dimensions and bottom-right page badge",
+      "5 general presentation page types / optional added cover or CTA",
+      "new topic palette and default Arial/YaHei",
+      "static-only/no-transitions",
+      "mandatory non-text decoration and repeated card recipes",
+      "PNG icon rasterization vs editable diagram requirements",
+      "body bold/underline/gradient generic prohibitions",
+      "text-only QA and mandatory fix cycle vs actual defect evidence",
+      "Edit-tool naming and missing literal tool"
+    ]
+  },
+  "executable_scope": {
+    "available_now": [
+      "Read six skill/reference Markdown documents",
+      "Use installed PptxGenJS4.0.1 API through production agent3",
+      "Use installed sharp if approved raster assets are needed",
+      "Use isolated Python for markitdown/defusedxml; root reports extraction fixtures PASS",
+      "Inspect/copy/edit ZIP/XML through separately reviewed project implementation"
+    ],
+    "not_proven_here": [
+      "PPT generation success",
+      "PPT render or full-page visual quality",
+      "PowerPoint open/edit/resave",
+      "named Edit-tool exact workflow",
+      "all optional React icon recipes",
+      "KEDI/KIRD exact template parity"
+    ],
+    "actual_tests_performed": [
+      "9 original file Gitblob/size/SHA preservation",
+      "18 local Markdown file/anchor checks",
+      "runtime module resolution and load probes",
+      "PptxGenJS shape/chart aliases and layout setter probe without slides/files",
+      "isolated MarkItDown0.1.9/defusedxml import/metadata probe"
+    ],
+    "ppt_created_by_this_agent": false
+  },
+  "production_diagnostic_checklist_for_root": [
+    "For source-specific KIRD and KEDI cases compare EMU/page frames/narration/source boxes against exact original hash",
+    "Check native text/shape/table/chart objects remain editable and not a page bitmap; approved raster assets tracked separately",
+    "Check screen/narration/page map sync starts #1 on each page, including page2 and split scenes",
+    "Check source font substitutions, Korean/Latin/Hanja/symbol glyphs and exact line wrapping at full size",
+    "Compare/flow diagram must reflect actual script relationship and preserve qualified attribution; avoid decorative mandatory icons",
+    "Check long URLs/citations stay inside designated source region and preserve per-asset rights and hashes",
+    "Preserve speaker/conditions/order/duration and approved text; no content truncation to satisfy 36pt or generic margins",
+    "Render same-version PPT/PDF/PNG and inspect every page for clipping/overlap and exact frame; text extraction is only content QA",
+    "Separate native table/chart data/source from decorative SVG or PNG; inspect chart package and relationships",
+    "Record actual PowerPoint app and video playback separately from LibreOffice/static render"
+  ],
+  "artifacts": {
+    "upstream-manifest.json": {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session5/upstream-manifest.json",
+      "sha256": "7b1c38e81a4531085a6ee18b9e734a23d80a05ad30df05fe8995d6ef50a0738c"
+    },
+    "static-links.json": {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session5/static-links.json",
+      "sha256": "09fdc6ee2721641c74c11ad2b3c0191fb064c6b7be6813a0891eb8925a23f3a0"
+    },
+    "dependency-check.json": {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session5/dependency-check.json",
+      "sha256": "5a4117bdf74709f13e340ff1c939edd01754c138ee7f3ba29f3d26c1ef086228"
+    },
+    "python-dependencies.json": {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session5/python-dependencies.json",
+      "sha256": "471a97042950245a71be6bbe7ecc788901ff8fe3d59f8b5a9f8f7eae82b53cf3"
+    },
+    "isolated-python-dependencies.json": {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session5/isolated-python-dependencies.json",
+      "sha256": "e9900c7a3006333c0d918f903be6485d518cf120ac407da3a542c9e482727dc1"
+    },
+    "pptxgenjs-api-probe.json": {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session5/pptxgenjs-api-probe.json",
+      "sha256": "b80daf59d4da4a5fe2fd81a44d68ce61c2e8da6a9af150c0f3ffd33a87f149b5"
+    },
+    "COMPARISON.md": {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session5/COMPARISON.md",
+      "sha256": "24da844a58267d0efb31f9d9a7745caf100c2f02639722caf0b9c84ea629b9e2"
+    },
+    "PROJECT-ADAPTER-PROPOSAL.md": {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session5/PROJECT-ADAPTER-PROPOSAL.md",
+      "sha256": "53a88bdc1001f399726f756cd7c5cd25c19b66a958e211cefad73b7c4ae6f76a"
+    }
+  }
+}

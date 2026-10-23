@@ -1,0 +1,856 @@
+{
+  "schemaVersion": 1,
+  "task": "ADDITIVE-ADVANCED-TOOLS-20261023",
+  "role": "internal session3 production",
+  "timestampUtc": "2026-10-23T06:46:45.921283+00:00",
+  "status": "PASS_WITH_DECLARED_LIMITS",
+  "scope": "Add PptxGenJS/Mermaid isolated production bridge only. Existing repository operating files, roles, skills and original decks untouched.",
+  "ownedPaths": [
+    "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production",
+    "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3"
+  ],
+  "runtimeCheck": {
+    "nodeVersion": "v24.19.0",
+    "existingBundledPptxGenJS": "4.0.1",
+    "existingBundledMermaid": false,
+    "existingBundledSharp": "0.35.5",
+    "reuseDecision": "Project local exact dependencies installed. Node/renderers reused read-only. sharp prefers shared identical version only if present and not forced local; local exact fallback verified without runtime environment variable."
+  },
+  "installation": {
+    "success": true,
+    "path": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/node_modules",
+    "manifest": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/package.json",
+    "manifestSha256": "923cdbfecd97d5a16bb1b0e5d6f1435a9c2f70a882dee8d8218d2b3a02d23057",
+    "lock": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/package-lock.json",
+    "lockSha256": "9daeca79ddf83885271e105a471342cfa6748e556f1760ea798fafb6a2e9acc7",
+    "registry": "https://registry.npmjs.org/",
+    "installScriptsExecuted": false,
+    "globalChanges": false,
+    "cachePath": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/.npm-cache",
+    "npmDependencyPackages": 205,
+    "lockedPackages": {
+      "pptxgenjs": {
+        "version": "4.0.1",
+        "resolved": "https://registry.npmjs.org/pptxgenjs/-/pptxgenjs-4.0.1.tgz",
+        "integrity": "sha512-TeJISr8wouAuXw4C1F/mC33xbZs/FuEG6nH9FG1Zj+nuPcGMP5YRHl6X+j3HSUnS1f3at6k75ZZXPMZlA5Lj9A=="
+      },
+      "mermaid": {
+        "version": "12.2.0",
+        "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-12.2.0.tgz",
+        "integrity": "sha512-w7nr/SFrLO7BaVTs3dQTvYSV6nYSBj0Yy9DjBhsIJtAcHqRzXSq4Pg32ujHZ/AdWsAMNEvvhbm5dt9E2tOiHzw=="
+      },
+      "jsdom": {
+        "version": "26.1.0",
+        "resolved": "https://registry.npmjs.org/jsdom/-/jsdom-26.1.0.tgz",
+        "integrity": "sha512-Cvc9WUhxSMEo4McES3P7oK3QaXldCfNWp7pl2NNeiIFlCoLr3kfq9kb1fxftiwk1FLV7CvpvDfonxtzUDeSOPg=="
+      },
+      "jszip": {
+        "version": "3.10.2",
+        "resolved": "https://registry.npmjs.org/jszip/-/jszip-3.10.2.tgz",
+        "integrity": "sha512-3l+rb15IOWtUhU0H5MFqES/T6Kh7abYwjosBey/vD6hDt8zoEffkSC5Ws5SGtgVw3gBx2NEbhTeSW1+kWkpyTQ=="
+      },
+      "sharp": {
+        "version": "0.35.5",
+        "resolved": "https://registry.npmjs.org/sharp/-/sharp-0.35.5.tgz",
+        "integrity": "sha512-Ywn4OnzGukp7CDMrp08RQ50YKmuwG47brZgIVPTvBaaAfQlRlygrRqSrxdCiL9M+LlzLBiJ68IR1QqvzHyjC7g=="
+      }
+    }
+  },
+  "sources": {
+    "checked_date": "2026-10-23",
+    "packages": [
+      {
+        "package": "pptxgenjs",
+        "version": "4.0.1",
+        "license": "MIT",
+        "official_repository": "https://github.com/gitbrent/PptxGenJS",
+        "github_connector_verified": true,
+        "upstream_default_branch_license_blob_sha": "0b21750ad94fcfc08e723c81d337fd66e5b35964",
+        "distributed_license_file": "licenses/pptxgenjs-LICENSE",
+        "distributed_license_sha256": "7a2bfe96150786ed1908b8e63f98ebab88875c1e79e28faff6649e0f11f77e52",
+        "registry": "https://registry.npmjs.org/",
+        "installed_path": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/node_modules/pptxgenjs"
+      },
+      {
+        "package": "mermaid",
+        "version": "12.2.0",
+        "license": "MIT",
+        "official_repository": "https://github.com/mermaid-js/mermaid",
+        "github_connector_verified": true,
+        "upstream_default_branch_license_blob_sha": "2e5daebd2ad0fb200080a27d98aec5f04902acdd",
+        "distributed_license_file": "licenses/mermaid-LICENSE",
+        "distributed_license_sha256": "ec9fb67dcb25eccc416ed56e1aab819222c805a2a4bfe4cb19e7556bf2ffde80",
+        "registry": "https://registry.npmjs.org/",
+        "installed_path": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/node_modules/mermaid"
+      },
+      {
+        "package": "jsdom",
+        "version": "26.1.0",
+        "license": "MIT",
+        "official_repository": "https://github.com/jsdom/jsdom",
+        "github_connector_verified": true,
+        "upstream_default_branch_license_blob_sha": "0dbd4290419fcfd490e0dd574d22ba2660f7fc5d",
+        "distributed_license_file": "licenses/jsdom-LICENSE.txt",
+        "distributed_license_sha256": "242d37e7cab25cbafc36cc973ee88f9345fddf066afe4f72b7ac3d9ad4e24cce",
+        "registry": "https://registry.npmjs.org/",
+        "installed_path": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/node_modules/jsdom"
+      },
+      {
+        "package": "jszip",
+        "version": "3.10.2",
+        "license": "MIT OR GPL-3.0-or-later",
+        "selectedLicense": "MIT",
+        "official_repository": "https://github.com/Stuk/jszip",
+        "github_connector_verified": true,
+        "upstream_default_branch_license_blob_sha": "f8250b37a61862ea61ea9a93d5d423cad395a364",
+        "distributed_license_file": "licenses/jszip-LICENSE.markdown",
+        "distributed_license_sha256": "566c953c6090b1218ca6217dd7359d45dde46581968586dc607d59a78af6a9c4",
+        "registry": "https://registry.npmjs.org/",
+        "installed_path": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/node_modules/jszip"
+      },
+      {
+        "package": "sharp",
+        "version": "0.35.5",
+        "license": "Apache-2.0",
+        "official_repository": "https://github.com/lovell/sharp",
+        "github_connector_verified": true,
+        "upstream_default_branch_license_blob_sha": "37ec93a14fdcd0d6e525d97c0cfa6b314eaa98d8",
+        "distributed_license_file": "licenses/sharp-LICENSE",
+        "distributed_license_sha256": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68",
+        "registry": "https://registry.npmjs.org/",
+        "installed_path": "/workspace/scratch/4ce71c0d77c1/ppt1/tools/advanced-production/node_modules/sharp",
+        "native_dependency_licenses": "Preserved in npm optional @img/sharp/libvips packages; no runtime binary redistributed separately."
+      }
+    ],
+    "notes": [
+      "Source repository and license read with GitHub connector.",
+      "Default-branch license blob is upstream reference, not an assertion of release-tag source identity. Installed version/integrity resolved from package-lock.json; distributed license copied from exact installed package.",
+      "All transitive versions, registry URLs and integrity hashes are in package-lock.json."
+    ]
+  },
+  "api": {
+    "module": "src/native-pptx.mjs",
+    "entrypoints": [
+      "validateProto",
+      "assertBox",
+      "createNativeDeck",
+      "addScene",
+      "text",
+      "shape",
+      "addTable",
+      "addChart",
+      "addSvg",
+      "addMermaidNative",
+      "save"
+    ],
+    "templateContract": "Use explicitly measured dimensions/palette/font/region and object coordinates. Real CLI verifies original reference path SHA256. Virtual diagnostic profiles do not represent real institution templates.",
+    "originalDeckHandling": "PptxGenJS has no existing PPTX import/edit support. Existing proto/native-object preservation remains with existing ppt-master native edit or OOXML route. No source merging implemented.",
+    "guardTests": [
+      "Missing production reference rejected",
+      "Out-of-canvas proto rejected",
+      "Out-of-canvas shape rejected",
+      "Page-local cue not starting at 1 rejected",
+      "Unmapped narration cue rejected",
+      "Missing Mermaid node placement rejected"
+    ],
+    "mermaidRole": "Parse grammar and semantic graph only; convert supported structures to native shapes and text with explicit placements",
+    "browserUsed": false,
+    "jsdomRole": "DOM sanitizer environment only; no external resource or script loading enabled",
+    "mermaidVersionBoundary": "Flowchart db is internal pinned-version extraction; rerun contract diagnostics on updates.",
+    "svgPolicy": "Original SVG remains image; native diagram/table/chart/text stay separately editable.",
+    "svgFallbackRepair": "PptxGenJS4.0.1 Node broken PNG preview replaced using direct exact sharp0.35.5; optional identical shared reuse; current final test forced local with CODEX_PRIMARY_RUNTIME_NODE_MODULES removed.",
+    "pageCueContract": "Each page requires one or more consecutive cue IDs starting at 1 and a first narration marker #1; all narration markers must map. #1 resets on every page. Input is rejected without rewriting approved narration."
+  },
+  "tests": {
+    "execution": {
+      "diagnosticOnly": true,
+      "mermaid": {
+        "nodes": 3,
+        "edges": 2,
+        "koreanLabels": true,
+        "invalidOrUnsupportedRejected": 4
+      },
+      "summaries": [
+        {
+          "family": "KIRD",
+          "file": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pptx",
+          "width": 10,
+          "height": 5.625,
+          "slides": 2,
+          "svgFallbacks": 1
+        },
+        {
+          "family": "KEDI",
+          "file": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pptx",
+          "width": 13.333333,
+          "height": 7.5,
+          "slides": 2,
+          "svgFallbacks": 1
+        }
+      ]
+    },
+    "structuralVerification": {
+      "passed": true,
+      "diagnosticOnly": true,
+      "reports": [
+        {
+          "family": "kird",
+          "sha256": "068f21dfc4f9c1319d559b9c79ced8ce3388144a06688d16ef6c68a1f89c10a0",
+          "size_emu": [
+            9144000,
+            5143500
+          ],
+          "slide_count": 2,
+          "slides": [
+            {
+              "slide": 1,
+              "native_shapes": 8,
+              "native_tables": 1,
+              "native_charts": 1,
+              "pictures": 1,
+              "native_text_runs": 10,
+              "page_cue_reset_to_one": true
+            },
+            {
+              "slide": 2,
+              "native_shapes": 15,
+              "native_tables": 0,
+              "native_charts": 0,
+              "pictures": 0,
+              "native_text_runs": 7,
+              "page_cue_reset_to_one": true
+            }
+          ],
+          "chart_cached_values": [
+            "2",
+            "4",
+            "3"
+          ],
+          "embedded_workbook_crc_pass": true,
+          "svg_preserved": true,
+          "svg_png_fallback_dimensions": [
+            120,
+            60
+          ],
+          "all_xml_parsed": true,
+          "all_internal_relationships_resolve": true,
+          "zip_crc_pass": true
+        },
+        {
+          "family": "kedi",
+          "sha256": "626ef9768def9ae09e7cea006a82035f24d2fb5484efd976a22ffd4dec22d7be",
+          "size_emu": [
+            12192000,
+            6858000
+          ],
+          "slide_count": 2,
+          "slides": [
+            {
+              "slide": 1,
+              "native_shapes": 8,
+              "native_tables": 1,
+              "native_charts": 1,
+              "pictures": 1,
+              "native_text_runs": 10,
+              "page_cue_reset_to_one": true
+            },
+            {
+              "slide": 2,
+              "native_shapes": 15,
+              "native_tables": 0,
+              "native_charts": 0,
+              "pictures": 0,
+              "native_text_runs": 7,
+              "page_cue_reset_to_one": true
+            }
+          ],
+          "chart_cached_values": [
+            "2",
+            "4",
+            "3"
+          ],
+          "embedded_workbook_crc_pass": true,
+          "svg_preserved": true,
+          "svg_png_fallback_dimensions": [
+            120,
+            60
+          ],
+          "all_xml_parsed": true,
+          "all_internal_relationships_resolve": true,
+          "zip_crc_pass": true
+        }
+      ]
+    },
+    "rendering": {
+      "engine": "LibreOffice headless separate UserInstallation per file, then pdftoppm PNG",
+      "pptxToPdfFiles": 2,
+      "pdfPages": 4,
+      "pngPages": 4,
+      "allFourPngsIndividuallyOpened": true,
+      "visualFindings": [
+        "Korean headings/narration and table labels readable.",
+        "Native table has three rows/two columns; chart displays diagnostic values 2,4,3.",
+        "Small SVG check mark renders via valid PNG fallback while original SVG remains packaged.",
+        "Native Mermaid shapes and arrows keep labels 원고/장면/화면 and page-local #1 cues.",
+        "No clipping, unintended overlaps or broken glyphs observed in the four diagnostic pages."
+      ],
+      "images": [
+        {
+          "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-1.png",
+          "sha256": "48cd10c356d968785f84b8791f13b40225da558305b77c3cbb983a2ce783837f",
+          "pixelFileUnchangedFromPreviouslyInspectedVersion": true
+        },
+        {
+          "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-2.png",
+          "sha256": "87ed4fe82108245d74b821c771ff16fffa60e2833ed293fa2b4cbab882b0b509",
+          "pixelFileUnchangedFromPreviouslyInspectedVersion": true
+        },
+        {
+          "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-1.png",
+          "sha256": "9d29c3a15d4785a2ce29557bd1b145656ad35e4cf14966942afc3f39739c897f",
+          "pixelFileUnchangedFromPreviouslyInspectedVersion": true
+        },
+        {
+          "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-2.png",
+          "sha256": "516de5f77a1972365b5ca83c8d2d93e2a62b77ce5363807ab3f40754d1c6ad80",
+          "pixelFileUnchangedFromPreviouslyInspectedVersion": true
+        }
+      ]
+    },
+    "actualPowerPointOpenEditResave": false,
+    "actualInstitutionProtoCompared": false,
+    "originalManuscriptOrDeckRecreated": false,
+    "localSharpWithoutRuntimeEnvironment": {
+      "success": true,
+      "installIgnoreScripts": true,
+      "version": "0.35.5",
+      "nativeLibvipsVersion": "8.18.7",
+      "svgStandalonePngBytes": 100,
+      "bothPptxReceiptsProjectLocal": true,
+      "repeatedSvgPptxPdfPngVisualReview": true
+    },
+    "geometryOptionsRegression": {
+      "issue": "S2-GEOM-001",
+      "passed": true,
+      "negativeCases": 50,
+      "tests": [
+        {
+          "surface": "text",
+          "case": 0,
+          "rejected": true
+        },
+        {
+          "surface": "text",
+          "case": 1,
+          "rejected": true
+        },
+        {
+          "surface": "text",
+          "case": 2,
+          "rejected": true
+        },
+        {
+          "surface": "text",
+          "case": 3,
+          "rejected": true
+        },
+        {
+          "surface": "text",
+          "case": 4,
+          "rejected": true
+        },
+        {
+          "surface": "text",
+          "case": 5,
+          "rejected": true
+        },
+        {
+          "surface": "text",
+          "case": 6,
+          "rejected": true
+        },
+        {
+          "surface": "text",
+          "case": 7,
+          "rejected": true
+        },
+        {
+          "surface": "shape",
+          "case": 0,
+          "rejected": true
+        },
+        {
+          "surface": "shape",
+          "case": 1,
+          "rejected": true
+        },
+        {
+          "surface": "shape",
+          "case": 2,
+          "rejected": true
+        },
+        {
+          "surface": "shape",
+          "case": 3,
+          "rejected": true
+        },
+        {
+          "surface": "shape",
+          "case": 4,
+          "rejected": true
+        },
+        {
+          "surface": "shape",
+          "case": 5,
+          "rejected": true
+        },
+        {
+          "surface": "shape",
+          "case": 6,
+          "rejected": true
+        },
+        {
+          "surface": "shape",
+          "case": 7,
+          "rejected": true
+        },
+        {
+          "surface": "table",
+          "case": 0,
+          "rejected": true
+        },
+        {
+          "surface": "table",
+          "case": 1,
+          "rejected": true
+        },
+        {
+          "surface": "table",
+          "case": 2,
+          "rejected": true
+        },
+        {
+          "surface": "table",
+          "case": 3,
+          "rejected": true
+        },
+        {
+          "surface": "table",
+          "case": 4,
+          "rejected": true
+        },
+        {
+          "surface": "table",
+          "case": 5,
+          "rejected": true
+        },
+        {
+          "surface": "table",
+          "case": 6,
+          "rejected": true
+        },
+        {
+          "surface": "table",
+          "case": 7,
+          "rejected": true
+        },
+        {
+          "surface": "chart",
+          "case": 0,
+          "rejected": true
+        },
+        {
+          "surface": "chart",
+          "case": 1,
+          "rejected": true
+        },
+        {
+          "surface": "chart",
+          "case": 2,
+          "rejected": true
+        },
+        {
+          "surface": "chart",
+          "case": 3,
+          "rejected": true
+        },
+        {
+          "surface": "chart",
+          "case": 4,
+          "rejected": true
+        },
+        {
+          "surface": "chart",
+          "case": 5,
+          "rejected": true
+        },
+        {
+          "surface": "chart",
+          "case": 6,
+          "rejected": true
+        },
+        {
+          "surface": "chart",
+          "case": 7,
+          "rejected": true
+        },
+        {
+          "surface": "mermaid.options.text",
+          "case": 0,
+          "rejected": true
+        },
+        {
+          "surface": "mermaid.options.text",
+          "case": 1,
+          "rejected": true
+        },
+        {
+          "surface": "mermaid.options.text",
+          "case": 2,
+          "rejected": true
+        },
+        {
+          "surface": "mermaid.options.text",
+          "case": 3,
+          "rejected": true
+        },
+        {
+          "surface": "mermaid.options.text",
+          "case": 4,
+          "rejected": true
+        },
+        {
+          "surface": "mermaid.options.text",
+          "case": 5,
+          "rejected": true
+        },
+        {
+          "surface": "mermaid.options.text",
+          "case": 6,
+          "rejected": true
+        },
+        {
+          "surface": "mermaid.options.text",
+          "case": 7,
+          "rejected": true
+        },
+        {
+          "surface": "CLI op.options text",
+          "rejected": true,
+          "outputCreated": false
+        },
+        {
+          "surface": "CLI op.options shape",
+          "rejected": true,
+          "outputCreated": false
+        },
+        {
+          "surface": "CLI op.options table",
+          "rejected": true,
+          "outputCreated": false
+        },
+        {
+          "surface": "CLI op.options chart",
+          "rejected": true,
+          "outputCreated": false
+        },
+        {
+          "surface": "CLI mermaid.options.text",
+          "rejected": true,
+          "outputCreated": false
+        },
+        {
+          "surface": "addScene page-local cue contract",
+          "case": 0,
+          "rejected": true
+        },
+        {
+          "surface": "addScene page-local cue contract",
+          "case": 1,
+          "rejected": true
+        },
+        {
+          "surface": "addScene page-local cue contract",
+          "case": 2,
+          "rejected": true
+        },
+        {
+          "surface": "addScene page-local cue contract",
+          "case": 3,
+          "rejected": true
+        },
+        {
+          "surface": "addScene page-local cue contract",
+          "case": 4,
+          "rejected": true
+        }
+      ],
+      "pageCueFirstMarkerRequired": true,
+      "pageCueResetRepeatedAcrossTwoInMemoryScenesAllowed": true,
+      "approvedNarrationRewritten": false,
+      "nativeAdapterSha256": "21bd77585dff7d4ca6eb0643a5e0749dd0b119470e423a99d0dd7f1e1e5a6e4a",
+      "existingDiagnosticArtifacts": [
+        "kedi-1.png",
+        "kedi-2.png",
+        "kedi-virtual-diagnostic.pdf",
+        "kedi-virtual-diagnostic.pptx",
+        "kird-1.png",
+        "kird-2.png",
+        "kird-virtual-diagnostic.pdf",
+        "kird-virtual-diagnostic.pptx"
+      ],
+      "pptxCreated": false,
+      "fullDiagnosticsRerun": false,
+      "receiptPath": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/geometry-guard-regression.json",
+      "receiptSha256": "51a7e83480725ff32fa5b1cd093cb6d0e54e8243a8103c0eaedc23332ed65b85",
+      "artifactHashPreservation": [
+        {
+          "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-1.png",
+          "sha256": "48cd10c356d968785f84b8791f13b40225da558305b77c3cbb983a2ce783837f",
+          "matchesPrevious": true
+        },
+        {
+          "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-2.png",
+          "sha256": "87ed4fe82108245d74b821c771ff16fffa60e2833ed293fa2b4cbab882b0b509",
+          "matchesPrevious": true
+        },
+        {
+          "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pdf",
+          "sha256": "b780b3c2e1364c9cbf3fa6bb8505d27015504026ff0d2b0c7298feffee48b493",
+          "matchesPrevious": true
+        },
+        {
+          "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pptx",
+          "sha256": "626ef9768def9ae09e7cea006a82035f24d2fb5484efd976a22ffd4dec22d7be",
+          "matchesPrevious": true
+        },
+        {
+          "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-1.png",
+          "sha256": "9d29c3a15d4785a2ce29557bd1b145656ad35e4cf14966942afc3f39739c897f",
+          "matchesPrevious": true
+        },
+        {
+          "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-2.png",
+          "sha256": "516de5f77a1972365b5ca83c8d2d93e2a62b77ce5363807ab3f40754d1c6ad80",
+          "matchesPrevious": true
+        },
+        {
+          "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pdf",
+          "sha256": "0bec5e42b64bfa96afd16b75e5bf2d5196cc4ff820c38741ef1276ff0a5bdcc8",
+          "matchesPrevious": true
+        },
+        {
+          "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pptx",
+          "sha256": "068f21dfc4f9c1319d559b9c79ced8ce3388144a06688d16ef6c68a1f89c10a0",
+          "matchesPrevious": true
+        }
+      ],
+      "previousValidatedIntegrationResultSha256": "ad711a9724a7ecea13a82c13d0f16d6fec7395c3ed00c78ca78a706bd3044db2",
+      "fix": "Reject x/y/w/h keys in style options before native-object mutation, including Mermaid options.text and CLI forwarding. Require nonempty page cues starting at 1 and a first narration marker #1. Reject input without rewriting narration.",
+      "scope": "Negative-input guard checks plus two in-memory pages confirming per-page #1 reset. No PPTX creation or full rendering repeated."
+    }
+  },
+  "diagnosticFiles": [
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/cli-structure.json",
+      "bytes": 618,
+      "sha256": "027df507a6c86c8d64b3663fd062d3b9babf1a22f74ecd04396b855a421b66d8"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/execution.json",
+      "bytes": 643,
+      "sha256": "8a281325f947c66d8dfb7d23c2bad24ecf1a7943fdc2cc3265042ffd95befcd7"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/geometry-guard-regression.json",
+      "bytes": 4969,
+      "sha256": "51a7e83480725ff32fa5b1cd093cb6d0e54e8243a8103c0eaedc23332ed65b85"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/geometry-negative-chart.json",
+      "bytes": 781,
+      "sha256": "90ff27d9a53ab48f748da9e420324316c8db51bd4b97ac9ab9ebd00d2a436cd7"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/geometry-negative-mermaid.json",
+      "bytes": 817,
+      "sha256": "7428073fbe5d36adc0e50757040853478dba8f33e02f62bff8a9cde665e44a12"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/geometry-negative-shape.json",
+      "bytes": 743,
+      "sha256": "dd8088ad8d62695b068fdfb3e2cd911cf85edc2e96b0edb5476d46cbfe5392ac"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/geometry-negative-table.json",
+      "bytes": 746,
+      "sha256": "86138d4918e7e02b10490f78dd8a8bcf3281e75a01e6e5f97c6f17a660cb8377"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/geometry-negative-text.json",
+      "bytes": 741,
+      "sha256": "5d75b03cb45cb65f224d1876480327bd68e944603409a5bebf98dee77350d209"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-1.png",
+      "bytes": 56039,
+      "sha256": "48cd10c356d968785f84b8791f13b40225da558305b77c3cbb983a2ce783837f"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-2.png",
+      "bytes": 54437,
+      "sha256": "87ed4fe82108245d74b821c771ff16fffa60e2833ed293fa2b4cbab882b0b509"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pdf",
+      "bytes": 66977,
+      "sha256": "b780b3c2e1364c9cbf3fa6bb8505d27015504026ff0d2b0c7298feffee48b493"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pptx",
+      "bytes": 26328,
+      "sha256": "626ef9768def9ae09e7cea006a82035f24d2fb5484efd976a22ffd4dec22d7be"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pptx.receipt.json",
+      "bytes": 4768,
+      "sha256": "05314f6814bd4f7474dba06b19819e381fb714c11bebdfc72f3cdb38ad17858f"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-1.png",
+      "bytes": 42218,
+      "sha256": "9d29c3a15d4785a2ce29557bd1b145656ad35e4cf14966942afc3f39739c897f"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-2.png",
+      "bytes": 39119,
+      "sha256": "516de5f77a1972365b5ca83c8d2d93e2a62b77ce5363807ab3f40754d1c6ad80"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pdf",
+      "bytes": 67062,
+      "sha256": "0bec5e42b64bfa96afd16b75e5bf2d5196cc4ff820c38741ef1276ff0a5bdcc8"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pptx",
+      "bytes": 26297,
+      "sha256": "068f21dfc4f9c1319d559b9c79ced8ce3388144a06688d16ef6c68a1f89c10a0"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pptx.receipt.json",
+      "bytes": 3856,
+      "sha256": "ae24647622d1d286795439491dfe0b4fab5b24445e5d79cf694ccb186c8abce4"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/session-overlay-ack.json",
+      "bytes": 3611,
+      "sha256": "a83b9d122db076d310a8b3f407b6ef6d7f16305f4776aaea0e2dad8903edfac1"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/structural-verification.json",
+      "bytes": 2117,
+      "sha256": "fc9acd8d5895f7c5b268a3c339238c550135fcc983e8105af6f744d5a643bd38"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/structure.json",
+      "bytes": 618,
+      "sha256": "027df507a6c86c8d64b3663fd062d3b9babf1a22f74ecd04396b855a421b66d8"
+    },
+    {
+      "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/structure.mmd",
+      "bytes": 61,
+      "sha256": "055699f9d6e89dd892579725d5f306956d186de53fc55bed5f4a6a3672cef01c"
+    }
+  ],
+  "limitations": [
+    "Existing PPTX import/edit/merge unavailable in this adapter; preserve original source through existing native edit path.",
+    "Two KEDI/KIRD fixture profiles are invented diagnostics, never asserted to be real institution templates.",
+    "Native Mermaid conversion supports limited flowchart nodes and simple arrows; subgraphs, HTML labels, directives/click, other diagram types and unsupported styles fail closed.",
+    "Canvas geometry checks do not replace text-fit or full visual review.",
+    "No real project template fidelity, PowerPoint round-trip, audio/motion/video playback, recorded timing, final media rights, institutional review or user design acceptance was tested.",
+    "Direct dependency jsdom is needed for Korean/text Mermaid node labels in Node.",
+    "sharp local native module and SVG rendering passed on this Linux x64 environment with npm --ignore-scripts. Other OS/CPU installations still require their matching npm optional native packages; no cross-platform execution is claimed."
+  ],
+  "sourceCodeFiles": [
+    {
+      "path": ".gitignore",
+      "sha256": "913a5e80446aad84df3f5d4efba5f43196845a8a0c2611394f0fbfff8d4bac3d"
+    },
+    {
+      "path": ".npmrc",
+      "sha256": "6d4152457be94a38d5c01dd5784a9e46dd12c4ccfe965be13c618d95d8cd1037"
+    },
+    {
+      "path": "README.md",
+      "sha256": "8073ee72fd795c6e7ff45ef95cc13e8ebf1804220b21d76a4b81cdcf6398fbd3"
+    },
+    {
+      "path": "fixtures/kedi-virtual-proto.json",
+      "sha256": "db425a4eaf1e488bea1bd822c0ab688973bd72e326aeeae82194cc572ad8f6d8"
+    },
+    {
+      "path": "fixtures/kird-virtual-proto.json",
+      "sha256": "e47c4d14ad491a96b36f2bf105b23933dc91d49df308fa04a5923171772fe9fc"
+    },
+    {
+      "path": "licenses/jsdom-LICENSE.txt",
+      "sha256": "242d37e7cab25cbafc36cc973ee88f9345fddf066afe4f72b7ac3d9ad4e24cce"
+    },
+    {
+      "path": "licenses/jszip-LICENSE.markdown",
+      "sha256": "566c953c6090b1218ca6217dd7359d45dde46581968586dc607d59a78af6a9c4"
+    },
+    {
+      "path": "licenses/mermaid-LICENSE",
+      "sha256": "ec9fb67dcb25eccc416ed56e1aab819222c805a2a4bfe4cb19e7556bf2ffde80"
+    },
+    {
+      "path": "licenses/pptxgenjs-LICENSE",
+      "sha256": "7a2bfe96150786ed1908b8e63f98ebab88875c1e79e28faff6649e0f11f77e52"
+    },
+    {
+      "path": "licenses/sharp-LICENSE",
+      "sha256": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "9daeca79ddf83885271e105a471342cfa6748e556f1760ea798fafb6a2e9acc7"
+    },
+    {
+      "path": "package.json",
+      "sha256": "923cdbfecd97d5a16bb1b0e5d6f1435a9c2f70a882dee8d8218d2b3a02d23057"
+    },
+    {
+      "path": "scripts/build.mjs",
+      "sha256": "e0894579770a37c67ec8b51b325b5cb388b2db4938b40b2957871c33c6d9e004"
+    },
+    {
+      "path": "scripts/diagnose.mjs",
+      "sha256": "4161b663f7f4c022959674bca410fbd4ddab79481ad17da7da29e6ada28f5d41"
+    },
+    {
+      "path": "scripts/parse-mermaid.mjs",
+      "sha256": "5e668dc5d9f7e8657d9cd88fbb06153e6b4bc29076558acfd55d877168a9ec69"
+    },
+    {
+      "path": "scripts/test-geometry-guards.mjs",
+      "sha256": "3192ae188497231eff620b2f835d17fc877fb069aa0c7243ac7730c9bb0b622e"
+    },
+    {
+      "path": "scripts/verify-diagnostics.py",
+      "sha256": "980524d4e0798a20d43ae686179e0f7b86910cbbd097b3f98b9aafde9dfe89eb"
+    },
+    {
+      "path": "sources.json",
+      "sha256": "6195a8245df0ad723a6faad37a2a5d7a2b161189de996d7f58f1bf5f1756591b"
+    },
+    {
+      "path": "src/mermaid-structure.mjs",
+      "sha256": "339fc397dd03bc418c381881905d397269e70b13e06e5b563e7728158f5d591c"
+    },
+    {
+      "path": "src/native-pptx.mjs",
+      "sha256": "21bd77585dff7d4ca6eb0643a5e0749dd0b119470e423a99d0dd7f1e1e5a6e4a"
+    }
+  ]
+}

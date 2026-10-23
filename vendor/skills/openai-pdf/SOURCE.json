@@ -1,0 +1,39 @@
+{
+  "repository": "openai/skills",
+  "commit": "49f948faa9258a0c61caceaf225e179651397431",
+  "upstream_path": "skills/.curated/pdf",
+  "source_url": "https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/pdf",
+  "acquisition": "GitHub plugin; UTF-8 blobs via fetch_blob; PNG via fetch_file encoding=base64 after fetch_blob could not decode PNG",
+  "files": [
+    {
+      "upstream_path": "skills/.curated/pdf/LICENSE.txt",
+      "local_path": "vendor/skills/openai-pdf/LICENSE.txt",
+      "git_blob_sha1": "13e25df86ce06eb6488e6a6bc5c5847f5dedc352",
+      "sha256": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9",
+      "bytes": 10776
+    },
+    {
+      "upstream_path": "skills/.curated/pdf/SKILL.md",
+      "local_path": "vendor/skills/openai-pdf/SKILL.md",
+      "git_blob_sha1": "fd5d56058f10202e4f50a30bc2906f39696024a1",
+      "sha256": "d108cf2b36355ab37eb5962933f4d09785ec002f3105c506129320209306b9d2",
+      "bytes": 2517
+    },
+    {
+      "upstream_path": "skills/.curated/pdf/agents/openai.yaml",
+      "local_path": "vendor/skills/openai-pdf/agents/openai.yaml",
+      "git_blob_sha1": "fe2876a68ad5cdbf6d045396e18fba9b8919e1bf",
+      "sha256": "f8b223e25343559f57e1839ccd849fd1494a9729da33da04bb5074b7f80f4887",
+      "bytes": 219
+    },
+    {
+      "upstream_path": "skills/.curated/pdf/assets/pdf.png",
+      "local_path": "vendor/skills/openai-pdf/assets/pdf.png",
+      "git_blob_sha1": "dd16ba283f6056cfe99cc3d36612d3b8cd79e00d",
+      "sha256": "17da356d195d4e3fa24f9becbee6b8d9e60e13005762b5ab0809c520c76da6ee",
+      "bytes": 1312
+    }
+  ],
+  "upstream_modified": false,
+  "role": "Pinned upstream archive only; current built-in e2/pdf remains active; no second pdf registration"
+}

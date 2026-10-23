@@ -1,0 +1,888 @@
+{
+  "task_id": "ADDITIVE-ADVANCED-TOOLS-20261023",
+  "reviewer": "/root/session2_review",
+  "timestamp_utc": "2026-10-23T06:52:17.111540+00:00",
+  "status": "PASS_WITH_DECLARED_BROWSER_AND_NATIVE_APP_LIMITS; GITHUB_SAVE_PENDING_ROOT",
+  "review_scope": "Additive six-tool integration and diagnostic artifacts only. No source author/builder rerun by independent reviewer. No real production deck equivalence claim.",
+  "baseline": {
+    "base_source_path": ".local/advanced-tests/base-source.json",
+    "base_source_sha256": "80e00b3cf1af227fc2ca8ea7573554f6b5f650d3e69e92244daca2533bf2e324",
+    "source_blob_hashes_verified": true,
+    "byte_identical_count": 12,
+    "appended_prompt_only_count": 5,
+    "files": [
+      {
+        "path": "AGENTS.md",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": true,
+        "base_prefix_preserved": true,
+        "base_sha256": "f4519c38d1281495f77dde3f3a6be3d1bfa9c4cf31d908b02c526a128d6f5f86",
+        "current_sha256": "f4519c38d1281495f77dde3f3a6be3d1bfa9c4cf31d908b02c526a128d6f5f86"
+      },
+      {
+        "path": "docs/스킬환경.md",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": true,
+        "base_prefix_preserved": true,
+        "base_sha256": "1e78f1462e769d2e7dbe818fcccd1ea6405cac831bf2c9506d91c61241937a3c",
+        "current_sha256": "1e78f1462e769d2e7dbe818fcccd1ea6405cac831bf2c9506d91c61241937a3c"
+      },
+      {
+        "path": "SKILLS-SOURCE.md",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": true,
+        "base_prefix_preserved": true,
+        "base_sha256": "238b6bfd7804a6e34a58dac7bb98676be75e75addca0e72fb701db4334abe29c",
+        "current_sha256": "238b6bfd7804a6e34a58dac7bb98676be75e75addca0e72fb701db4334abe29c"
+      },
+      {
+        "path": "source-lock.json",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": true,
+        "base_prefix_preserved": true,
+        "base_sha256": "04160fb9490eacdd7964e4059ea144c5814944d9ff7f6031e09a76aa11f3da36",
+        "current_sha256": "04160fb9490eacdd7964e4059ea144c5814944d9ff7f6031e09a76aa11f3da36"
+      },
+      {
+        "path": "scripts/Initialize-Workspace.ps1",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": true,
+        "base_prefix_preserved": true,
+        "base_sha256": "e3b7cfd3b5735d480f86dd5421529dbe75d8738f2e46802a7eee5dc27cdf3331",
+        "current_sha256": "e3b7cfd3b5735d480f86dd5421529dbe75d8738f2e46802a7eee5dc27cdf3331"
+      },
+      {
+        "path": ".codex/config.toml",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": true,
+        "base_prefix_preserved": true,
+        "base_sha256": "7ebb55f6738f8944d81dce9a01db9b6700202f396fc9379fdf6fd0bd75e22e2c",
+        "current_sha256": "7ebb55f6738f8944d81dce9a01db9b6700202f396fc9379fdf6fd0bd75e22e2c"
+      },
+      {
+        "path": "docs/제작기준.md",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": true,
+        "base_prefix_preserved": true,
+        "base_sha256": "ee8182934ad4112d014553f6d7488cdca615a2b89631c7d98349bd7b1813dc5a",
+        "current_sha256": "ee8182934ad4112d014553f6d7488cdca615a2b89631c7d98349bd7b1813dc5a"
+      },
+      {
+        "path": "docs/검수보고서기준.md",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": true,
+        "base_prefix_preserved": true,
+        "base_sha256": "d57777ca3a2c22672703cc8b4f3a762c95d52f55e078df08583b31f78a6085a3",
+        "current_sha256": "d57777ca3a2c22672703cc8b4f3a762c95d52f55e078df08583b31f78a6085a3"
+      },
+      {
+        "path": "docs/세션운영.md",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": true,
+        "base_prefix_preserved": true,
+        "base_sha256": "71ec2ca4294cde80657ebe2edfd35ae6e8703db0f6b6410ab8714d00ecaaeeea",
+        "current_sha256": "71ec2ca4294cde80657ebe2edfd35ae6e8703db0f6b6410ab8714d00ecaaeeea"
+      },
+      {
+        "path": ".gitignore",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": true,
+        "base_prefix_preserved": true,
+        "base_sha256": "04c11a5d2663904d34a2efdb4b74b2a9d3a4fa3da8f220d00e852851df8a6e98",
+        "current_sha256": "04c11a5d2663904d34a2efdb4b74b2a9d3a4fa3da8f220d00e852851df8a6e98"
+      },
+      {
+        "path": ".claude/skills/ppt-master/SKILL.md",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": true,
+        "base_prefix_preserved": true,
+        "base_sha256": "6b568cfa5b17229f264c3366c5e07844df5749b243c31af15e12424d75c30185",
+        "current_sha256": "6b568cfa5b17229f264c3366c5e07844df5749b243c31af15e12424d75c30185"
+      },
+      {
+        "path": ".claude/skills/playwright-skill/SKILL.md",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": true,
+        "base_prefix_preserved": true,
+        "base_sha256": "6dc254f552392e1f5b8704434e982cd26375d04ebe815084d1b47af1ee2a971f",
+        "current_sha256": "6dc254f552392e1f5b8704434e982cd26375d04ebe815084d1b47af1ee2a971f"
+      },
+      {
+        "path": "prompts/1세션_총괄.md",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": false,
+        "base_prefix_preserved": true,
+        "base_sha256": "de825925e0b6858f31b51409a1b3e1614f6437fef456dae096611d0f593faa7d",
+        "current_sha256": "29811f2624a6d036883f2e55619cadfff52e1fb3217fb5d4a052d322e3b9212d",
+        "appended_text": "\n\n[고급 도구 추가] 기존 역할과 작업 상태를 유지하며 `prompts/extensions/session1.md`의 추가 도구 지침을 함께 적용한다.\n"
+      },
+      {
+        "path": "prompts/2세션_검수.md",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": false,
+        "base_prefix_preserved": true,
+        "base_sha256": "f4d50effcdb8eb45a5d0ecb0a81e11c4be6ab28e304b41eeda9388c66e6d7a4f",
+        "current_sha256": "26152a47056c12a70856dad61f0349b1030551bb0ecf2d304d3b5a06d018f5cb",
+        "appended_text": "\n\n[고급 도구 추가] 기존 역할과 작업 상태를 유지하며 `prompts/extensions/session2.md`의 추가 도구 지침을 함께 적용한다.\n"
+      },
+      {
+        "path": "prompts/3세션_제작.md",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": false,
+        "base_prefix_preserved": true,
+        "base_sha256": "8a3ffb5c834cb1758f2b9636089fe0c4a6f5eebef1d9ca4ff70aeb06ea2073de",
+        "current_sha256": "b67ecda562e15025cbcce8d652d61d0ab74b8618aa55cd5e5521249381cf6d82",
+        "appended_text": "\n\n[고급 도구 추가] 기존 역할과 작업 상태를 유지하며 `prompts/extensions/session3.md`의 추가 도구 지침을 함께 적용한다.\n"
+      },
+      {
+        "path": "prompts/4세션_자료권리.md",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": false,
+        "base_prefix_preserved": true,
+        "base_sha256": "6d033337da3c70429f22a52346214d9d35bcecb7b692463d398b434fb420f881",
+        "current_sha256": "7ed2da2cc533d0a971589d846d5e55984107bbd24a52364d1f328bb96d503266",
+        "appended_text": "\n\n[고급 도구 추가] 기존 역할과 작업 상태를 유지하며 `prompts/extensions/session4.md`의 추가 도구 지침을 함께 적용한다.\n"
+      },
+      {
+        "path": "prompts/5세션_디자인.md",
+        "base_git_blob_verified": true,
+        "exists": true,
+        "byte_identical": false,
+        "base_prefix_preserved": true,
+        "base_sha256": "ec03b644d72486aee7fd25e7ac3f56b57c163428e068f45cd8aa95a7939a1cdf",
+        "current_sha256": "298ec993e495e7a5903165732a8eb2fcfb18afcbd110dc2a32a894c20728a79d",
+        "appended_text": "\n\n[고급 도구 추가] 기존 역할과 작업 상태를 유지하며 `prompts/extensions/session5.md`의 추가 도구 지침을 함께 적용한다.\n"
+      }
+    ],
+    "scope_limit": "Only the 17 supplied base-source files were independently compared; not all historical repository or workspace files."
+  },
+  "registration": {
+    "actual_local_registrations": [
+      {
+        "name": "pptx-generator",
+        "target": "/workspace/scratch/4ce71c0d77c1/ppt1/vendor/skills/minimax-pptx-generator"
+      }
+    ],
+    "PDF_and_Playwright_duplicate_registration": false,
+    "manager_default_only_adds": "pptx-generator",
+    "explicit_fallbacks_only": true,
+    "unit_test_command": "python -m unittest discover -s tests",
+    "unit_test_observed": {
+      "exit_code": 0,
+      "tests": 3,
+      "result": "OK"
+    },
+    "manager_readonly_check": {
+      "exit_code": 0,
+      "output": "manager-check-output.json",
+      "scope": "vendored hash and documents/production imports, not browser smoke",
+      "note": "Original full integration check recorded before optional browser fallback addition. Follow-up source branch reviewed separately; no additional installation or browser run by reviewer."
+    }
+  },
+  "vendor_integrity": {
+    "checks": [
+      {
+        "path": "vendor/skills/minimax-pptx-generator/CREDITS.md",
+        "sha256": "536cfa5cf8171d6c9418a7520d732ce5a382fa68947654bd5f037bdfc6368897",
+        "expected_sha256": "536cfa5cf8171d6c9418a7520d732ce5a382fa68947654bd5f037bdfc6368897",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/minimax-pptx-generator/LICENSE",
+        "sha256": "eed4ccce37c2d24822da3bd9d5bee7bc12d494741de56ada513d0b97f537fcd0",
+        "expected_sha256": "eed4ccce37c2d24822da3bd9d5bee7bc12d494741de56ada513d0b97f537fcd0",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/minimax-pptx-generator/LICENSES/Apache-2.0.txt",
+        "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+        "expected_sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/minimax-pptx-generator/SKILL.md",
+        "sha256": "6eeb36239fdef35ab133ca462e1ec4674cb96dd9c5cd63da39c29151899bda10",
+        "expected_sha256": "6eeb36239fdef35ab133ca462e1ec4674cb96dd9c5cd63da39c29151899bda10",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/minimax-pptx-generator/integration-result.json",
+        "sha256": "724015d7aeeb9e3019d58359474a409cedadcbe704845d65b5bd2d69c25f2889",
+        "expected_sha256": "724015d7aeeb9e3019d58359474a409cedadcbe704845d65b5bd2d69c25f2889",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/minimax-pptx-generator/references/design-system.md",
+        "sha256": "8a225af2ebd3bfa979616da74b7ec34395712fe1a8195e5613214aa291211996",
+        "expected_sha256": "8a225af2ebd3bfa979616da74b7ec34395712fe1a8195e5613214aa291211996",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/minimax-pptx-generator/references/editing.md",
+        "sha256": "5385ef88e7d081c43ee488ca308174743678314d53f6afc5df9b932390dcb3bf",
+        "expected_sha256": "5385ef88e7d081c43ee488ca308174743678314d53f6afc5df9b932390dcb3bf",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/minimax-pptx-generator/references/pitfalls.md",
+        "sha256": "247a8eb1860524fdd0d8a3365a791490c162d4a58677eb3f329d4dd682ce0257",
+        "expected_sha256": "247a8eb1860524fdd0d8a3365a791490c162d4a58677eb3f329d4dd682ce0257",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/minimax-pptx-generator/references/pptxgenjs.md",
+        "sha256": "4b66df00dd581c2eeadb140fd9bbad71daea6fb48b424f97b993f8521e41d470",
+        "expected_sha256": "4b66df00dd581c2eeadb140fd9bbad71daea6fb48b424f97b993f8521e41d470",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/minimax-pptx-generator/references/slide-types.md",
+        "sha256": "fa2c0da76d420463990317dc5932e607cea5e126389ca391e3e5718629b0cb38",
+        "expected_sha256": "fa2c0da76d420463990317dc5932e607cea5e126389ca391e3e5718629b0cb38",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-pdf/LICENSE.txt",
+        "sha256": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9",
+        "expected_sha256": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-pdf/SKILL.md",
+        "sha256": "d108cf2b36355ab37eb5962933f4d09785ec002f3105c506129320209306b9d2",
+        "expected_sha256": "d108cf2b36355ab37eb5962933f4d09785ec002f3105c506129320209306b9d2",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-pdf/SOURCE.json",
+        "sha256": "6e594bd46bb48d55e9ea1e70df50332bf096ab869f743abd6f9fedd61f5075f5",
+        "expected_sha256": "6e594bd46bb48d55e9ea1e70df50332bf096ab869f743abd6f9fedd61f5075f5",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-pdf/agents/openai.yaml",
+        "sha256": "f8b223e25343559f57e1839ccd849fd1494a9729da33da04bb5074b7f80f4887",
+        "expected_sha256": "f8b223e25343559f57e1839ccd849fd1494a9729da33da04bb5074b7f80f4887",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-pdf/assets/pdf.png",
+        "sha256": "17da356d195d4e3fa24f9becbee6b8d9e60e13005762b5ab0809c520c76da6ee",
+        "expected_sha256": "17da356d195d4e3fa24f9becbee6b8d9e60e13005762b5ab0809c520c76da6ee",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-playwright/LICENSE.txt",
+        "sha256": "9a7110fc2d2f964038e5dc49128f908f29f47a574c961cba16085914e879cbda",
+        "expected_sha256": "9a7110fc2d2f964038e5dc49128f908f29f47a574c961cba16085914e879cbda",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-playwright/NOTICE.txt",
+        "sha256": "417d5d3372914ecfd9fe102ac1d7dc2119253209f9718d6c222f616876c1904b",
+        "expected_sha256": "417d5d3372914ecfd9fe102ac1d7dc2119253209f9718d6c222f616876c1904b",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-playwright/SKILL.md",
+        "sha256": "0ffaabcc8e0990627c4725f18bf1c7955534a796c1c199e872909de2013ce6a8",
+        "expected_sha256": "0ffaabcc8e0990627c4725f18bf1c7955534a796c1c199e872909de2013ce6a8",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-playwright/agents/openai.yaml",
+        "sha256": "ddda43720fc566fffa45264be8f17f7745a3cee28d5245d41d3b963bc9967230",
+        "expected_sha256": "ddda43720fc566fffa45264be8f17f7745a3cee28d5245d41d3b963bc9967230",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-playwright/assets/playwright-small.svg",
+        "sha256": "f1d213c0f76735d8272c3d3e9fbf71fe7b894e2d1588907044c780f2c33a9732",
+        "expected_sha256": "f1d213c0f76735d8272c3d3e9fbf71fe7b894e2d1588907044c780f2c33a9732",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-playwright/assets/playwright.png",
+        "sha256": "521669f088c838196c6c852ccc9abdd7234d8f37fc9a8a7a9af7db2d50193381",
+        "expected_sha256": "521669f088c838196c6c852ccc9abdd7234d8f37fc9a8a7a9af7db2d50193381",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-playwright/references/cli.md",
+        "sha256": "7c069a8206ba20b9ddbdc42436b04de30bb3aa4a825ba98680757ee62e954900",
+        "expected_sha256": "7c069a8206ba20b9ddbdc42436b04de30bb3aa4a825ba98680757ee62e954900",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-playwright/references/workflows.md",
+        "sha256": "a2b5835a00ebee3906c146adf7f764f7718ea3f89a8702d86eaa135dfe0fc8c2",
+        "expected_sha256": "a2b5835a00ebee3906c146adf7f764f7718ea3f89a8702d86eaa135dfe0fc8c2",
+        "match": true
+      },
+      {
+        "path": "vendor/skills/openai-playwright/scripts/playwright_cli.sh",
+        "sha256": "aa3fdff5d0e4556177f4dfd5f04117e772aa54f94b6a2e34b6c0edf629c6b9b5",
+        "expected_sha256": "aa3fdff5d0e4556177f4dfd5f04117e772aa54f94b6a2e34b6c0edf629c6b9b5",
+        "match": true
+      }
+    ],
+    "passed_count": 24,
+    "failures": 0
+  },
+  "package_versions": [
+    {
+      "name": "jsdom",
+      "manifest": "26.1.0",
+      "installed": "26.1.0",
+      "locked": "26.1.0",
+      "match": true,
+      "integrity_present": true
+    },
+    {
+      "name": "jszip",
+      "manifest": "3.10.2",
+      "installed": "3.10.2",
+      "locked": "3.10.2",
+      "match": true,
+      "integrity_present": true
+    },
+    {
+      "name": "mermaid",
+      "manifest": "12.2.0",
+      "installed": "12.2.0",
+      "locked": "12.2.0",
+      "match": true,
+      "integrity_present": true
+    },
+    {
+      "name": "pptxgenjs",
+      "manifest": "4.0.1",
+      "installed": "4.0.1",
+      "locked": "4.0.1",
+      "match": true,
+      "integrity_present": true
+    },
+    {
+      "name": "sharp",
+      "manifest": "0.35.5",
+      "installed": "0.35.5",
+      "locked": "0.35.5",
+      "match": true,
+      "integrity_present": true
+    }
+  ],
+  "document_conversion": {
+    "source_hash_checks": [
+      {
+        "result": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/documents/diagnostic.pptx.json",
+        "source_hash_match": true,
+        "markdown": "<!-- Slide number: 1 -->\nDIAGNOSTIC ONLY #1 원고 분석 시험\n| BEFORE | AFTER |\n| --- | --- |\n|  |  |",
+        "layout_claim": false
+      },
+      {
+        "result": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/documents/diagnostic.docx.json",
+        "source_hash_match": true,
+        "markdown": "DIAGNOSTIC ONLY\n\n원고 전처리 #1",
+        "layout_claim": false
+      },
+      {
+        "result": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/documents/diagnostic.pdf.json",
+        "source_hash_match": true,
+        "markdown": "DIAGNOSTIC ONLY - PDF TEXT #1\n\n",
+        "layout_claim": false
+      }
+    ],
+    "status": "PASS for PPTX/DOCX/PDF diagnostic extraction and HWP/HWPX rejection route",
+    "notes": "Routing sentinels are explicitly not real Hangul files; no active/deleted/comment/speaker fidelity or real Hangul parser claim."
+  },
+  "production_diagnostics": {
+    "independent_review_file": "production-independent-review.json",
+    "actual_pptx_hashes": [
+      {
+        "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pptx",
+        "sha256": "068f21dfc4f9c1319d559b9c79ced8ce3388144a06688d16ef6c68a1f89c10a0"
+      },
+      {
+        "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pptx",
+        "sha256": "626ef9768def9ae09e7cea006a82035f24d2fb5484efd976a22ffd4dec22d7be"
+      }
+    ],
+    "crc_xml_relationship_errors": 0,
+    "slides_total": 4,
+    "actual_pngs_visually_opened": 4,
+    "visual_verdict": "PASS for the four virtual diagnostic pages; Korean labels/narration, native table, chart values2/4/3, SVG check mark and native Mermaid flow readable with no clipping or unintended overlaps.",
+    "manifest_file_hashes_checked": 15,
+    "manifest_file_hash_failures": 0,
+    "source_editability": "Native text/shapes/tables/charts and second-page picture count0 verified in OOXML; SVG remains image. App edit/resave not tested.",
+    "svg_receipts_renderer_source": [
+      [
+        {
+          "svg": "ppt/media/image-1-2.svg",
+          "png": "ppt/media/image-1-1.png",
+          "renderer": "sharp",
+          "rendererVersion": "0.35.5",
+          "rendererSource": "project-local",
+          "sourcePreserved": true
+        }
+      ],
+      [
+        {
+          "svg": "ppt/media/image-1-2.svg",
+          "png": "ppt/media/image-1-1.png",
+          "renderer": "sharp",
+          "rendererVersion": "0.35.5",
+          "rendererSource": "project-local",
+          "sourcePreserved": true
+        }
+      ]
+    ],
+    "production_source_manifest_sha256": "910931295b5338cbd7c16d40d62a8172fc133a16be766418dfd45699a931606e",
+    "current_adapter_sha256": "21bd77585dff7d4ca6eb0643a5e0749dd0b119470e423a99d0dd7f1e1e5a6e4a"
+  },
+  "browser": {
+    "status": "BLOCKED_BROWSER_UNAVAILABLE",
+    "actual_open_attempted": true,
+    "local_page_opened": false,
+    "snapshot_created": false,
+    "screenshot_created": false,
+    "report_matches_cli_log": true,
+    "is_remaining_environment_limit_not_success": true
+  },
+  "defects": [
+    {
+      "id": "S2-GEOM-001",
+      "severity": "required implementation correction",
+      "state": "CLOSED",
+      "owner": "/root/session3_production",
+      "path": "tools/advanced-production/src/native-pptx.mjs",
+      "input_source_sha256": "ccdc1ee9cbacd7d5d7287eacd3dd8e2dad308ae614cb5c93c7bcaaf0a31b2747",
+      "finding": "text/shape/addTable/addChart validate box then spread formatting options last. options.x/y/w/h can override validated geometry. CLI op.options and Mermaid options.text expose this path, contrary to documented out-of-canvas guard.",
+      "minimal_fix": "Reject geometry keys in formatting options or validate final merged geometry consistently, including Mermaid text options.",
+      "retest_scope": "Guard negative inputs only; existing diagnostic artifact hashes can remain unchanged.",
+      "fixed_source_sha256": "21bd77585dff7d4ca6eb0643a5e0749dd0b119470e423a99d0dd7f1e1e5a6e4a",
+      "independent_recheck": {
+        "method": "Direct read-only inspection of corrected source; formatting geometry x/y/w/h now rejected before every relevant object is created, including Mermaid text.",
+        "owner_regression_log_path": ".local/advanced-tests/session3/geometry-guard-regression.json",
+        "owner_regression_log_sha256": "51a7e83480725ff32fa5b1cd093cb6d0e54e8243a8103c0eaedc23332ed65b85",
+        "owner_negative_cases": 50,
+        "owner_cases_all_rejected": true,
+        "reviewer_did_not_execute_production_author_code": true,
+        "artifact_unchanged_checks": [
+          {
+            "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-1.png",
+            "old_sha256": "48cd10c356d968785f84b8791f13b40225da558305b77c3cbb983a2ce783837f",
+            "current_sha256": "48cd10c356d968785f84b8791f13b40225da558305b77c3cbb983a2ce783837f",
+            "unchanged": true
+          },
+          {
+            "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-2.png",
+            "old_sha256": "87ed4fe82108245d74b821c771ff16fffa60e2833ed293fa2b4cbab882b0b509",
+            "current_sha256": "87ed4fe82108245d74b821c771ff16fffa60e2833ed293fa2b4cbab882b0b509",
+            "unchanged": true
+          },
+          {
+            "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pdf",
+            "old_sha256": "b780b3c2e1364c9cbf3fa6bb8505d27015504026ff0d2b0c7298feffee48b493",
+            "current_sha256": "b780b3c2e1364c9cbf3fa6bb8505d27015504026ff0d2b0c7298feffee48b493",
+            "unchanged": true
+          },
+          {
+            "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pptx",
+            "old_sha256": "626ef9768def9ae09e7cea006a82035f24d2fb5484efd976a22ffd4dec22d7be",
+            "current_sha256": "626ef9768def9ae09e7cea006a82035f24d2fb5484efd976a22ffd4dec22d7be",
+            "unchanged": true
+          },
+          {
+            "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-1.png",
+            "old_sha256": "9d29c3a15d4785a2ce29557bd1b145656ad35e4cf14966942afc3f39739c897f",
+            "current_sha256": "9d29c3a15d4785a2ce29557bd1b145656ad35e4cf14966942afc3f39739c897f",
+            "unchanged": true
+          },
+          {
+            "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-2.png",
+            "old_sha256": "516de5f77a1972365b5ca83c8d2d93e2a62b77ce5363807ab3f40754d1c6ad80",
+            "current_sha256": "516de5f77a1972365b5ca83c8d2d93e2a62b77ce5363807ab3f40754d1c6ad80",
+            "unchanged": true
+          },
+          {
+            "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pdf",
+            "old_sha256": "0bec5e42b64bfa96afd16b75e5bf2d5196cc4ff820c38741ef1276ff0a5bdcc8",
+            "current_sha256": "0bec5e42b64bfa96afd16b75e5bf2d5196cc4ff820c38741ef1276ff0a5bdcc8",
+            "unchanged": true
+          },
+          {
+            "path": "/workspace/scratch/4ce71c0d77c1/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pptx",
+            "old_sha256": "068f21dfc4f9c1319d559b9c79ced8ce3388144a06688d16ef6c68a1f89c10a0",
+            "current_sha256": "068f21dfc4f9c1319d559b9c79ced8ce3388144a06688d16ef6c68a1f89c10a0",
+            "unchanged": true
+          }
+        ],
+        "scope": "Only source guard and page-cue guard changed; existing eight PPTX/PDF/PNG artifacts retain their independently inspected hashes."
+      }
+    }
+  ],
+  "documents_and_engine_consistency": {
+    "verdict": "PASS for the current additive integration and disclosed limitations",
+    "PptxGenJS_engine_selected": true,
+    "existing_pptx_import_limitation_disclosed": true,
+    "external_skill_defaults_subordinate_to_user_AGENTS_proto": true,
+    "PDF_builtin_reuse_and_CLI_host_reuse_disclosed": true,
+    "real_browser_capture_incomplete_disclosed": true
+  },
+  "source_freeze": [
+    {
+      "path": "advanced-tools.json",
+      "sha256": "69402bfa80f44458af8b792eed99cd0ea95ca20d2ccd55c94ce1b1b8a6d69bdd",
+      "bytes": 3396
+    },
+    {
+      "path": "advanced-tools.lock.json",
+      "sha256": "fbaf51526e77e805f1feeb21e12e1b4e2cd493a3c4f0d59427c41dc9a4e7a8e9",
+      "bytes": 9842
+    },
+    {
+      "path": "scripts/Manage-AdvancedTools.py",
+      "sha256": "59bf361d8d3aabc4246b91e05542fcd3a3c315d69eb1feb0ee115ec007c9ba1c",
+      "bytes": 8513
+    },
+    {
+      "path": "docs/고급도구추가.md",
+      "sha256": "8dca463bdfcc229e82b7ed5078913fe1824bab8e6024f43379f9c4393e7b6608",
+      "bytes": 8807
+    },
+    {
+      "path": "tools/advanced-production/README.md",
+      "sha256": "8073ee72fd795c6e7ff45ef95cc13e8ebf1804220b21d76a4b81cdcf6398fbd3",
+      "bytes": 8352
+    },
+    {
+      "path": "tools/advanced-production/.gitignore",
+      "sha256": "913a5e80446aad84df3f5d4efba5f43196845a8a0c2611394f0fbfff8d4bac3d",
+      "bytes": 26
+    },
+    {
+      "path": "tools/advanced-production/package-lock.json",
+      "sha256": "9daeca79ddf83885271e105a471342cfa6748e556f1760ea798fafb6a2e9acc7",
+      "bytes": 88359
+    },
+    {
+      "path": "tools/advanced-production/integration-result.json",
+      "sha256": "910931295b5338cbd7c16d40d62a8172fc133a16be766418dfd45699a931606e",
+      "bytes": 32099
+    },
+    {
+      "path": "tools/advanced-production/.npmrc",
+      "sha256": "6d4152457be94a38d5c01dd5784a9e46dd12c4ccfe965be13c618d95d8cd1037",
+      "bytes": 113
+    },
+    {
+      "path": "tools/advanced-production/package.json",
+      "sha256": "923cdbfecd97d5a16bb1b0e5d6f1435a9c2f70a882dee8d8218d2b3a02d23057",
+      "bytes": 534
+    },
+    {
+      "path": "tools/advanced-production/sources.json",
+      "sha256": "6195a8245df0ad723a6faad37a2a5d7a2b161189de996d7f58f1bf5f1756591b",
+      "bytes": 3741
+    },
+    {
+      "path": "tools/advanced-production/scripts/verify-diagnostics.py",
+      "sha256": "980524d4e0798a20d43ae686179e0f7b86910cbbd097b3f98b9aafde9dfe89eb",
+      "bytes": 4836
+    },
+    {
+      "path": "tools/advanced-production/scripts/diagnose.mjs",
+      "sha256": "4161b663f7f4c022959674bca410fbd4ddab79481ad17da7da29e6ada28f5d41",
+      "bytes": 4222
+    },
+    {
+      "path": "tools/advanced-production/scripts/build.mjs",
+      "sha256": "e0894579770a37c67ec8b51b325b5cb388b2db4938b40b2957871c33c6d9e004",
+      "bytes": 1669
+    },
+    {
+      "path": "tools/advanced-production/scripts/test-geometry-guards.mjs",
+      "sha256": "3192ae188497231eff620b2f835d17fc877fb069aa0c7243ac7730c9bb0b622e",
+      "bytes": 4883
+    },
+    {
+      "path": "tools/advanced-production/scripts/parse-mermaid.mjs",
+      "sha256": "5e668dc5d9f7e8657d9cd88fbb06153e6b4bc29076558acfd55d877168a9ec69",
+      "bytes": 420
+    },
+    {
+      "path": "tools/advanced-production/src/mermaid-structure.mjs",
+      "sha256": "339fc397dd03bc418c381881905d397269e70b13e06e5b563e7728158f5d591c",
+      "bytes": 1451
+    },
+    {
+      "path": "tools/advanced-production/src/native-pptx.mjs",
+      "sha256": "21bd77585dff7d4ca6eb0643a5e0749dd0b119470e423a99d0dd7f1e1e5a6e4a",
+      "bytes": 8518
+    },
+    {
+      "path": "tools/advanced-production/fixtures/kird-virtual-proto.json",
+      "sha256": "e47c4d14ad491a96b36f2bf105b23933dc91d49df308fa04a5923171772fe9fc",
+      "bytes": 730
+    },
+    {
+      "path": "tools/advanced-production/fixtures/kedi-virtual-proto.json",
+      "sha256": "db425a4eaf1e488bea1bd822c0ab688973bd72e326aeeae82194cc572ad8f6d8",
+      "bytes": 857
+    },
+    {
+      "path": "tools/advanced-production/licenses/sharp-LICENSE",
+      "sha256": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68",
+      "bytes": 10273
+    },
+    {
+      "path": "tools/advanced-production/licenses/mermaid-LICENSE",
+      "sha256": "ec9fb67dcb25eccc416ed56e1aab819222c805a2a4bfe4cb19e7556bf2ffde80",
+      "bytes": 1089
+    },
+    {
+      "path": "tools/advanced-production/licenses/jsdom-LICENSE.txt",
+      "sha256": "242d37e7cab25cbafc36cc973ee88f9345fddf066afe4f72b7ac3d9ad4e24cce",
+      "bytes": 1056
+    },
+    {
+      "path": "tools/advanced-production/licenses/pptxgenjs-LICENSE",
+      "sha256": "7a2bfe96150786ed1908b8e63f98ebab88875c1e79e28faff6649e0f11f77e52",
+      "bytes": 1081
+    },
+    {
+      "path": "tools/advanced-production/licenses/jszip-LICENSE.markdown",
+      "sha256": "566c953c6090b1218ca6217dd7359d45dde46581968586dc607d59a78af6a9c4",
+      "bytes": 33753
+    },
+    {
+      "path": "tools/advanced-documents/LICENSE.markitdown",
+      "sha256": "c075a7fdbcff0157cf50a2c2b54c7190e36e0215ec5b9145988fdd1f9efb869b",
+      "bytes": 1142
+    },
+    {
+      "path": "tools/advanced-documents/test_conversion.py",
+      "sha256": "5c38d40412ad60500c86891f95bde938dd29961b2329f33f944468b7fa94f0f5",
+      "bytes": 2811
+    },
+    {
+      "path": "tools/advanced-documents/integration-result.json",
+      "sha256": "c4e3fac8544913075a66742c89f100f80e9776e071f43745f420cbcf4a71286f",
+      "bytes": 1961
+    },
+    {
+      "path": "tools/advanced-documents/convert_document.py",
+      "sha256": "b2d93a3c7e5b9d4e543f4e937bce44233b21b877044faffde777dbe8241323a7",
+      "bytes": 2574
+    },
+    {
+      "path": "tools/advanced-documents/requirements.lock",
+      "sha256": "bd6619ff78cba2a59a034ff1971c20f7be6964f90f000c024582402544dd83c0",
+      "bytes": 65782
+    },
+    {
+      "path": "tools/advanced-documents/requirements.in",
+      "sha256": "d95621620e091e79e8c1aba85a37dbc751210414d3f78d06d3a0df272d727ff8",
+      "bytes": 33
+    },
+    {
+      "path": "tools/advanced-browser/smoke.cjs",
+      "sha256": "f3e249589dcffa3acb45281999715e380bef57b9c97332eca30b443908260a29",
+      "bytes": 5555
+    },
+    {
+      "path": "tools/advanced-browser/README.md",
+      "sha256": "864645f268e6af9da3426fb5b6b6b37485e829fb46748de61f44f31f1710571d",
+      "bytes": 4102
+    },
+    {
+      "path": "tools/advanced-browser/upstream-files.json",
+      "sha256": "1d08a6e7a4f821493dc178c726823b5503fe868f39c61e8adbaac307dec41b84",
+      "bytes": 3563
+    },
+    {
+      "path": "tools/advanced-browser/playwright-cli.cjs",
+      "sha256": "5c83f3223dd9747ced6405e5b719421319061d1eed9ac7c566c167c7faf54311",
+      "bytes": 2140
+    },
+    {
+      "path": "tools/advanced-browser/runtime-lock.json",
+      "sha256": "ce47938a8bd5bc8aa1b347e7cb8770e96ce3103b9d5ef74a910a788e7c5cf902",
+      "bytes": 251
+    },
+    {
+      "path": "tools/advanced-browser/test-page.html",
+      "sha256": "a0732eb0b493c7f51c0033940aa80fc184ce1d5608608c53a72df9beb2fe97fc",
+      "bytes": 808
+    },
+    {
+      "path": "prompts/extensions/session1.md",
+      "sha256": "cbe4100787125ba880a759dec069f9956056e623d5c69e6a784d1f5eefae446c",
+      "bytes": 598
+    },
+    {
+      "path": "prompts/extensions/session4.md",
+      "sha256": "35c72b309b213c52f04ff9cbf3811a8082399d350ba27e589744f4555ec66dc5",
+      "bytes": 897
+    },
+    {
+      "path": "prompts/extensions/session2.md",
+      "sha256": "e2453ac3f4212a2452f1d47304e5a9f17288c18ada2d499cc16baa970eb7ede6",
+      "bytes": 740
+    },
+    {
+      "path": "prompts/extensions/session3.md",
+      "sha256": "bef3aada69bf7b632cb0ef4fbfbec98adf0f88af32275cde45ae67574fc5e30b",
+      "bytes": 1170
+    },
+    {
+      "path": "prompts/extensions/session5.md",
+      "sha256": "138019fe476b80d81e0392d74411bab0fcf6885b79a520d94606b2dc89511fd5",
+      "bytes": 802
+    },
+    {
+      "path": "docs/외부고급도구_설치결과_20261023.md",
+      "sha256": "e2339bd3535419030bce00bcc8aea9dbf2abdfd9cd254b501e5d4fd91e00b232",
+      "bytes": 9003
+    },
+    {
+      "path": "tools/advanced-browser/package.json",
+      "sha256": "3c45836ff8f787305d60ff694bd867a36535dfd2627844b16b0dc138389f336b",
+      "bytes": 260
+    },
+    {
+      "path": "tools/advanced-browser/package-lock.json",
+      "sha256": "834680f3f532f331f4e8f6b10a8a1b7431f0a50189d926cb8412b8c37b9b0092",
+      "bytes": 1691
+    }
+  ],
+  "pending": [
+    "Root GitHub save verification of final changed files; use actual freshly checked branch commit parent. No implementation defect remains in the reviewed scope."
+  ],
+  "limits": [
+    "No historical full workspace restore or v4 reproduction.",
+    "No PowerPoint/Hancom app open-edit-resave, audio/motion/MP4 playback, recorded timing, rights acquisition, institutional or user final design acceptance.",
+    "Original prototype was not reloaded; virtual KIRD/KEDI diagnostics do not prove source-template fidelity.",
+    "Reviewer did not change another owner file, register over existing skills, install dependencies, or change global Python/npm."
+  ],
+  "root_result_report": {
+    "path": "docs/외부고급도구_설치결과_20261023.md",
+    "sha256": "e2339bd3535419030bce00bcc8aea9dbf2abdfd9cd254b501e5d4fd91e00b232",
+    "verdict": "No material unsupported overstatement or required correction found in current result report.",
+    "scope_limits_adequately_disclosed": [
+      "Virtual institution fixtures, not actual source-template match",
+      "PDF smoke English only; production Korean diagnostics separate",
+      "Actual browser open failed; snapshots/screenshots absent",
+      "No existing ppt-master attribution guard execution success claim",
+      "No PowerPoint/Hancom app or rights/final acceptance claim"
+    ]
+  },
+  "git_branch_reference": {
+    "checked_at": "2026-10-23",
+    "source": "GitHub plugin GET /repos/whddjr91-hue/ppt1/branches/main",
+    "branch": "main",
+    "commit_sha": "22c39b6ed16aedccd31473bfcabbc4b1024a7d3d",
+    "tree_sha": "ec51f259f35e8891d9c4e83caa08de85f7bc40cf",
+    "base_commit_label_correct": true
+  },
+  "mandatory_open_defects": 0,
+  "final_review_summary": "Existing baseline preserved in all 17 supplied comparisons; no default PDF/CLI duplication; 24 vendored files/locks and pinned direct libraries verified; 3 installer protection tests pass; source text conversions/source hashes correct; two native PPTX packages and four actual PNG pages pass limited independent diagnostics. S2-GEOM-001 fixed and narrowly rechecked. Browser capture remains untested due declared missing Chromium/CDN failure. GitHub publication is root follow-up.",
+  "browser_fallback_followup": {
+    "scope": "Only optional local pinned browser CLI fallback, selected runtime propagation, manager branch order, docs and upstream shell mode. No new browser retry or broader production test.",
+    "verdict": "PASS_WITH_EXISTING_BROWSER_CAPTURE_LIMIT",
+    "package_lock": {
+      "path": "tools/advanced-browser/package-lock.json",
+      "sha256": "834680f3f532f331f4e8f6b10a8a1b7431f0a50189d926cb8412b8c37b9b0092",
+      "exact_playwright_version": "1.62.1",
+      "official_registry_urls": true,
+      "tarball_integrity_matches_record": true,
+      "tarball_cli_hash_matches_host_and_wrapper_lock": true,
+      "reviewer_scope": "Read current package lock and responsible-agent tarball verification record; did not redownload npm source or install package."
+    },
+    "runtime_selection": "smoke.cjs obtains selected modules/version via wrapper --runtime-info and requires that selected package; same host/local selection policy, no direct shared-runtime assumption.",
+    "manager_install_branch": "Direct code inspection: Node required, matching runtime probe returns before npm is required; npm required only after absent/mismatched runtime; npm ci --ignore-scripts --no-audit --no-fund scoped to tools/advanced-browser.",
+    "branch_order_issue": {
+      "id": "S2-BROWSER-002",
+      "state": "CLOSED",
+      "finding": "Initial draft checked npm before matching-runtime reuse; root moved npm availability check after the reuse early return.",
+      "validation": "Direct source re-read; root reports actual matching-runtime skip PASS and existing installer protection tests3 PASS. Reviewer did not repeat install or broaden tests."
+    },
+    "preflight": {
+      "record_path": ".local/advanced-tests/session4/preflight-result.json",
+      "sha256": "c3e4e8add3fa64d814ad36309978b9ed32898491321a33020b5ac2a5b9d34ff3",
+      "passed": true,
+      "selected_version": "1.62.1",
+      "full_browser_exists": false
+    },
+    "local_cli_package_added": false,
+    "upstream_shell_mode": "0o755",
+    "source_wrapper_unchanged": true,
+    "production_guard_unchanged": true,
+    "actual_browser_retry_performed_by_reviewer": false,
+    "snapshot_screenshot_claim": "Still absent; prior BLOCKED_BROWSER_UNAVAILABLE result unchanged.",
+    "updated_files": [
+      {
+        "path": "tools/advanced-browser/package.json",
+        "sha256": "3c45836ff8f787305d60ff694bd867a36535dfd2627844b16b0dc138389f336b",
+        "bytes": 260
+      },
+      {
+        "path": "tools/advanced-browser/package-lock.json",
+        "sha256": "834680f3f532f331f4e8f6b10a8a1b7431f0a50189d926cb8412b8c37b9b0092",
+        "bytes": 1691
+      },
+      {
+        "path": "tools/advanced-browser/smoke.cjs",
+        "sha256": "f3e249589dcffa3acb45281999715e380bef57b9c97332eca30b443908260a29",
+        "bytes": 5555
+      },
+      {
+        "path": "tools/advanced-browser/README.md",
+        "sha256": "864645f268e6af9da3426fb5b6b6b37485e829fb46748de61f44f31f1710571d",
+        "bytes": 4102
+      },
+      {
+        "path": "scripts/Manage-AdvancedTools.py",
+        "sha256": "59bf361d8d3aabc4246b91e05542fcd3a3c315d69eb1feb0ee115ec007c9ba1c",
+        "bytes": 8513
+      },
+      {
+        "path": "docs/고급도구추가.md",
+        "sha256": "8dca463bdfcc229e82b7ed5078913fe1824bab8e6024f43379f9c4393e7b6608",
+        "bytes": 8807
+      },
+      {
+        "path": "docs/외부고급도구_설치결과_20261023.md",
+        "sha256": "e2339bd3535419030bce00bcc8aea9dbf2abdfd9cd254b501e5d4fd91e00b232",
+        "bytes": 9003
+      },
+      {
+        "path": "advanced-tools.json",
+        "sha256": "69402bfa80f44458af8b792eed99cd0ea95ca20d2ccd55c94ce1b1b8a6d69bdd",
+        "bytes": 3396
+      },
+      {
+        "path": "advanced-tools.lock.json",
+        "sha256": "fbaf51526e77e805f1feeb21e12e1b4e2cd493a3c4f0d59427c41dc9a4e7a8e9",
+        "bytes": 9842
+      }
+    ],
+    "reviewed_at_utc": "2026-10-23T06:52:17.111540+00:00"
+  }
+}
