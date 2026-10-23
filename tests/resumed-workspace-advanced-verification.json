@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-23",
+  "workspace": "/workspace/scratch/3188a94e77fa/ppt1",
+  "restored_from_git_commit": "5274a0e10cfdc5dd1573505afac7cb7c0a957808",
+  "original_project_reinitialized": false,
+  "vendor_hashes_passed": true,
+  "original_files_and_prompt_prefixes_preserved": true,
+  "runtime": {
+    "documents_python": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-documents-venv/bin/python",
+    "documents_ready": true,
+    "production_ready": true,
+    "node": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "pdftoppm": "/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override/pdftoppm",
+    "soffice": "/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override/soffice",
+    "browser_status": "Run the browser smoke separately; CLI presence is not browser availability",
+    "markitdown_version": "0.1.9",
+    "browser_cli_runtime_ready": true
+  },
+  "document_conversion": {
+    "tests": [
+      {
+        "format": ".pptx",
+        "expected_text_found": true,
+        "source_unchanged": true,
+        "source_sha256": "4a58eafcaf5e5aa09801b2051661f61a653374f9d67f23b2c2c5dc8d09db0d39"
+      },
+      {
+        "format": ".docx",
+        "expected_text_found": true,
+        "source_unchanged": true,
+        "source_sha256": "943795d7abeecd6f47d4d8125ca6e0713678a634204f3a1cd4761da25386887c"
+      },
+      {
+        "format": ".pdf",
+        "expected_text_found": true,
+        "source_unchanged": true,
+        "source_sha256": "a17e4ba8b357d4da7bf24d1f664d81510509acf99d2a310a60f9d585fa77eefb"
+      },
+      {
+        "format": ".hwp",
+        "legacy_route_preserved": true,
+        "real_hangul_parsing_tested": false
+      },
+      {
+        "format": ".hwpx",
+        "legacy_route_preserved": true,
+        "real_hangul_parsing_tested": false
+      }
+    ],
+    "status": "PASS",
+    "scope": "diagnostic local preprocessing and routing only"
+  },
+  "visual_review": {
+    "status": "PASS_VIRTUAL_FIXTURE_VISUAL_SCOPE",
+    "reviewer": "/root/reviewer",
+    "inputs": [
+      {
+        "file": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pptx",
+        "sha256": "ce046a96f9071f598a017cb118c97950b77428c1c1764dc4a8f503b571e2e27d",
+        "page_count": 2,
+        "pdf_sha256": "e1084f9ac2114e1e8161b0ee077da2514fb58a9477d11464ff651043698d90bb"
+      },
+      {
+        "file": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pptx",
+        "sha256": "713210491cef0ee4932da475ff4e8e49842ee214ab2460934cf322f0cb89e28f",
+        "page_count": 2,
+        "pdf_sha256": "0a5c93e201402af043a0db9574ae8ddf273f4e4dfdc688fc7643212b9a008b7d"
+      }
+    ],
+    "pages_reviewed": 4,
+    "page_results": [
+      {
+        "file": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pptx",
+        "page": 1,
+        "visual": "PASS: Korean glyphs, table/chart, SVG checkmark, native flowchart and arrows visible; no observed clipping or text overlap"
+      },
+      {
+        "file": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-tests/session3/kedi-virtual-diagnostic.pptx",
+        "page": 2,
+        "visual": "PASS: Korean glyphs, table/chart, SVG checkmark, native flowchart and arrows visible; no observed clipping or text overlap"
+      },
+      {
+        "file": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pptx",
+        "page": 1,
+        "visual": "PASS: Korean glyphs, table/chart, SVG checkmark, native flowchart and arrows visible; no observed clipping or text overlap"
+      },
+      {
+        "file": "/workspace/scratch/3188a94e77fa/ppt1/.local/advanced-tests/session3/kird-virtual-diagnostic.pptx",
+        "page": 2,
+        "visual": "PASS: Korean glyphs, table/chart, SVG checkmark, native flowchart and arrows visible; no observed clipping or text overlap"
+      }
+    ],
+    "scope": "Resumed environment output check of synthetic diagnostic fixtures only; not a real institutional prototype/manuscript delivery review.",
+    "limits": [
+      "PowerPoint UI edit/save roundtrip not performed",
+      "Real manuscript fidelity, template fidelity, media rights and playback not tested"
+    ],
+    "production_files_modified": false,
+    "browser_executed": false,
+    "reviewed_at_utc": "2026-10-23T13:09:28.434109+00:00"
+  },
+  "internal_team_ready": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "vscode_sessions_connected": false,
+  "browser_test_scope": "Runtime info and CLI help only in this resumed environment; approved host browser/connector routing required.",
+  "fonts": "Google Fonts NanumGothic Regular/Bold restored; Git blob hashes matched official files; OFL retained locally."
+}
