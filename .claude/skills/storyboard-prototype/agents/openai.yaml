@@ -1,0 +1,4 @@
+interface:
+  display_name: "프로토 스토리보드 기준"
+  short_description: "프로토와 원고를 대조해 사례·강사·도식의 학습 의미와 시각 위계를 검수합니다"
+  default_prompt: "Use $storyboard-prototype to analyze the approved prototype and manuscript before producing or reviewing a storyboard."

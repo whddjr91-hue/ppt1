@@ -176,7 +176,9 @@
       "path": "AGENTS.md",
       "sha256": "f4519c38d1281495f77dde3f3a6be3d1bfa9c4cf31d908b02c526a128d6f5f86",
       "bytes": 6336,
-      "git_blob_sha1": "2b7408a0d3274c67911ee284b53b2a63b915f5f7"
+      "git_blob_sha1": "2b7408a0d3274c67911ee284b53b2a63b915f5f7",
+      "mode": "prefix",
+      "extension_reason": "User-authorized policy appended; original bytes/hash retained"
     },
     {
       "path": "docs/스킬환경.md",
@@ -212,13 +214,17 @@
       "path": "docs/제작기준.md",
       "sha256": "ee8182934ad4112d014553f6d7488cdca615a2b89631c7d98349bd7b1813dc5a",
       "bytes": 2825,
-      "git_blob_sha1": "c2d708bda8dfcf62d027e8021c6e8e2433d3ec42"
+      "git_blob_sha1": "c2d708bda8dfcf62d027e8021c6e8e2433d3ec42",
+      "mode": "prefix",
+      "extension_reason": "User-authorized policy appended; original bytes/hash retained"
     },
     {
       "path": "docs/검수보고서기준.md",
       "sha256": "d57777ca3a2c22672703cc8b4f3a762c95d52f55e078df08583b31f78a6085a3",
       "bytes": 2574,
-      "git_blob_sha1": "0d4578b1e4ddb072f4617db06526ec6543633330"
+      "git_blob_sha1": "0d4578b1e4ddb072f4617db06526ec6543633330",
+      "mode": "prefix",
+      "extension_reason": "User-authorized policy appended; original bytes/hash retained"
     },
     {
       "path": "docs/세션운영.md",

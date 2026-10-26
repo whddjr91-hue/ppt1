@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "precedence": "Selected storyboard is design authority; manuscript is content authority; supporting examples do not replace the primary. Keep KEDI/KIRD separate.",
+  "sources": [
+    {
+      "id": "KIRD-psychology-storyboard",
+      "name": "[SB]KIRD_22_연구윤리 심화콘텐츠(인문계)_06.심리_v1.4_261006.pptx",
+      "library_file_id": "libfile_607e3bc8500081918b778062b239e74c",
+      "sha256": "c4cdba89c41dc68ee34270c329da5f32fea633bef4d6d31c1159c6145b17e9ff",
+      "role": "primary-design",
+      "pages": 73
+    },
+    {
+      "id": "KIRD-psychology-manuscript",
+      "name": "[인문_심리][KIRD]2026년도 연구윤리 심화콘텐츠 최훈_v2.0.hwp",
+      "library_file_id": "libfile_bebaadd137308191987b12c19fd7563c",
+      "sha256": "043b1b6a11b1b29747f761db815bae3fe0944f99831c68a7e3e2249fb7389051",
+      "role": "reference-manuscript",
+      "pages": null
+    },
+    {
+      "id": "KIRD-statistics-completed",
+      "name": "[SB]KIRD_22_연구윤리 심화콘텐츠(인문계)_09.통계_v1.2_261019.pdf",
+      "library_file_id": "libfile_00cbaab313888191886258d3af4109e3",
+      "sha256": "2256002dcfe9444c7e29d05051c07445b774010d667d461dbcb2572bf097483b",
+      "role": "supporting-example",
+      "pages": 97
+    }
+  ]
+}

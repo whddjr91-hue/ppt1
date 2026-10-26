@@ -115,7 +115,7 @@ def check():
     for entry in lock["preserved_existing_files"] + lock["preserved_prompt_prefixes"]:
         path = ROOT / entry["path"]
         data = path.read_bytes() if path.is_file() else b""
-        if entry in lock["preserved_prompt_prefixes"]:
+        if entry in lock["preserved_prompt_prefixes"] or entry.get("mode") == "prefix":
             data = data[:entry["bytes"]]
         preservation.append({"path": entry["path"],
                              "original_bytes_preserved": hashlib.sha256(data).hexdigest() == entry["sha256"]})

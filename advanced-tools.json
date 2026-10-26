@@ -9,14 +9,16 @@
     "1": {
       "role": "총괄 PM",
       "tools": [
-        "markitdown"
+        "markitdown",
+        "storyboard-prototype"
       ],
       "overlay": "prompts/extensions/session1.md"
     },
     "2": {
       "role": "독립 검수",
       "tools": [
-        "openai-pdf"
+        "openai-pdf",
+        "storyboard-prototype"
       ],
       "overlay": "prompts/extensions/session2.md"
     },
@@ -26,7 +28,8 @@
         "minimax-pptx-generator",
         "pptxgenjs",
         "mermaid",
-        "markitdown"
+        "markitdown",
+        "storyboard-prototype"
       ],
       "preserve": [
         "ppt-master"
@@ -37,7 +40,8 @@
       "role": "자료·출처 조사",
       "tools": [
         "openai-playwright",
-        "openai-pdf"
+        "openai-pdf",
+        "storyboard-prototype"
       ],
       "preserve": [
         "playwright-skill"
@@ -48,7 +52,8 @@
       "role": "별도 사본 디자인",
       "tools": [
         "minimax-pptx-generator",
-        "mermaid"
+        "mermaid",
+        "storyboard-prototype"
       ],
       "overlay": "prompts/extensions/session5.md"
     }
@@ -110,16 +115,24 @@
       ],
       "capture_transport": "Playwright public API stdio",
       "validation": "tests/chromium-results.json"
+    },
+    "storyboard-prototype": {
+      "kind": "project-and-personal-skill",
+      "path": ".claude/skills/storyboard-prototype/SKILL.md",
+      "registration": ".agents/skills/storyboard-prototype",
+      "mode": "required prototype design and semantic review policy"
     }
   },
   "required_precedence": [
-    "explicit user directions",
-    "project AGENTS.md",
-    "approved KEDI/KIRD prototype and manuscript",
-    "session overlay",
+    "explicit user instruction",
+    "selected storyboard prototype for design",
+    "approved project manuscript for facts/narration",
+    "AGENTS workflow",
+    "role overlay",
     "external skill defaults"
   ],
   "quality_gates": [
+    "Prototype-bound scene role, learning meaning, relationships, visual hierarchy and independent per-page observation; no automatic semantic PASS",
     "original template frame, size, colors and typefaces",
     "screen text separated from approved narration",
     "sync markers start at #1 per page",
@@ -133,5 +146,6 @@
     "No full original prototype was reloaded in this add-on task",
     "No legacy workspace or completed storyboard was regenerated",
     "Official Chromium CDN still returns invalid archives; pinned npm Chromium153 capture works via public API. CLI daemon Unix socket remains EPERM in this environment."
-  ]
+  ],
+  "prototype_policy": "prototype-policy.json"
 }

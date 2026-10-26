@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "design_authority": "user-selected prototype storyboard",
+  "skill": ".claude/skills/storyboard-prototype/SKILL.md",
+  "registration": ".agents/skills/storyboard-prototype",
+  "source_catalog": ".claude/skills/storyboard-prototype/references/source-catalog.json",
+  "binding": ".local/prototype-binding.json",
+  "required_roles": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "workflow_roles": [
+    3,
+    2,
+    5,
+    3,
+    2,
+    1
+  ],
+  "automatic_semantic_quality_pass": false,
+  "preflight": [
+    "python",
+    ".claude/skills/storyboard-prototype/scripts/prototype_guard.py",
+    "preflight",
+    "--binding",
+    "<binding>",
+    "--scenes",
+    "<scene-plan>"
+  ],
+  "review": [
+    "python",
+    ".claude/skills/storyboard-prototype/scripts/prototype_guard.py",
+    "review",
+    "--binding",
+    "<binding>",
+    "--scenes",
+    "<scene-plan>",
+    "--review",
+    "<review>"
+  ],
+  "precedence": [
+    "explicit user instruction",
+    "selected storyboard prototype for design",
+    "approved project manuscript for facts/narration",
+    "AGENTS workflow",
+    "role overlay",
+    "external skill defaults"
+  ],
+  "cross_institution_substitution": false,
+  "new_agent_roles_allowed": false,
+  "scope": "Reusable policy addition; no PPT regeneration or original source publication"
+}
