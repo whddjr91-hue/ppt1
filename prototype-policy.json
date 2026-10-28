@@ -20,6 +20,10 @@
     2,
     1
   ],
+  "workflow_scope": "full_lesson_final_delivery",
+  "partial_workflow": "docs/세션운영.md#작업-규모별-실행",
+  "max_automatic_fix_attempts": 2,
+  "cache_policy": "reuse only when all relevant source, rules, and artifact hashes match; no automatic semantic pass",
   "automatic_semantic_quality_pass": false,
   "preflight": [
     "python",
@@ -51,5 +55,38 @@
   ],
   "cross_institution_substitution": false,
   "new_agent_roles_allowed": false,
-  "scope": "Reusable policy addition; no PPT regeneration or original source publication"
+  "scope": "Reusable policy addition; no PPT regeneration or original source publication",
+  "execution_policy": {
+    "simple": [
+      3,
+      1
+    ],
+    "partial": [
+      3,
+      2,
+      1
+    ],
+    "full": [
+      3,
+      2,
+      5,
+      3,
+      2,
+      1
+    ],
+    "partial_with_design": [
+      3,
+      2,
+      5,
+      3,
+      2,
+      1
+    ],
+    "source_role": 4,
+    "source_trigger": "new assets or unresolved provenance/rights",
+    "design_trigger": "specific design defect; always for new lesson pilot and final delivery",
+    "planner": "scripts/production_plan.py",
+    "max_automatic_fix_attempts": 2,
+    "bulk_requires_reviewed_pilot": true
+  }
 }

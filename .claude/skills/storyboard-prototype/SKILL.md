@@ -15,7 +15,7 @@ description: Apply the user's approved storyboard prototype when analyzing, auth
 1. 프로젝트 AGENTS.md와 자신의 1~5 역할 프롬프트를 읽는다.
 2. [실제 페이지와 설계 원리](references/design-rules.md), [역할·검수](references/roles-and-review.md)를 읽는다.
 3. 프로젝트 prototype-policy.json 및 .local/prototype-binding.json을 읽는다. 독립 스킬이면 [원본 식별 목록](references/source-catalog.json)에서 현재 작업에 맞는 자료를 찾고 경로·SHA를 고정한다.
-4. 실제 프로토와 원고를 연다. 사례·설명·도식·강조·정리의 대표 화면을 원해상도로 보고 원고와 대조한다. 텍스트 추출/경로 존재만으로 분석 완료라고 하지 않는다.
+4. 실제 프로토와 원고를 연다. 같은 입력·규칙 해시의 검증된 관측은 재사용하고, 새로 필요하거나 바뀐 사례·설명·도식·강조·정리의 대표 화면을 원해상도로 보고 원고와 대조한다. 텍스트 추출/경로 존재만으로 분석 완료라고 하지 않는다.
 5. scripts/prototype_guard.py preflight --binding <binding.json> --scenes <scene-plan.json> 을 실행한다. 원본이 없거나 해시가 다르면 **제작을 중지**하고 연결 자료부터 찾는다. 관련 없는 파일로 대체하거나 프로토를 봤다고 추정하지 않는다.
 
 ## 원고를 화면으로 바꾸기
@@ -35,7 +35,7 @@ description: Apply the user's approved storyboard prototype when analyzing, auth
 ## 도구·역할·완료
 - PPTX Generator/ppt-master/PptxGenJS/Mermaid/MarkItDown/Playwright/PDF는 보조다. 도구 수·문법·CRC 검사로 교수설계 품질을 판정하지 않는다.
 - 기존 PPTX native 구조를 보존한다. PptxGenJS의 기존 PPTX import 지원을 주장하지 않는다. 신규 텍스트·도형·관계는 편집 가능하게 만든다.
-- **3 제작 → 2 검수 → 5 별도 사본 디자인 → 3 내용 확인 → 2 재검수 → 1 실제 파일 확인**을 지킨다. 4 자료 지원은 병행할 수 있다.
+- 신규 차시 대표/최종 검증은 **3 제작 → 2 검수 → 5 별도 사본 디자인 → 3 내용 확인 → 2 재검수 → 1 실제 파일 확인**을 지킨다. 부분·단순 작업은 프로젝트 `prototype-policy.json`의 `execution_policy`와 `docs/세션운영.md`의 범위별 조건을 적용한다. 4는 신규 자료·미해결 출처/권리가 있을 때 지원한다.
 - 총괄1과 담당2~5의 기존 역할을 재사용한다. 새 이름의 담당을 누적하지 않는다. VS Code 대화 연결과 내부 역할을 구분한다.
 - 변경 페이지를 실제 출력과 프로토 옆에 놓고 읽는다. 대상·관계·조건·판단이 이해되는지 구체적인 관측 문장으로 기록한다.
 - [네 가지 검수](references/roles-and-review.md)를 모두 통과해야 채택한다. 자동 검사의 human_semantic_review_required를 교육적 품질 PASS로 바꾸지 않는다.

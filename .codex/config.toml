@@ -1,7 +1,8 @@
-# User preference. Availability and actual applied model must be verified locally.
+# Same model; medium for routine tasks. Use high for complex instructional/academic judgments.
+# Role routing: prototype-policy.json / scripts/production_plan.py. Verify host application locally.
 model = "gpt-6.1-sol"
-model_reasoning_effort = "high"
+model_reasoning_effort = "medium"
 
 [agents]
 default_subagent_model = "gpt-6.1-sol"
-default_subagent_reasoning_effort = "high"
+default_subagent_reasoning_effort = "medium"

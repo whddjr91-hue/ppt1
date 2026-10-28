@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 import xml.etree.ElementTree as ET
 import zipfile
+import importlib.util
 
 
 class ContractError(ValueError):
@@ -83,7 +84,7 @@ def preflight(binding_path, scenes_path):
     scenes = plan.get("scenes", []) if isinstance(plan, dict) else plan
     require(isinstance(scenes, list) and scenes, "Scene plan is empty")
     page_ids = set()
-    roles = {"case", "explanation", "diagram", "emphasis", "section", "quiz", "closing"}
+    roles = {"intro", "objectives_contents", "case", "explanation", "diagram", "emphasis", "section", "quiz", "closing"}
     relation_types = {"context", "sequence", "contrast", "cause_effect", "hierarchy", "condition", "emphasis"}
     for s in scenes:
         page = s.get("page")
@@ -92,10 +93,18 @@ def preflight(binding_path, scenes_path):
         prefix = f"page{page}"
         require(s.get("role") in roles, prefix + ": classify scene role")
         excerpt = text(s.get("source_excerpt"), prefix + ": source excerpt")
-        narration = text(s.get("narration"), prefix + ": narration")
         approved = s.get("approved_change_id") in b.get("approved_change_ids", [])
+        silent = s.get("silent") is True
+        if silent:
+            require(approved, prefix + ": silent form insertion/omission requires a bound approved change ID")
+            require(s.get("role") in {"objectives_contents", "section"}, prefix + ": silent exception is only for prototype forms")
+            require(s.get("narration") == "" and s.get("sync") == [], prefix + ": silent form must not invent narration/cues")
+            text(s.get("silent_prototype_rationale"), prefix + ": observed silent prototype form")
+            narration = ""
+        else:
+            narration = text(s.get("narration"), prefix + ": narration")
         require(normalized(excerpt) in manuscript_text, prefix + ": excerpt not in current manuscript")
-        require(normalized(excerpt) == normalized(narration) or approved, prefix + ": narration changed without approved change")
+        require(silent or normalized(excerpt) == normalized(narration) or approved, prefix + ": narration changed without approved change")
         text(s.get("core_message"), prefix + ": learning message")
         meaning = s.get("meaning", {})
         for k in ["subject", "action", "conditions", "judgment"]:
@@ -114,14 +123,14 @@ def preflight(binding_path, scenes_path):
             require(e.get("from") in ids and e.get("to") in ids, prefix + ": relation target missing")
             text(e.get("meaning"), prefix + ": relation meaning")
         cues = s.get("sync", [])
-        require(cues and [c.get("n") for c in cues] == list(range(1, len(cues) + 1)), prefix + ": sync must start #1 and be consecutive")
+        require(silent or (cues and [c.get("n") for c in cues] == list(range(1, len(cues) + 1))), prefix + ": sync must start #1 and be consecutive")
         for c in cues:
             quote = text(c.get("narration_quote"), prefix + ": sync quote")
             require(normalized(quote) in normalized(narration), prefix + ": sync quote not in narration")
             require(c.get("visual_targets") and all(i in ids for i in c["visual_targets"]), prefix + ": sync target missing")
         visual = s.get("visual", {})
         require(visual.get("editable_text_and_diagrams") is True, prefix + ": declare native editability")
-        if s["role"] == "case":
+        if s["role"] in {"intro", "case"}:
             require(visual.get("full_video_region") is True, prefix + ": case must use full video region")
             require(visual.get("kind") == "situation_scene" or approved, prefix + ": document-only case requires user-approved exception")
         text(visual.get("hierarchy_rationale"), prefix + ": prototype hierarchy")
@@ -139,7 +148,30 @@ def review(binding_path, scenes_path, review_path):
     base = Path(review_path).resolve().parent
     source(r.get("artifact"), base, "reviewed artifact")
     artifact_sha = r["artifact"]["sha256"]
-    require(r.get("workflow_roles") == [3, 2, 5, 3, 2, 1], "Required workflow roles missing/out of order")
+    # Existing full-delivery records remain valid. A partial review must bind its
+    # original file and prove the complete changed/dependency-affected page scope.
+    task = r.get("task", {"kind": "full"})
+    project_root = Path(__file__).resolve().parents[4]
+    policy_path = project_root / "prototype-policy.json"
+    expected = read_json(policy_path)["execution_policy"]["full"] if policy_path.is_file() else [3, 2, 5, 3, 2, 1]
+    if task.get("kind") == "partial":
+        root = Path(__file__).resolve().parents[4]
+        def load(name):
+            spec = importlib.util.spec_from_file_location(name, root / "scripts" / (name + ".py"))
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            return module
+        expected = load("production_plan").plan(task, base)["workflow_roles"]
+        original = source(task.get("before_artifact"), base, "partial original")
+        final = source(r.get("artifact"), base, "partial result")
+        diff = load("compare_pptx").compare(original, final)
+        require(set(diff["affected_pages"]) <= set(result["pages"]), "Changed/affected pages missing from partial review")
+        require(set(result["pages"]) == set(task.get("pages", [])), "Partial scope differs from scene/review pages")
+        if task.get("design_defects"):
+            require(task.get("design_defects") and all(isinstance(v, str) and len(v) >= 12 for v in task["design_defects"]), "Specify concrete design defects")
+    else:
+        require(task.get("kind") == "full", "Mechanical edit cannot claim semantic/full quality approval")
+    require(r.get("workflow_roles") == expected, "Required scoped workflow roles missing/out of order")
     require(r.get("prototype_sha256") == result["prototype_sha256"], "Review uses different prototype")
     for role in [2, 1]:
         reviewers = [v for v in r.get("reviews", []) if v.get("role") == role]

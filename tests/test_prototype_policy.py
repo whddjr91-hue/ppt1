@@ -19,7 +19,8 @@ class PrototypePolicyTests(unittest.TestCase):
         self.root = Path(self.tmp.name)
         proto = self.root / "contract-fixture.pptx"
         with zipfile.ZipFile(proto, "w") as z:
-            z.writestr("ppt/presentation.xml", '<p:presentation xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"><p:sldIdLst><p:sldId id="256"/></p:sldIdLst><p:sldSz cx="9144000" cy="5143500"/></p:presentation>')
+            z.writestr("ppt/presentation.xml", '<p:presentation xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"><p:sldIdLst><p:sldId xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" id="256" r:id="rId1"/></p:sldIdLst><p:sldSz cx="9144000" cy="5143500"/></p:presentation>')
+            z.writestr('ppt/_rels/presentation.xml.rels', '<Relationships><Relationship Id="rId1" Target="slides/slide1.xml"/></Relationships>')
             z.writestr("ppt/slides/slide1.xml", '<p:sld xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:latin typeface="나눔바른고딕"/></p:sld>')
         (self.root / "source.txt").write_text("상담 서비스 동의와 연구 활용 동의는 구분해야 합니다.", encoding="utf-8")
         def entry(name):
@@ -49,6 +50,18 @@ class PrototypePolicyTests(unittest.TestCase):
         self.assertTrue(r["contract_pass"])
         self.assertTrue(r["human_semantic_review_required"])
         self.assertFalse(r["educational_quality_automatically_verified"])
+
+    def test_silent_forms_are_reviewable_but_explanation_cannot_drop_narration(self):
+        self.scene.update(role='objectives_contents', silent=True, narration='', sync=[],
+                          silent_prototype_rationale='실제 프로토의 무나레이션 학습목표 양식을 따름')
+        self.save()
+        with self.assertRaises(G.ContractError): G.preflight(self.bp, self.sp)
+        self.binding['approved_change_ids'] = ['user-approved-silent-form']
+        self.scene['approved_change_id'] = 'user-approved-silent-form'
+        self.save()
+        self.assertTrue(G.preflight(self.bp, self.sp)['contract_pass'])
+        self.scene['role'] = 'explanation'; self.save()
+        with self.assertRaises(G.ContractError): G.preflight(self.bp, self.sp)
 
     def test_missing_or_changed_reference_blocks(self):
         self.binding["prototype_storyboard"]["sha256"] = "0" * 64
@@ -90,9 +103,35 @@ class PrototypePolicyTests(unittest.TestCase):
         r = {"artifact": {"path": str(artifact), "sha256": ah}, "workflow_roles": [3,2,5,3,2,1], "prototype_sha256": self.binding["prototype_storyboard"]["sha256"], "reviews": [{"role": 2, "artifact_sha256": ah, "page_reviews": [e]}]}
         rp = self.root / "review.json"; rp.write_text(json.dumps(r))
         with self.assertRaises(G.ContractError): G.review(self.bp, self.sp, rp)
+
         r["reviews"].append({"role": 1, "artifact_sha256": ah, "page_reviews": [copy.deepcopy(e)]})
         rp.write_text(json.dumps(r)); self.assertTrue(G.review(self.bp, self.sp, rp)["manual_review_records_present"])
         r["reviews"][1]["page_reviews"][0]["render"]["derived_from_sha256"] = "0" * 64
+        rp.write_text(json.dumps(r))
+        with self.assertRaises(G.ContractError): G.review(self.bp, self.sp, rp)
+
+    def test_partial_review_accepts_scoped_workflow_but_not_unreviewed_pages(self):
+        original = self.root / 'contract-fixture.pptx'
+        artifact = self.root / 'partial.pptx'
+        with zipfile.ZipFile(original) as src, zipfile.ZipFile(artifact, 'w') as out:
+            for name in src.namelist():
+                data = src.read(name)
+                if name == 'ppt/slides/slide1.xml': data += b' '
+                out.writestr(name, data)
+        render = self.root / 'partial-render.bin'; render.write_bytes(b'fixture render only')
+        ah = G.sha(artifact)
+        e = {'page': 1, 'prototype_pages': [1], 'render': {'path': str(render), 'sha256': G.sha(render), 'derived_from_sha256': ah}}
+        for k in ['manuscript_facts', 'learning_meaning', 'prototype_visual', 'sources_sync_editability']:
+            e[k] = {'status': 'passed', 'observation': 'Fixture observation only; not actual educational approval.'}
+        r = {'artifact': {'path': str(artifact), 'sha256': ah}, 'prototype_sha256': self.binding['prototype_storyboard']['sha256'],
+             'workflow_roles': [3, 2, 1], 'task': {'kind': 'partial', 'pages': [1],
+               'before_artifact': {'path': str(original), 'sha256': G.sha(original)}},
+             'reviews': [{'role': role, 'artifact_sha256': ah, 'page_reviews': [copy.deepcopy(e)]} for role in [2, 1]]}
+        rp = self.root / 'partial-review.json'; rp.write_text(json.dumps(r))
+        self.assertTrue(G.review(self.bp, self.sp, rp)['manual_review_records_present'])
+        r['task']['pages'] = [2]; rp.write_text(json.dumps(r))
+        with self.assertRaises(G.ContractError): G.review(self.bp, self.sp, rp)
+        r['task']['pages'] = [1]; r['task']['design_defects'] = ['사례와 설명의 위계가 잘못 배치된 결함']
         rp.write_text(json.dumps(r))
         with self.assertRaises(G.ContractError): G.review(self.bp, self.sp, rp)
 
