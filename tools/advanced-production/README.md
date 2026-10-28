@@ -25,7 +25,7 @@ python3 scripts/verify-diagnostics.py
 
 ## 기존 프로토와의 경계
 
-**PptxGenJS는 기존 PPTX를 직접 import/edit하는 엔진이 아니다.** 기존 원본의 마스터·레이아웃·상속 객체·애니메이션·미디어를 보존하는 편집에는 기존 ppt-master의 native 편집/OOXML 경로를 우선한다. 이 추가 API는 새 네이티브 객체나 별도 새 파일을 만들 때 사용한다. 기존 원본에 새 객체를 병합하는 기능은 구현하지 않았다.
+**PptxGenJS는 기존 PPTX를 직접 import/edit하는 엔진이 아니다.** 기존 원본의 마스터·레이아웃·상속 객체·애니메이션·미디어를 보존하는 편집에는 기존 ppt-master의 native 편집/OOXML 경로를 우선한다. 이 추가 API는 새 네이티브 객체나 별도 새 파일을 만들 때 사용한다. 임의의 새 객체를 기존 원본에 병합하는 엔진은 구현하지 않았다. 실제 native 페이지/도형/레이아웃 재사용은 `scripts/reuse-prototype.py`의 복제·정확 텍스트 교체 경로를 제공한다. 복잡한 기존 도형 수정은 기존 ppt-master native 경로를 유지한다.
 
 원본을 기준으로 만들 경우 먼저 실제 원본의 크기·색·글꼴·표·도형·화면/내레이션/제작지시 위치를 측정하고, 관련 페이지를 실제 렌더와 비교한다. 그런 다음 `proto`에 아래 값을 명시한다. 일반 발표형 기본값으로 바꾸지 않는다.
 
@@ -36,7 +36,7 @@ python3 scripts/verify-diagnostics.py
 - `reference.path/sha256`: 실제 원본 파일과 해시. production CLI는 파일을 읽어 해시가 맞는지 확인한다.
 - 각 객체의 `box`/`placements`/`options`: 원본 위치·치수·세부 서식을 명시한다. 자동 레이아웃으로 원본을 대체하지 않는다.
 
-샘플 2종은 `diagnosticOnly:true`인 **가상 KIRD/KEDI 진단 fixture**다. 실제 기관 양식·공식 프로토·역사학 완성본과의 동일성을 주장하지 않는다. 실무 프로필을 자동 추출하는 기능이나 원본 프로토의 모든 객체/상속 구조를 재현하는 기능은 없다.
+샘플 2종은 `diagnosticOnly:true`인 **가상 KIRD/KEDI 진단 fixture**다. 실제 기관 양식·공식 프로토·역사학 완성본과의 동일성을 주장하지 않는다. 가상 fixture는 진단용이다. `production-state.py analyze-prototype`로 실제 OOXML 측정/상속 객체 캐시를 만들 수 있지만 사람의 역할 분류·실물 분석을 대체하지 않는다. production CLI는 실제 native `templateReuse`와 역할별 샘플·대표 검수 gate를 요구한다.
 
 ## JavaScript API
 
@@ -86,3 +86,7 @@ PptxGenJS 4.0.1의 Node 경로는 SVG를 보존하지만 PNG 미리보기를 깨
 `../../.local/advanced-tests/session3/`에 가상 양식별 2쪽, 총 4쪽 진단 PPTX/PDF/PNG를 생성했다. 실제 전4쪽을 열어 한글·표·차트·SVG·도형·페이지 싱크 및 잘림/겹침을 확인했다. CRC, 전체 XML 파싱, 내부 관계 대상, 각2쪽/정확 크기, 편집 가능한 표·차트, 차트값 `[2,4,3]`와 embedded workbook CRC, 원본 SVG/PNG 미리보기, Mermaid 페이지의 그림0개를 검사했다.
 
 이는 기본 도구 연결 시험이다. 실제 PowerPoint 앱의 열기/편집/재저장, 원본 프로토 일치, 전체 문서의 실제 가독성, 오디오·애니메이션·모션/MP4 재생은 확인하지 않았다. 최종 품질·권리·기관감수·사용자 수용을 의미하지 않는다. 상세 판정은 `integration-result.json`이다.
+
+## 범위·재사용·양산 gate
+
+[단일 운영 기준](../../docs/작업범위와재사용.md)에 task profiles, 실제 모델 지원 검증, 분석 캐시, native 원본 재사용, 공유 리소스를 포함한 부분 수정 검사, 대표 페이지 gate, 사용량 기록 방법을 둔다. 새 의존성/스킬 설치가 필요 없는 Python 표준 라이브러리 경로다. 기존 진단/제작 엔진은 삭제하지 않는다.
