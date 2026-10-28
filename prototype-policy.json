@@ -1,25 +1,10 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "design_authority": "user-selected prototype storyboard",
   "skill": ".claude/skills/storyboard-prototype/SKILL.md",
   "registration": ".agents/skills/storyboard-prototype",
   "source_catalog": ".claude/skills/storyboard-prototype/references/source-catalog.json",
   "binding": ".local/prototype-binding.json",
-  "required_roles": [
-    1,
-    2,
-    3,
-    4,
-    5
-  ],
-  "workflow_roles": [
-    3,
-    2,
-    5,
-    3,
-    2,
-    1
-  ],
   "automatic_semantic_quality_pass": false,
   "preflight": [
     "python",
@@ -51,5 +36,84 @@
   ],
   "cross_institution_substitution": false,
   "new_agent_roles_allowed": false,
-  "scope": "Reusable policy addition; no PPT regeneration or original source publication"
+  "scope": "Existing engine/skills preserved; typed scopes, measured prototype reuse and human quality evidence remain mandatory",
+  "role_definitions": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "task_profiles": {
+    "simple": {
+      "workflow_roles": [
+        3,
+        1
+      ],
+      "direct_review_roles": [
+        1
+      ],
+      "semantic_change": false
+    },
+    "partial": {
+      "workflow_roles": [
+        3,
+        2,
+        1
+      ],
+      "direct_review_roles": [
+        2,
+        1
+      ],
+      "design_workflow_roles": [
+        3,
+        2,
+        5,
+        3,
+        2,
+        1
+      ]
+    },
+    "full": {
+      "workflow_roles": [
+        3,
+        2,
+        5,
+        3,
+        2,
+        1
+      ],
+      "direct_review_roles": [
+        2,
+        1
+      ]
+    }
+  },
+  "canonical_operations": "docs/작업범위와재사용.md",
+  "model_routing": {
+    "model": "gpt-6.1-sol",
+    "default_reasoning": "medium",
+    "complex_judgment_reasoning": "high",
+    "low_cost_model_auto_switch": false,
+    "runtime_catalog_required_for_override": true,
+    "actual_existing_session_settings_changed": false
+  },
+  "max_auto_corrections": 2,
+  "cache": {
+    "root": ".local/production-cache",
+    "identity": [
+      "source_hashes",
+      "rule_hashes",
+      "payload_hash"
+    ],
+    "quality_pass_from_cache_hit": false
+  },
+  "pilot_gate": {
+    "max_pages": 3,
+    "required_for_full_production": true,
+    "critical_sample_roles": [
+      "case",
+      "diagram"
+    ]
+  }
 }

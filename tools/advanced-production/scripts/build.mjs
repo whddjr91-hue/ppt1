@@ -1,5 +1,4 @@
 import fs from 'node:fs/promises';
-import {createNativeDeck} from '../src/native-pptx.mjs';
 const [input,output]=process.argv.slice(2);
 if(!input||!output)throw new Error('Usage: npm run build -- job.json new-output.pptx');
 // Fail closed on output replacement and on absent/unverified original reference.
@@ -11,22 +10,28 @@ if(!job.proto.diagnosticOnly){
  const path=await import('node:path');
  if(!job.prototypePolicy?.binding||!job.prototypePolicy?.scenes)throw new Error('Production requires prototypePolicy.binding and scenes; read storyboard-prototype');
  const base=path.dirname(path.resolve(input));
- const binding=path.resolve(base,job.prototypePolicy.binding),scenePlan=path.resolve(base,job.prototypePolicy.scenes);
- const script=fileURLToPath(new URL('../../../.claude/skills/storyboard-prototype/scripts/prototype_guard.py',import.meta.url));
  const python=process.env.PROTOTYPE_POLICY_PYTHON||process.env.CODEX_PRIMARY_RUNTIME_PYTHON||(process.platform==='win32'?'python':'python3');
- const checked=spawnSync(python,[script,'preflight','--binding',binding,'--scenes',scenePlan],{encoding:'utf8',shell:false});
+ const gate=fileURLToPath(new URL('./verify-production.py',import.meta.url));
+ const checked=spawnSync(python,[gate,'--job',input],{encoding:'utf8',shell:false});
  if(checked.error||checked.status!==0)throw new Error('Prototype policy blocked production: '+(checked.stdout||checked.stderr||checked.error));
- const guard=JSON.parse(checked.stdout),b=JSON.parse(await fs.readFile(binding,'utf8')),plan=JSON.parse(await fs.readFile(scenePlan,'utf8'));
- const scenes=Array.isArray(plan)?plan:plan.scenes;
- if(guard.prototype_sha256!==job.proto.reference?.sha256)throw new Error('Build reference is not the selected storyboard prototype');
- if(job.proto.font?.face!==b.observed_profile.screen_font)throw new Error('Build screen font differs from measured prototype');
- if(job.scenes.length!==scenes.length)throw new Error('Build and reviewed scene plan counts differ');
- const norm=s=>s.replace(/#[0-9０-９]+/g,'').replace(/\s+/g,'');
- for(let i=0;i<scenes.length;i++)if(!scenes[i].scene_id||job.scenes[i].sceneId!==scenes[i].scene_id||norm(job.scenes[i].narration)!==norm(scenes[i].narration))throw new Error('Build scene identity/narration differs from prototype-bound plan');
- const {createHash}=await import('node:crypto');
- const sha=createHash('sha256').update(await fs.readFile(job.proto.reference.path)).digest('hex');
- if(sha!==job.proto.reference.sha256)throw new Error('Original proto reference SHA256 mismatch');
+ const verified=JSON.parse(checked.stdout);
+ if(job.templateReuse){
+  // Native source pages, layouts and shared resources stay intact; no generic chrome.
+  const os=await import('node:os');
+  const tmp=await fs.mkdtemp(path.join(os.tmpdir(),'ppt1-reuse-'));
+  try{
+   const reuseJob=path.join(tmp,'reuse.json');
+   await fs.writeFile(reuseJob,JSON.stringify({reference:{path:verified.reference_path,sha256:verified.prototype_sha256},pages:job.templateReuse.pages}));
+   const result=spawnSync(python,[fileURLToPath(new URL('./reuse-prototype.py',import.meta.url)),'--job',reuseJob,'--output',path.resolve(output)],{encoding:'utf8',shell:false});
+   if(result.error||result.status!==0)throw new Error('Native reuse failed: '+(result.stdout||result.stderr||result.error));
+   const populated=spawnSync(python,[gate,'--job',input,'--receipt',path.resolve(output)+'.receipt.json'],{encoding:'utf8',shell:false});
+   if(populated.error||populated.status!==0)throw new Error('Native draft rejected; not accepted: '+(populated.stdout||populated.stderr||populated.error));
+   console.log(result.stdout.trim());
+  }finally{await fs.rm(tmp,{recursive:true,force:true});}
+  process.exit(0);
+ }
 }
+const {createNativeDeck}=await import('../src/native-pptx.mjs');
 const deck=createNativeDeck(job.proto);
 for(const scene of job.scenes){
  const slide=deck.addScene(scene);

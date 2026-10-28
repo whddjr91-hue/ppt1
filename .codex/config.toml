@@ -1,7 +1,6 @@
-# User preference. Availability and actual applied model must be verified locally.
+# Same quality model; current UI/other sessions are not reconfigured by this file.
 model = "gpt-6.1-sol"
-model_reasoning_effort = "high"
+model_reasoning_effort = "medium"
 
-[agents]
-default_subagent_model = "gpt-6.1-sol"
-default_subagent_reasoning_effort = "high"
+# Per-task medium/high routing and verified model catalog: prototype-policy.json.
+# No speculative default_subagent_* keys: callers must apply verified launch parameters.

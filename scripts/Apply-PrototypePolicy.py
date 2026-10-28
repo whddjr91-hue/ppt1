@@ -63,6 +63,7 @@ def bind(a):
          "manuscript": entry(a.manuscript), "manuscript_text": entry(a.manuscript_text),
          "observed_profile": profile["observed_profile"], "prototype_pages_reviewed": profile["prototype_pages_reviewed"],
          "prototype_analysis": profile["prototype_analysis"], "approved_change_ids": [], "accepted_generated_outputs": []}
+    b["prototype_role_samples"] = profile.get("prototype_role_samples", {})
     b["manuscript_text"]["derived_from_sha256"] = b["manuscript"]["sha256"]
     if profile.get("prototype_storyboard_sha256") != b["prototype_storyboard"]["sha256"]:
         raise ValueError("Profile belongs to another prototype; do not substitute a generated deck")

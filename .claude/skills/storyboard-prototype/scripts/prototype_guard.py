@@ -7,6 +7,40 @@ import re
 from pathlib import Path
 import xml.etree.ElementTree as ET
 import zipfile
+import importlib.util
+
+REPO = Path(__file__).resolve().parents[4]
+
+
+def local_module(name, relative):
+    file = REPO / relative
+    if not file.is_file():
+        raise ContractError("Repository operation helper unavailable: " + relative)
+    spec = importlib.util.spec_from_file_location(name, file)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def prototype_facts(p):
+    def measure():
+        with zipfile.ZipFile(p) as z:
+            ns = {"p": "http://schemas.openxmlformats.org/presentationml/2006/main"}
+            presentation = ET.fromstring(z.read("ppt/presentation.xml"))
+            size = presentation.find("p:sldSz", ns)
+            fonts = set()
+            for n in z.namelist():
+                if n.endswith(".xml") and n.startswith(("ppt/slides/", "ppt/slideLayouts/", "ppt/slideMasters/")):
+                    fonts.update(e.get("typeface") for e in ET.fromstring(z.read(n)).iter() if e.get("typeface"))
+            return {"canvas": [int(size.get(k)) / 914400 for k in ["cx", "cy"]],
+                    "pages": len(presentation.findall("p:sldIdLst/p:sldId", ns)), "fonts": sorted(fonts)}
+    # Standalone installed skill retains its uncached legacy path. Repo shares a
+    # content/rules-addressed cache; every call still hashes actual source bytes.
+    helper = REPO / "tools/advanced-production/scripts/production-state.py"
+    if helper.is_file():
+        state = local_module("prototype_state", "tools/advanced-production/scripts/production-state.py")
+        return state.cached("guard-prototype-facts", {"prototype": p}, measure)[0]
+    return measure()
 
 
 class ContractError(ValueError):
@@ -60,18 +94,8 @@ def preflight(binding_path, scenes_path):
     require(b["manuscript_text"].get("derived_from_sha256") == b["manuscript"]["sha256"], "Text not linked to current project manuscript")
     manuscript_text = normalized(mt.read_text(encoding="utf-8"))
     profile = b.get("observed_profile", {})
-    with zipfile.ZipFile(p) as z:
-        ns = {"p": "http://schemas.openxmlformats.org/presentationml/2006/main"}
-        presentation = ET.fromstring(z.read("ppt/presentation.xml"))
-        size = presentation.find("p:sldSz", ns)
-        canvas = [int(size.get(k)) / 914400 for k in ["cx", "cy"]]
-        pages = len(presentation.findall("p:sldIdLst/p:sldId", ns))
-        fonts = set()
-        for n in z.namelist():
-            if re.fullmatch(r"ppt/slides/slide\d+\.xml", n):
-                for e in ET.fromstring(z.read(n)).iter():
-                    if e.get("typeface"):
-                        fonts.add(e.get("typeface"))
+    facts = prototype_facts(p)
+    canvas, pages, fonts = facts["canvas"], facts["pages"], facts["fonts"]
     require(len(profile.get("canvas_inches", [])) == 2 and all(abs(a - c) < .001 for a, c in zip(canvas, profile["canvas_inches"])), "Profile canvas differs from prototype")
     require(profile.get("screen_font") in fonts, "Screen font not found in prototype")
     region = profile.get("video_region", {})
@@ -139,9 +163,57 @@ def review(binding_path, scenes_path, review_path):
     base = Path(review_path).resolve().parent
     source(r.get("artifact"), base, "reviewed artifact")
     artifact_sha = r["artifact"]["sha256"]
-    require(r.get("workflow_roles") == [3, 2, 5, 3, 2, 1], "Required workflow roles missing/out of order")
+    expected_workflow, direct_roles = [3, 2, 5, 3, 2, 1], [2, 1]
+    scope_result = None
+    if r.get("operation"):
+        operation_file = source(r["operation"], base, "operation manifest")
+        operation = read_json(operation_file)
+        state = local_module("operation_state", "tools/advanced-production/scripts/production-state.py")
+        policy = read_json(REPO / "prototype-policy.json")
+        routing = state.route(operation, policy)
+        expected_workflow = routing["workflow_roles"]
+        direct_roles = policy["task_profiles"][operation["task_type"]]["direct_review_roles"]
+        if operation["task_type"] != "full":
+            require(set(routing["review_pages"]) == set(result["pages"]), "Review plan must cover every changed/dependent page")
+            original = source(operation.get("original"), operation_file.parent, "original artifact")
+            baseline_file = source(operation.get("baseline_review"), operation_file.parent, "baseline review")
+            baseline = read_json(baseline_file)
+            require(baseline.get("artifact", {}).get("sha256") == sha(original), "Baseline review is for another original")
+            require(baseline.get("prototype_sha256") == result["prototype_sha256"], "Baseline uses another prototype")
+            with zipfile.ZipFile(original) as z:
+                old_root = ET.fromstring(z.read("ppt/presentation.xml"))
+                count = len(old_root.findall("{http://schemas.openxmlformats.org/presentationml/2006/main}sldIdLst/{http://schemas.openxmlformats.org/presentationml/2006/main}sldId"))
+            require(count > 0, "Baseline original has no logical pages")
+            baseline_needed = set(range(1, count + 1)) - set(routing["review_pages"])
+            if operation.get("output_scope") == "excerpt":
+                baseline_needed = set(routing["review_pages"])
+            binding = read_json(binding_path)
+            for role in [2, 1]:
+                prior = [v for v in baseline.get("reviews", []) if v.get("role") == role]
+                require(prior and prior[-1].get("artifact_sha256") == sha(original), "Baseline lacks independent review identity")
+                require(prior[-1].get("page_reviews"), "Empty baseline review cannot be reused")
+                coverage = [v.get("page") for v in prior[-1]["page_reviews"]]
+                require(all(type(p) is int and 1 <= p <= count for p in coverage), "Baseline page outside original deck")
+                require(len(coverage) == len(set(coverage)), "Duplicate baseline page review")
+                require(baseline_needed <= set(coverage), "Baseline lacks review of reused pages")
+                for e in prior[-1]["page_reviews"]:
+                    source(e.get("render"), baseline_file.parent, "baseline render")
+                    require(e["render"].get("derived_from_sha256") == sha(original), "Stale baseline render")
+                    require(e.get("prototype_pages") and all(p in binding["prototype_pages_reviewed"] for p in e["prototype_pages"]), "Baseline reference was not inspected")
+                    for key in ["manuscript_facts", "learning_meaning", "prototype_visual", "sources_sync_editability"]:
+                        require(e.get(key, {}).get("status") == "passed", "Baseline contains an unresolved failure")
+                        require(len(text(e[key].get("observation"), "baseline direct observation")) >= 12, "Baseline needs concrete observations")
+            if operation.get("output_scope", "full_deck") == "full_deck":
+                scope = local_module("pptx_scope", "tools/advanced-production/scripts/pptx-scope.py")
+                scope_result = scope.compare(original, source(r["artifact"], base, "artifact"), routing["review_pages"])
+                require(scope_result["passed"], "Undeclared page/shared-resource change: " + json.dumps(scope_result, ensure_ascii=False))
+            else:
+                require(operation["output_scope"] == "excerpt", "Unknown output scope")
+                require(operation.get("source_pages") == routing["review_pages"], "Excerpt must explicitly map original page IDs")
+                scope_result = {"scope": "excerpt", "whole_deck_preservation_verified": False}
+    require(r.get("workflow_roles") == expected_workflow, "Required task workflow roles missing/out of order")
     require(r.get("prototype_sha256") == result["prototype_sha256"], "Review uses different prototype")
-    for role in [2, 1]:
+    for role in direct_roles:
         reviewers = [v for v in r.get("reviews", []) if v.get("role") == role]
         require(reviewers, f"Missing role{role} direct review")
         reviewer = reviewers[-1]
@@ -159,7 +231,7 @@ def review(binding_path, scenes_path, review_path):
                 require(judgement.get("status") == "passed", f"role{role}/page{page}: {key} not passed")
                 observation = text(judgement.get("observation"), "direct observation")
                 require(len(observation) >= 12, "Use concrete observation, not PASS/checked")
-    return {**result, "manual_review_records_present": True, "educational_quality_automatically_verified": False, "artifact_sha256": artifact_sha, "user_acceptance_verified": False}
+    return {**result, "manual_review_records_present": True, "educational_quality_automatically_verified": False, "artifact_sha256": artifact_sha, "user_acceptance_verified": False, "scope_check": scope_result}
 
 
 def main():
