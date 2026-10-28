@@ -20,6 +20,10 @@
     2,
     1
   ],
+  "workflow_scope": "full_lesson_final_delivery",
+  "partial_workflow": "docs/세션운영.md#작업-규모별-실행",
+  "max_automatic_fix_attempts": 2,
+  "cache_policy": "reuse only when all relevant source, rules, and artifact hashes match; no automatic semantic pass",
   "automatic_semantic_quality_pass": false,
   "preflight": [
     "python",
