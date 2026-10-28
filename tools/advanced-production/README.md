@@ -86,3 +86,10 @@ PptxGenJS 4.0.1의 Node 경로는 SVG를 보존하지만 PNG 미리보기를 깨
 `../../.local/advanced-tests/session3/`에 가상 양식별 2쪽, 총 4쪽 진단 PPTX/PDF/PNG를 생성했다. 실제 전4쪽을 열어 한글·표·차트·SVG·도형·페이지 싱크 및 잘림/겹침을 확인했다. CRC, 전체 XML 파싱, 내부 관계 대상, 각2쪽/정확 크기, 편집 가능한 표·차트, 차트값 `[2,4,3]`와 embedded workbook CRC, 원본 SVG/PNG 미리보기, Mermaid 페이지의 그림0개를 검사했다.
 
 이는 기본 도구 연결 시험이다. 실제 PowerPoint 앱의 열기/편집/재저장, 원본 프로토 일치, 전체 문서의 실제 가독성, 오디오·애니메이션·모션/MP4 재생은 확인하지 않았다. 최종 품질·권리·기관감수·사용자 수용을 의미하지 않는다. 상세 판정은 `integration-result.json`이다.
+
+
+## 범위별 실행 게이트
+
+실제 제작 CLI의 비진단 job은 prototypePolicy.binding/scenes와 함께 prototypePolicy.execution에 `scripts/production_plan.py`가 읽을 작업 JSON 경로를 지정한다. full은 phase=pilot 또는 bulk를 명시한다. pilot은 실제 장면계획과 같은 2~5쪽만 만들고, bulk는 현재 원고·프로토·정책과 일치하는 대표 화면의 독립 2/5 검수 근거가 없으면 객체 생성 전 중단한다. 필드가 없는 과거 제작 job은 명시적 오류를 내므로 근거를 추가한 새 job 사본으로 실행한다. diagnosticOnly 가상 fixture는 도구 진단에만 사용하며 실무 품질/양산 승인 근거가 아니다.
+
+기존 API·제작 엔진과 native 원본 보존 경로는 유지한다. CLI의 partial 출력은 새 객체/페이지 조각이며 원본 전체를 대체하는 편집기가 아니다. 기존 PPT 부분 수정은 기존 native 편집 후 compare_pptx와 scoped review로 원본 보존을 확인한다. 저수준 내부 API를 직접 호출할 때에도 운영 계획·대표 검수·최종 독립 검수는 별도로 지켜야 한다. 이 게이트가 모든 임의 스크립트 실행을 통제한다고 주장하지 않는다.

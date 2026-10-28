@@ -11,9 +11,18 @@ if(!job.proto.diagnosticOnly){
  const path=await import('node:path');
  if(!job.prototypePolicy?.binding||!job.prototypePolicy?.scenes)throw new Error('Production requires prototypePolicy.binding and scenes; read storyboard-prototype');
  const base=path.dirname(path.resolve(input));
+ // Local bounded execution gate: no model call, no new agent, no re-analysis.
+ if(!job.prototypePolicy.execution)throw new Error('Production requires prototypePolicy.execution (scoped job JSON)');
+ const executionPath=path.resolve(base,job.prototypePolicy.execution);
+ const execution=JSON.parse(await fs.readFile(executionPath,'utf8'));
  const binding=path.resolve(base,job.prototypePolicy.binding),scenePlan=path.resolve(base,job.prototypePolicy.scenes);
  const script=fileURLToPath(new URL('../../../.claude/skills/storyboard-prototype/scripts/prototype_guard.py',import.meta.url));
  const python=process.env.PROTOTYPE_POLICY_PYTHON||process.env.CODEX_PRIMARY_RUNTIME_PYTHON||(process.platform==='win32'?'python':'python3');
+ const planner=fileURLToPath(new URL('../../../scripts/production_plan.py',import.meta.url));
+ const planned=spawnSync(python,[planner,executionPath],{encoding:'utf8',shell:false});
+ if(planned.error||planned.status!==0)throw new Error('Execution policy blocked production: '+(planned.stdout||planned.stderr||planned.error));
+ const executionPlan=JSON.parse(planned.stdout);
+ if(executionPlan.kind==='simple')throw new Error('Mechanical edits must preserve the existing PPTX through its native edit path');
  const checked=spawnSync(python,[script,'preflight','--binding',binding,'--scenes',scenePlan],{encoding:'utf8',shell:false});
  if(checked.error||checked.status!==0)throw new Error('Prototype policy blocked production: '+(checked.stdout||checked.stderr||checked.error));
  const guard=JSON.parse(checked.stdout),b=JSON.parse(await fs.readFile(binding,'utf8')),plan=JSON.parse(await fs.readFile(scenePlan,'utf8'));
@@ -24,6 +33,17 @@ if(!job.proto.diagnosticOnly){
  const norm=s=>s.replace(/#[0-9０-９]+/g,'').replace(/\s+/g,'');
  for(let i=0;i<scenes.length;i++)if(!scenes[i].scene_id||job.scenes[i].sceneId!==scenes[i].scene_id||norm(job.scenes[i].narration)!==norm(scenes[i].narration))throw new Error('Build scene identity/narration differs from prototype-bound plan');
  const {createHash}=await import('node:crypto');
+ if(execution.kind==='full'){
+  if(execution.phase==='pilot'&&(job.scenes.length>5||job.scenes.length!==executionPlan.pages.length))throw new Error('Pilot scene/page scope mismatch');
+  if(execution.phase==='bulk'){
+   const policy=fileURLToPath(new URL('../../../prototype-policy.json',import.meta.url));
+   const rulesSha=createHash('sha256').update(await fs.readFile(policy)).digest('hex');
+   if(execution.prototype?.sha256!==b.prototype_storyboard.sha256||execution.manuscript?.sha256!==b.manuscript.sha256||execution.rules?.sha256!==rulesSha)throw new Error('Pilot gate is not bound to current prototype/manuscript/policy');
+  }
+ }
+ if(executionPlan.kind==='partial'||execution.phase==='pilot'){
+  if(JSON.stringify([...executionPlan.pages].sort((a,b)=>a-b))!==JSON.stringify([...guard.pages].sort((a,b)=>a-b)))throw new Error('Execution pages differ from bound scene plan');
+ }
  const sha=createHash('sha256').update(await fs.readFile(job.proto.reference.path)).digest('hex');
  if(sha!==job.proto.reference.sha256)throw new Error('Original proto reference SHA256 mismatch');
 }

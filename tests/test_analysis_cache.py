@@ -11,6 +11,19 @@ SPEC.loader.exec_module(C)
 
 
 class CacheTests(unittest.TestCase):
+    def test_paragraph_memo_and_rule_changes_invalidate_affected_pages(self):
+        import copy
+        old = {'source_sha256': 'a', 'rules_sha256': 'r',
+               'paragraphs': [{'id': 'P1', 'text': '본문', 'speaker': '강사', 'memo': ''}, {'id': 'P2', 'text': '사례'}],
+               'page_map': {'P1': [17], 'P2': [18, 19]}}
+        new = copy.deepcopy(old); new['source_sha256'] = 'b'
+        new['paragraphs'][0]['memo'] = '승인된 감수 변경'
+        delta = C.paragraph_delta(old, new)
+        self.assertEqual(delta['affected_pages'], [17])
+        self.assertEqual(delta['reusable_paragraph_ids'], ['P2'])
+        new['rules_sha256'] = 'new rules'
+        self.assertEqual(C.paragraph_delta(old, new)['affected_pages'], [17, 18, 19])
+
     def test_reuse_only_exact_bytes_and_rules(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

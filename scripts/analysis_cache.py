@@ -14,6 +14,32 @@ import tempfile
 SCHEMA = 1
 
 
+def paragraph_delta(before, after):
+    """Compare approved structured extraction, including memo/speaker metadata.
+
+    This does not extract HWP, decide deletions, or approve narration. Every
+    manuscript paragraph must have a stable ID and an explicit page map.
+    """
+    def rows(manifest):
+        result = {}
+        for row in manifest['paragraphs']:
+            key = row['id']
+            if not isinstance(key, str) or not key or key in result:
+                raise ValueError('Missing or duplicate paragraph ID')
+            if key not in manifest['page_map']:
+                raise ValueError('Missing paragraph page mapping')
+            result[key] = row
+        return result
+    old, new = rows(before), rows(after)
+    same_rules = before['rules_sha256'] == after['rules_sha256']
+    changed = sorted(k for k in old.keys() | new.keys() if not same_rules or old.get(k) != new.get(k) or before['page_map'].get(k) != after['page_map'].get(k))
+    pages = {p for m in (before, after) for k in changed for p in m['page_map'].get(k, [])}
+    return {'changed_paragraph_ids': changed, 'affected_pages': sorted(pages),
+            'reusable_paragraph_ids': sorted(old.keys() & new.keys() - set(changed)),
+            'source_hash_changed': before['source_sha256'] != after['source_sha256'],
+            'educational_quality_verified': False}
+
+
 def digest(path):
     h = hashlib.sha256()
     with Path(path).open('rb') as f:
